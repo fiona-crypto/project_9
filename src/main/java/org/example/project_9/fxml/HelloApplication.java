@@ -1,4 +1,4 @@
-package org.example.project_9;
+package org.example.project_9.fxml;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
