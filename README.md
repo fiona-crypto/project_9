@@ -1,6 +1,6 @@
 # project_9
 
-Gruppe 9: 
+Gruppe 9:
 - Philipp Pedron ic23b007@technikum-wien.at
 - Fiona Wallensteiner ic23b068@technikum-wien.at
 
@@ -19,22 +19,22 @@ Das Ziel dieses Projekts ist es, ein benutzerfreundliches Wetter-Dashboard zu er
 
 ### **Must-Have Features**
 - **Abruf von Wetterdaten über die OpenWeatherMap API**:
-  - Anzeigen der aktuellen Temperatur, Luftfeuchtigkeit, Windgeschwindigkeit und des Wetterzustands.
+    - Anzeigen der aktuellen Temperatur, Luftfeuchtigkeit, Windgeschwindigkeit und des Wetterzustands.
 - **JavaFX GUI**:
-  - Klar strukturierte Oberfläche zur Anzeige der Wetterdaten.
-  - Automatische Aktualisierung der Wetterinformationen.
+    - Klar strukturierte Oberfläche zur Anzeige der Wetterdaten.
+    - Automatische Aktualisierung der Wetterinformationen.
 
 ### **Should-Have Features**
 - **Maßeinheiten umschalten**:
-  - Wechsel zwischen Celsius und Fahrenheit.
+    - Wechsel zwischen Celsius und Fahrenheit.
 - **Standortwechsel**:
-  - Abrufen und Anzeigen von Wetterdaten für verschiedene Städte.
+    - Abrufen und Anzeigen von Wetterdaten für verschiedene Städte.
 
 ### **Nice-to-Have Features**
 - **Speichern bevorzugter Städte**:
-  - Benutzer können eine Liste bevorzugter Städte anlegen und schnell auf diese zugreifen.
+    - Benutzer können eine Liste bevorzugter Städte anlegen und schnell auf diese zugreifen.
 - **Warnmeldungen bei extremen Wetterbedingungen**:
-  - Die Anwendung zeigt Warnmeldungen bei extremen Sturm- oder Wetterbedingungen an, damit der Benutzer gewarnt wird.
+    - Die Anwendung zeigt Warnmeldungen bei extremen Sturm- oder Wetterbedingungen an, damit der Benutzer gewarnt wird.
 
 ---
 
