@@ -66,10 +66,6 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <TextField fx:id="pressureLabel" text="Air Pressure" />
-            <TextField fx:id="humidityLabel" text="Humidity" GridPane.columnIndex="1" />
-            <TextField fx:id="windSpeedLabel" text="Wind Speed" GridPane.rowIndex="1" />
-            <TextField fx:id="windDirectionLabel" text="Wind Direction" GridPane.columnIndex="1" GridPane.rowIndex="1" />
          </children>
       </GridPane>
    </children>

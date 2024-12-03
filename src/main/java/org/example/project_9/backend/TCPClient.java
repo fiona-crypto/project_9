@@ -5,27 +5,25 @@ import java.net.*;
 
 public class TCPClient {
     public static void main(String[] args) {
-        String serverHost = "localhost"; // Der Server läuft lokal
-        int serverPort = 12345;          // Port des Servers
-        String city = "Vienna";          // Stadtname, den der Client an den Server senden soll
+        String serverHost = "localhost";
+        int serverPort = 4711;
+        String city = "Vienna";
 
         try (Socket socket = new Socket(serverHost, serverPort);
              PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
              BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()))) {
 
-            // Nachricht an den Server senden (Stadtname)
-            System.out.println("Sende Stadt an den Server...");
+            System.out.println("Send city to server...");
             out.println(city);
 
-            // Antwort vom Server lesen (Wetterdaten)
             String serverResponse;
-            System.out.println("Warte auf Antwort vom Server...");
+            System.out.println("Waiting for response from server...");
             while ((serverResponse = in.readLine()) != null) {
-                System.out.println("Antwort vom Server: " + serverResponse);
+                System.out.println("Answer from server: " + serverResponse);
             }
 
         } catch (IOException e) {
-            System.err.println("Fehler beim Verbinden mit dem Server: " + e.getMessage());
+            System.err.println("Error connecting to the server: " + e.getMessage());
         }
     }
 }

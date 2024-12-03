@@ -1,16 +1,21 @@
 package org.example.project_9.fxml;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 /*import org.example.project_9.backend.ApiRequests;*/
 
 public class HelloController {
+
     @FXML
     private TextField searchField;
 
     @FXML
-    private TextField locationLabel;
+    private Button searchButton;
+
+    @FXML
+    private Label cityLabel;
 
     @FXML
     private Label temperatureLabel;
@@ -28,27 +33,12 @@ public class HelloController {
     private Label minimumLabel;
 
     @FXML
-    private TextField pressureLabel;
+    private Label airPressureLabel;
 
     @FXML
-    private TextField humidityLabel;
+    private Label humidityLabel;
 
     @FXML
-    private TextField windSpeedLabel;
-
-    @FXML
-    private TextField windDirectionLabel;
-
-    @FXML
-    private void handleSearch() {
-        String query = searchField.getText();
-        if (query.isEmpty()) {
-            System.out.println("Suchfeld ist leer.");
-        } else {
-            System.out.println("Gesuchte Eingabe: " + query);
-            // Hier weitere Logik ergänzen, z. B. Daten filtern oder suchen.
-        }
-    }
-
+    private Label windSpeedLabel;
 
 }
