@@ -8,7 +8,7 @@ public class TCPServer {
         int port = 4711;
 
         try (ServerSocket serverSocket = new ServerSocket(port)) {
-            System.out.println("Server started and waiting auf connection...");
+            System.out.println("Server started and waiting for connection...");
 
             while (true) {
                 try (Socket clientSocket = serverSocket.accept();
@@ -18,16 +18,19 @@ public class TCPServer {
                     System.out.println("Client connected.");
 
                     String city = in.readLine();
-                    System.out.println("Message from client: " + city);
+                    System.out.println("Received city from client: " + city);
 
                     String apiResponse = fetchWeatherData(city);
 
-                    if (apiResponse != null) {
-                        WeatherData weatherData = WeatherParser.parseWeatherData(apiResponse);
-                        String formattedData = WeatherParser.formatWeatherData(weatherData);
-                        out.println(formattedData);
+                    if (apiResponse != null && !apiResponse.isEmpty() && apiResponse.startsWith("{")) {
+                        if (apiResponse.contains("\"cod\":\"404\"")) {
+                            System.out.println("City not found in API.");
+                            out.println("{\"error\": \"City not found.\"}");  // JSON-Fehlernachricht
+                        } else {
+                            out.println(apiResponse);  // Gib die rohe JSON-Antwort zurück
+                        }
                     } else {
-                        out.println("Error retrieving data.");
+                        out.println("{\"error\": \"Error retrieving data or invalid response.\"}");  // JSON-Fehlernachricht
                     }
 
                 } catch (IOException e) {
@@ -48,6 +51,8 @@ public class TCPServer {
             URL url = new URL(urlString);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
+            conn.setConnectTimeout(5000);
+            conn.setReadTimeout(5000);
 
             try (BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()))) {
                 StringBuilder response = new StringBuilder();
@@ -55,9 +60,12 @@ public class TCPServer {
                 while ((line = reader.readLine()) != null) {
                     response.append(line);
                 }
-                return response.toString();
-            }
 
+                System.out.println("API Response: " + response); // Debugging
+
+                // Gebe die rohe JSON-Antwort zurück
+                return response.toString();  // Rohe JSON-Daten ohne zusätzliche Formatierungen
+            }
         } catch (IOException e) {
             System.err.println("Error retrieving data: " + e.getMessage());
             return null;
