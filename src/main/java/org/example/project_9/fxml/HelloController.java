@@ -3,6 +3,7 @@ package org.example.project_9.fxml;
 import com.google.gson.Gson;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import org.example.project_9.backend.TCPClient;
@@ -16,6 +17,9 @@ public class HelloController {
 
     @FXML
     private Button searchButton;
+
+    @FXML
+    private ChoiceBox<String> unitChoiceBox; // Neue ChoiceBox für die Einheitenauswahl
 
     @FXML
     private Label cityLabel;
@@ -46,6 +50,10 @@ public class HelloController {
 
     @FXML
     public void initialize() {
+        // Einheitenauswahl vorbereiten
+
+        unitChoiceBox.getSelectionModel().selectFirst(); // Standard auf metrisch
+
         // Action für die Such-Schaltfläche definieren
         searchButton.setOnAction(event -> fetchWeatherData());
     }
@@ -59,9 +67,12 @@ public class HelloController {
             return;
         }
 
+        // Einheit aus der ChoiceBox auswählen
+        String selectedUnit = unitChoiceBox.getSelectionModel().getSelectedIndex() == 0 ? "metric" : "imperial";
+
         try {
             // TCPClient aufrufen, um Daten vom Server abzurufen
-            String serverResponse = TCPClient.getWeatherData(city);
+            String serverResponse = TCPClient.getWeatherData(city, selectedUnit);
 
             // Debugging-Ausgabe
             System.out.println("Server response: " + serverResponse);
@@ -79,20 +90,23 @@ public class HelloController {
             System.out.println("Parsed temperature: " + weatherData.getTemperature());
             System.out.println("Parsed weather condition: " + weatherData.getWeatherCondition());
 
+            // Einheitenspezifische Labels
+            String tempUnit = selectedUnit.equals("metric") ? "°C" : "°F";
+            String windUnit = selectedUnit.equals("metric") ? "m/s" : "mph";
+
             // GUI-Elemente aktualisieren
             cityLabel.setText(weatherData.getCity());
-            temperatureLabel.setText(String.format("%.2f °C", weatherData.getTemperature()));
+            temperatureLabel.setText(String.format("%.2f %s", weatherData.getTemperature(), tempUnit));
             weatherConditionLabel.setText(weatherData.getWeatherCondition());
-            feelsLikeLabel.setText(String.format("Feels like: %.2f °C", weatherData.getFeelsLike()));
-            maximumLabel.setText(String.format("Max: %.2f °C", weatherData.getTempMax()));
-            minimumLabel.setText(String.format("Min: %.2f °C", weatherData.getTempMin()));
+            feelsLikeLabel.setText(String.format("Feels like: %.2f %s", weatherData.getFeelsLike(), tempUnit));
+            maximumLabel.setText(String.format("Max: %.2f %s", weatherData.getTempMax(), tempUnit));
+            minimumLabel.setText(String.format("Min: %.2f %s", weatherData.getTempMin(), tempUnit));
             airPressureLabel.setText(String.format("Pressure: %d hPa", weatherData.getPressure()));
             humidityLabel.setText(String.format("Humidity: %d%%", weatherData.getHumidity()));
-            windSpeedLabel.setText(String.format("Wind Speed: %.2f m/s", weatherData.getWindSpeed()));
+            windSpeedLabel.setText(String.format("Wind Speed: %.2f %s", weatherData.getWindSpeed(), windUnit));
         } catch (Exception e) {
             cityLabel.setText("Fehler: " + e.getMessage());
             e.printStackTrace();
         }
     }
-
 }

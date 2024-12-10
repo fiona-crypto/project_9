@@ -5,7 +5,7 @@ import java.net.*;
 
 public class TCPClient {
 
-    public static String getWeatherData(String city) {
+    public static String getWeatherData(String city, String units) {
         String serverHost = "localhost";
         int serverPort = 4711;
 
@@ -13,7 +13,9 @@ public class TCPClient {
              PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
              BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()))) {
 
-            out.println(city); // Stadt an den Server senden
+            // Stadt und Einheit an den Server senden, getrennt durch ein Semikolon
+            out.println(city + ";" + units);
+
             StringBuilder serverResponse = new StringBuilder();
             String line;
 

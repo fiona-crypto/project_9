@@ -17,20 +17,30 @@ public class TCPServer {
 
                     System.out.println("Client connected.");
 
-                    String city = in.readLine();
-                    System.out.println("Received city from client: " + city);
+                    String input = in.readLine(); // Eingabe vom Client (Stadt und Einheit)
+                    System.out.println("Received input from client: " + input);
 
-                    String apiResponse = fetchWeatherData(city);
+                    if (input != null && input.contains(";")) {
+                        // Splitte Stadt und Einheit
+                        String[] parts = input.split(";");
+                        String city = parts[0].trim();
+                        String units = parts[1].trim();
 
-                    if (apiResponse != null && !apiResponse.isEmpty() && apiResponse.startsWith("{")) {
-                        if (apiResponse.contains("\"cod\":\"404\"")) {
-                            System.out.println("City not found in API.");
-                            out.println("{\"error\": \"City not found.\"}");  // JSON-Fehlernachricht
+                        // Rufe Wetterdaten mit Einheit ab
+                        String apiResponse = fetchWeatherData(city, units);
+
+                        if (apiResponse != null && !apiResponse.isEmpty() && apiResponse.startsWith("{")) {
+                            if (apiResponse.contains("\"cod\":\"404\"")) {
+                                System.out.println("City not found in API.");
+                                out.println("{\"error\": \"City not found.\"}");  // JSON-Fehlernachricht
+                            } else {
+                                out.println(apiResponse);  // Gib die rohe JSON-Antwort zurück
+                            }
                         } else {
-                            out.println(apiResponse);  // Gib die rohe JSON-Antwort zurück
+                            out.println("{\"error\": \"Error retrieving data or invalid response.\"}");  // JSON-Fehlernachricht
                         }
                     } else {
-                        out.println("{\"error\": \"Error retrieving data or invalid response.\"}");  // JSON-Fehlernachricht
+                        out.println("{\"error\": \"Invalid request format.\"}"); // Fehler bei ungültiger Anfrage
                     }
 
                 } catch (IOException e) {
@@ -43,9 +53,9 @@ public class TCPServer {
         }
     }
 
-    private static String fetchWeatherData(String city) {
+    private static String fetchWeatherData(String city, String units) {
         String apiKey = "2846e091909907b38614eb85000db992";
-        String urlString = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey + "&units=metric";
+        String urlString = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey + "&units=" + units;
 
         try {
             URL url = new URL(urlString);
