@@ -10,6 +10,9 @@ import org.example.project_9.backend.TCPClient;
 import org.example.project_9.backend.WeatherData;
 import org.example.project_9.backend.WeatherParser;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class HelloController {
 
     @FXML
@@ -17,6 +20,14 @@ public class HelloController {
 
     @FXML
     private Button searchButton;
+
+    @FXML
+    private Button addFavoriteButton;
+
+    @FXML
+    private ChoiceBox<String> favoritesChoiceBox;
+
+    private List<String> favoriteCities = new ArrayList<>();
 
     @FXML
     private ChoiceBox<String> unitChoiceBox; // Neue ChoiceBox für die Einheitenauswahl
@@ -56,6 +67,30 @@ public class HelloController {
 
         // Action für die Such-Schaltfläche definieren
         searchButton.setOnAction(event -> fetchWeatherData());
+
+        addFavoriteButton.setOnAction(event -> addFavoriteCity());
+
+        // Aktion für Favoritenauswahl
+        favoritesChoiceBox.setOnAction(event -> selectFavoriteCity());
+    }
+
+    private void selectFavoriteCity() {
+        String selectedCity = favoritesChoiceBox.getValue();
+        if (selectedCity != null && !selectedCity.isEmpty()) {
+            searchField.setText(selectedCity);
+            fetchWeatherData(); // Wetterdaten für die ausgewählte Stadt abrufen
+        }
+    }
+
+    private void addFavoriteCity() {
+        String city = searchField.getText();
+        if (city != null && !city.isEmpty() && !favoriteCities.contains(city)) {
+            favoriteCities.add(city);
+            favoritesChoiceBox.getItems().add(city);
+            System.out.println("Favorit hinzugefügt: " + city);
+        } else {
+            System.out.println("Stadt ist leer oder bereits in den Favoriten.");
+        }
     }
 
     private void fetchWeatherData() {

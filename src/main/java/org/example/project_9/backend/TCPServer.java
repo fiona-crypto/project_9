@@ -8,7 +8,7 @@ public class TCPServer {
         int port = 4711;
 
         try (ServerSocket serverSocket = new ServerSocket(port)) {
-            System.out.println("Server started and waiting for connection...");
+            System.out.println("Server started and waiting for connection ...");
 
             while (true) {
                 try (Socket clientSocket = serverSocket.accept();
