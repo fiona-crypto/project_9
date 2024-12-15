@@ -6,7 +6,6 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -27,7 +26,7 @@
 
          <!-- Eingabebereich -->
          <HBox alignment="CENTER" spacing="10">
-            <TextField fx:id="searchField" prefWidth="250" promptText="Stadt eingeben" />
+            <TextField fx:id="searchField" prefWidth="250" promptText="Stadt oder Postleitzahl eingeben" />
             <Button fx:id="searchButton" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold;" text="Suche" />
             <Button fx:id="addFavoriteButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="153.0" text="zu Favoriten hinzufügen" />
          </HBox>
@@ -43,83 +42,73 @@
                   </FXCollections>
                </items>
             </ChoiceBox>
+            <Label />
+            <Label style="-fx-font-weight: bold;" text="Favoriten:" />
+            <ChoiceBox prefWidth="150.0" />
          </HBox>
-         <SplitPane dividerPositions="0.5894648829431438" prefHeight="330.0" prefWidth="600.0">
-            <items>
-               <AnchorPane prefHeight="314.0" prefWidth="286.0">
-                  <children>
+   
+                                                            <!-- Ergebnisse -->
+         <VBox alignment="TOP_LEFT" prefHeight="314.0" prefWidth="350.0" spacing="10.0" style="-fx-background-color: white; -fx-padding: 15; -fx-border-color: #ccc; -fx-border-width: 1; -fx-border-radius: 5; -fx-background-radius: 5;">
+            <HBox prefHeight="282.0" prefWidth="373.0">
+               <children>
+                  <VBox prefHeight="282.0" prefWidth="363.0">
+                     <children>
+                        <!-- Ort -->
+                        <Label fx:id="cityLabel" prefHeight="29.0" prefWidth="56.0" style="-fx-font-size: 18; -fx-font-weight: bold;" text="Ort: -" />
                
-                                 <!-- Ergebnisse -->
-                     <VBox alignment="TOP_LEFT" layoutX="-1.0" prefHeight="314.0" prefWidth="350.0" spacing="10.0" style="-fx-background-color: white; -fx-padding: 15; -fx-border-color: #ccc; -fx-border-width: 1; -fx-border-radius: 5; -fx-background-radius: 5;">
-                        <HBox prefHeight="282.0" prefWidth="373.0">
-                           <children>
-                              <VBox prefHeight="282.0" prefWidth="363.0">
-                                 <children>
-                                    <!-- Ort -->
-                                    <Label fx:id="cityLabel" prefHeight="29.0" prefWidth="56.0" style="-fx-font-size: 18; -fx-font-weight: bold;" text="Ort: -" />
-                           
-                                                                                                      <!-- Wetterbedingungen -->
-                                    <Label fx:id="weatherConditionLabel" prefHeight="48.0" prefWidth="138.0" style="-fx-font-size: 14;" text="Wetterbedingungen: -" />
-                           
-                                                                                             <!-- Temperaturen -->
-                                    <GridPane hgap="10" prefHeight="113.0" prefWidth="444.0" vgap="10">
-                                       <Label style="-fx-font-weight: bold;" text="Temperatur:" />
-                                       <Label fx:id="temperatureLabel" text="- °C" GridPane.columnIndex="1" />
-                           
-                                                                                                <Label style="-fx-font-weight: bold;" text="Gefühlt wie:" GridPane.rowIndex="1" />
-                                       <Label fx:id="feelsLikeLabel" text="- °C" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                           
-                                                                                                <Label style="-fx-font-weight: bold;" text="Min.:" GridPane.rowIndex="2" />
-                                       <Label fx:id="minimumLabel" text="- °C" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                           
-                                                                                                <Label style="-fx-font-weight: bold;" text="Max.:" GridPane.rowIndex="3" />
-                                       <Label fx:id="maximumLabel" text="- °C" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                                       <columnConstraints>
-                                          <ColumnConstraints />
-                                          <ColumnConstraints />
-                                       </columnConstraints>
-                                       <rowConstraints>
-                                          <RowConstraints />
-                                          <RowConstraints />
-                                          <RowConstraints />
-                                          <RowConstraints />
-                                       </rowConstraints>
-                                    </GridPane>
-                           
-                                                                                             <!-- Weitere Informationen -->
-                                    <GridPane hgap="10" prefHeight="104.0" prefWidth="568.0" style="-fx-padding: 10 0 0 0;" vgap="10">
-                                       <Label style="-fx-font-weight: bold;" text="Luftdruck:" />
-                                       <Label fx:id="airPressureLabel" text="- hPa" GridPane.columnIndex="1" />
-                           
-                                                                                                <Label style="-fx-font-weight: bold;" text="Luftfeuchtigkeit:" GridPane.rowIndex="1" />
-                                       <Label fx:id="humidityLabel" text="- %" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                           
-                                                                                                <Label style="-fx-font-weight: bold;" text="Windgeschwindigkeit:" GridPane.rowIndex="2" />
-                                       <Label fx:id="windSpeedLabel" text="- m/s" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                       <columnConstraints>
-                                          <ColumnConstraints />
-                                          <ColumnConstraints />
-                                       </columnConstraints>
-                                       <rowConstraints>
-                                          <RowConstraints />
-                                          <RowConstraints />
-                                          <RowConstraints />
-                                       </rowConstraints>
-                                    </GridPane>
-                                 </children>
-                              </VBox>
-                           </children>
-                        </HBox>
-                     </VBox>
-                  </children>
-               </AnchorPane>
-               <AnchorPane prefHeight="314.0" prefWidth="253.0">
-                  <children>
-                     <ChoiceBox fx:id="favoritesChoiceBox" prefHeight="26.0" prefWidth="242.0" />
-                  </children>
-               </AnchorPane>
-            </items>
-         </SplitPane>
+                                                                                                                                 <!-- Wetterbedingungen -->
+                        <Label fx:id="weatherConditionLabel" prefHeight="48.0" prefWidth="138.0" style="-fx-font-size: 14;" text="Wetterbedingungen: -" />
+               
+                                                                                                                        <!-- Temperaturen -->
+                        <GridPane hgap="10" prefHeight="113.0" prefWidth="444.0" vgap="10">
+                           <Label style="-fx-font-weight: bold;" text="Temperatur:" />
+                           <Label fx:id="temperatureLabel" text="- °C" GridPane.columnIndex="1" />
+               
+                                                                                                                           <Label style="-fx-font-weight: bold;" text="Gefühlt wie:" GridPane.rowIndex="1" />
+                           <Label fx:id="feelsLikeLabel" text="- °C" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+               
+                                                                                                                           <Label style="-fx-font-weight: bold;" text="Min.:" GridPane.rowIndex="2" />
+                           <Label fx:id="minimumLabel" text="- °C" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+               
+                                                                                                                           <Label style="-fx-font-weight: bold;" text="Max.:" GridPane.rowIndex="3" />
+                           <Label fx:id="maximumLabel" text="- °C" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                           <columnConstraints>
+                              <ColumnConstraints />
+                              <ColumnConstraints />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints />
+                              <RowConstraints />
+                              <RowConstraints />
+                              <RowConstraints />
+                           </rowConstraints>
+                        </GridPane>
+               
+                                                                                                                        <!-- Weitere Informationen -->
+                        <GridPane hgap="10" prefHeight="104.0" prefWidth="568.0" style="-fx-padding: 10 0 0 0;" vgap="10">
+                           <Label style="-fx-font-weight: bold;" text="Luftdruck:" />
+                           <Label fx:id="airPressureLabel" text="- hPa" GridPane.columnIndex="1" />
+               
+                                                                                                                           <Label style="-fx-font-weight: bold;" text="Luftfeuchtigkeit:" GridPane.rowIndex="1" />
+                           <Label fx:id="humidityLabel" text="- %" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+               
+                                                                                                                           <Label style="-fx-font-weight: bold;" text="Windgeschwindigkeit:" GridPane.rowIndex="2" />
+                           <Label fx:id="windSpeedLabel" text="- m/s" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                           <columnConstraints>
+                              <ColumnConstraints />
+                              <ColumnConstraints />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints />
+                              <RowConstraints />
+                              <RowConstraints />
+                           </rowConstraints>
+                        </GridPane>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </VBox>
       </VBox>
    </children>
 </AnchorPane>
