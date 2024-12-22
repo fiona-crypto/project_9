@@ -1,15 +1,13 @@
 package org.example.project_9.fxml;
-
-import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import org.example.project_9.backend.*;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class HelloController {
 
@@ -24,8 +22,6 @@ public class HelloController {
 
     @FXML
     private ChoiceBox<String> favoritesChoiceBox;
-
-    private List<String> favoriteCities = new ArrayList<>();
 
     @FXML
     private ChoiceBox<String> unitChoiceBox; // Neue ChoiceBox für die Einheitenauswahl
@@ -57,46 +53,47 @@ public class HelloController {
     @FXML
     private Label windSpeedLabel;
 
+    private FavoritesManager favoritesManager;
+
     @FXML
     public void initialize() {
-        // Einheitenauswahl vorbereiten
-        favoriteCities = FavoritesManager.loadFavoritesFromLog();
-        favoritesChoiceBox.getItems().setAll(favoriteCities);
-
-        unitChoiceBox.getSelectionModel().selectFirst(); // Standard auf metrisch
-
-        // Action für die Such-Schaltfläche definieren
-        searchButton.setOnAction(event -> fetchWeatherData());
-
-        addFavoriteButton.setOnAction(event -> addFavoriteCity());
-
-        // Aktion für Favoritenauswahl
-        favoritesChoiceBox.setOnAction(event -> selectFavoriteCity());
+        initializeFavorites();
+        initializeUnitChoiceBox();
+        initializeEventHandlers();
     }
 
+    private void initializeFavorites() {
+        favoritesChoiceBox.getItems().setAll(FavoritesManager.getFavoriteCities());
+    }
 
-    private void selectFavoriteCity() {
+    private void initializeUnitChoiceBox() {
+        unitChoiceBox.getSelectionModel().selectFirst(); // Standard auf metrisch
+    }
+
+    private void initializeEventHandlers() {
+        searchButton.setOnAction(event -> fetchWeatherData());
+        addFavoriteButton.setOnAction(event -> handleAddFavoriteCity());
+        favoritesChoiceBox.setOnAction(event -> handleSelectFavoriteCity());
+    }
+
+    private void handleSelectFavoriteCity() {
         String selectedCity = favoritesChoiceBox.getValue();
         if (selectedCity != null && !selectedCity.isEmpty()) {
             searchField.setText(selectedCity);
-            fetchWeatherData(); // Wetterdaten für die ausgewählte Stadt abrufen
+            fetchWeatherData();
         }
     }
 
-    private void addFavoriteCity() {
+    private void handleAddFavoriteCity() {
         String city = searchField.getText();
-        if (city != null && !city.isEmpty() && !favoriteCities.contains(city)) {
-            // Favoriten hinzufügen
-            favoriteCities.add(city);
-            favoritesChoiceBox.getItems().add(city);  // Favoriten in ChoiceBox anzeigen
+        if (city != null && !city.isEmpty()) {
+            boolean wasAdded = FavoritesManager.addFavorite(city);
 
-            // Speichern in der Logdatei
-            FavoritesManager.saveFavorite(city);
-
-            // Log-Ausgabe für das Hinzufügen des Favoriten
-            Logger.log(Logger.Level.INFO, "Favorit added: " + city);
-        } else {
-            Logger.log(Logger.Level.DEBUG, "No city found or already added to favorites.");
+            if (wasAdded) {
+                favoritesChoiceBox.getItems().add(city);
+            } else {
+                ErrorHandler.showErrorAndLog("City already in favorites.", "City already in favorites.");
+            }
         }
     }
 
@@ -104,9 +101,13 @@ public class HelloController {
         Logger.log(Logger.Level.DEBUG, "Search starts.");
 
         String city = searchField.getText();
-        if (city == null || city.isEmpty()) {
-            cityLabel.setText("Please type a city.!");
-            Logger.log(Logger.Level.ERROR, "No city found.");
+
+        // Erste Überprüfung der Eingabe (ungültige Stadtnamen erkennen)
+        if (city == null || city.isEmpty() || !isValidCityName(city)) {
+            Platform.runLater(() -> {
+                cityLabel.setText("Invalid city name.");
+            });
+            ErrorHandler.showErrorAndLog("Invalid city name.", "Invalid city name: " + city);
             return;
         }
 
@@ -121,8 +122,20 @@ public class HelloController {
             Logger.log(Logger.Level.DEBUG, "Server response: " + serverResponse);
 
             if (serverResponse == null || serverResponse.isEmpty()) {
-                cityLabel.setText("No data found.");
-                Logger.log(Logger.Level.ERROR, "No response from server.");
+                Platform.runLater(() -> {
+                    cityLabel.setText("No data found.");
+                });
+                ErrorHandler.showErrorAndLog("No data from server.", "No response from server.");
+                return;
+            }
+
+            // API-Antwort überprüfen (z.B. '404 - Stadt nicht gefunden')
+            JsonObject jsonResponse = JsonParser.parseString(serverResponse).getAsJsonObject();
+            if (jsonResponse.has("cod") && jsonResponse.get("cod").getAsString().equals("404")) {
+                Platform.runLater(() -> {
+                    cityLabel.setText("City not found.");
+                });
+                ErrorHandler.showErrorAndLog("City not found.", "City not found: " + city);
                 return;
             }
 
@@ -139,18 +152,28 @@ public class HelloController {
             String windUnit = selectedUnit.equals("metric") ? "m/s" : "mph";
 
             // GUI-Elemente aktualisieren
-            cityLabel.setText(weatherData.getCity());
-            temperatureLabel.setText(String.format("%.2f %s", weatherData.getTemperature(), tempUnit));
-            weatherConditionLabel.setText(weatherData.getWeatherCondition());
-            feelsLikeLabel.setText(String.format("Feels like: %.2f %s", weatherData.getFeelsLike(), tempUnit));
-            maximumLabel.setText(String.format("Max: %.2f %s", weatherData.getTempMax(), tempUnit));
-            minimumLabel.setText(String.format("Min: %.2f %s", weatherData.getTempMin(), tempUnit));
-            airPressureLabel.setText(String.format("Pressure: %d hPa", weatherData.getPressure()));
-            humidityLabel.setText(String.format("Humidity: %d%%", weatherData.getHumidity()));
-            windSpeedLabel.setText(String.format("Wind Speed: %.2f %s", weatherData.getWindSpeed(), windUnit));
+            Platform.runLater(() -> {
+                cityLabel.setText(weatherData.getCity());
+                temperatureLabel.setText(String.format("%.2f %s", weatherData.getTemperature(), tempUnit));
+                weatherConditionLabel.setText(weatherData.getWeatherCondition());
+                feelsLikeLabel.setText(String.format("Feels like: %.2f %s", weatherData.getFeelsLike(), tempUnit));
+                maximumLabel.setText(String.format("Max: %.2f %s", weatherData.getTempMax(), tempUnit));
+                minimumLabel.setText(String.format("Min: %.2f %s", weatherData.getTempMin(), tempUnit));
+                airPressureLabel.setText(String.format("Pressure: %d hPa", weatherData.getPressure()));
+                humidityLabel.setText(String.format("Humidity: %d%%", weatherData.getHumidity()));
+                windSpeedLabel.setText(String.format("Wind Speed: %.2f %s", weatherData.getWindSpeed(), windUnit));
+            });
+
         } catch (Exception e) {
-            cityLabel.setText("Fehler: " + e.getMessage());
-            Logger.log(Logger.Level.ERROR, "Fehler beim Abrufen der Wetterdaten: " + e.getMessage());
+            Platform.runLater(() -> {
+                cityLabel.setText("Error: " + e.getMessage());
+            });
+            ErrorHandler.showErrorAndLog("Error fetching weather data: " + e.getMessage(), "Error fetching weather data: " + e.getMessage());
         }
     }
+
+    private boolean isValidCityName(String cityName) {
+        return cityName != null && cityName.matches("[a-zA-ZäöüÄÖÜß\\- ']+") && cityName.length() <= 100;
+    }
+
 }

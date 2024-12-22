@@ -4,36 +4,47 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FavoritesManager {
-    private static final String FAVORITES_LOG_FILE = "favorites.log";  // Neues Logfile für Favoriten
 
-    // Methode zum Speichern eines Favoriten in die Logdatei
-    public static void saveFavorite(String city) {
+public class FavoritesManager {
+    private static final String FAVORITES_LOG_FILE = "favorites.log";
+    private static List<String> favoriteCities = new ArrayList<>();
+
+    static {
+        favoriteCities = loadFavoritesFromLog(); // Initialisiere Favoriten beim Laden der Klasse
+    }
+
+    public static List<String> getFavoriteCities() {
+        return new ArrayList<>(favoriteCities);
+    }
+
+    public static boolean addFavorite(String city) {
+        if (city == null || city.isEmpty() || favoriteCities.contains(city)) {
+            return false; // Keine Duplikate oder ungültige Einträge hinzufügen
+        }
+        favoriteCities.add(city);
+        saveFavoriteToFile(city);
+        return true;
+    }
+
+    private static void saveFavoriteToFile(String city) {
         try (FileWriter fileWriter = new FileWriter(FAVORITES_LOG_FILE, true);
              PrintWriter printWriter = new PrintWriter(fileWriter)) {
-
-            printWriter.println("Favorit: " + city);
-
+            printWriter.println(city);
         } catch (IOException e) {
-            System.err.println("Error saving favorit: " + e.getMessage());
+            ErrorHandler.showErrorAndLog("Error saving favorite.", "Error saving favorite.");
         }
     }
 
-    // Methode zum Laden der Favoriten aus der Logdatei
-    public static List<String> loadFavoritesFromLog() {
-        List<String> favoriteCities = new ArrayList<>();
-
+    private static List<String> loadFavoritesFromLog() {
+        List<String> favorites = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(FAVORITES_LOG_FILE))) {
             String line;
             while ((line = reader.readLine()) != null) {
-                if (line.startsWith("Favorit: ")) {
-                    favoriteCities.add(line.substring("Favorit: ".length()));
-                }
+                favorites.add(line);
             }
         } catch (IOException e) {
-            System.err.println("Error loading favorites: " + e.getMessage());
+            ErrorHandler.showErrorAndLog("Error loading favorites.", "Error loading favorites.");
         }
-
-        return favoriteCities;
+        return favorites;
     }
 }

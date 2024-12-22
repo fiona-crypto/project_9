@@ -14,6 +14,7 @@ public class WeatherParser {
             // Debug: Zeige die gesamte JSON-Antwort
             Logger.log(Logger.Level.DEBUG, "Parsing JSON: " + json);
 
+
             // City
             if (json.has("name")) {
                 weatherData.setCity(json.get("name").getAsString());
