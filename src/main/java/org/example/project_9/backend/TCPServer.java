@@ -7,18 +7,20 @@ public class TCPServer {
     public static void main(String[] args) {
         int port = 4711;
 
+        Logger.setMinimumLevel(Logger.Level.DEBUG);
+
         try (ServerSocket serverSocket = new ServerSocket(port)) {
-            System.out.println("Server started and waiting for connection ...");
+            Logger.log(Logger.Level.INFO, "Server started and waiting for connection ...");
 
             while (true) {
                 try (Socket clientSocket = serverSocket.accept();
                      BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
                      PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true)) {
 
-                    System.out.println("Client connected.");
+                    Logger.log(Logger.Level.INFO, "Client connected.");
 
                     String input = in.readLine(); // Eingabe vom Client (Stadt und Einheit)
-                    System.out.println("Received input from client: " + input);
+                    Logger.log(Logger.Level.DEBUG, "Received input from client: " + input);
 
                     if (input != null && input.contains(";")) {
                         // Splitte Stadt und Einheit
@@ -31,25 +33,28 @@ public class TCPServer {
 
                         if (apiResponse != null && !apiResponse.isEmpty() && apiResponse.startsWith("{")) {
                             if (apiResponse.contains("\"cod\":\"404\"")) {
-                                System.out.println("City not found in API.");
+                                Logger.log(Logger.Level.INFO, "City not found in API.");
                                 out.println("{\"error\": \"City not found.\"}");  // JSON-Fehlernachricht
                             } else {
+                                Logger.log(Logger.Level.DEBUG, "Sending API response to client.");
                                 out.println(apiResponse);  // Gib die rohe JSON-Antwort zurück
                             }
                         } else {
+                            Logger.log(Logger.Level.ERROR, "Error retrieving data or invalid response.");
                             out.println("{\"error\": \"Error retrieving data or invalid response.\"}");  // JSON-Fehlernachricht
                         }
                     } else {
+                        Logger.log(Logger.Level.ERROR, "Invalid request format received.");
                         out.println("{\"error\": \"Invalid request format.\"}"); // Fehler bei ungültiger Anfrage
                     }
 
                 } catch (IOException e) {
-                    System.err.println("Error communicating with the client: " + e.getMessage());
+                    Logger.log(Logger.Level.ERROR, "Error communicating with the client: " + e.getMessage());
                 }
             }
 
         } catch (IOException e) {
-            System.err.println("Server can't start: " + e.getMessage());
+            Logger.log(Logger.Level.ERROR, "Server can't start: " + e.getMessage());
         }
     }
 
@@ -71,13 +76,13 @@ public class TCPServer {
                     response.append(line);
                 }
 
-                System.out.println("API Response: " + response); // Debugging
+                Logger.log(Logger.Level.DEBUG, "API Response: " + response);
 
                 // Gebe die rohe JSON-Antwort zurück
                 return response.toString();  // Rohe JSON-Daten ohne zusätzliche Formatierungen
             }
         } catch (IOException e) {
-            System.err.println("Error retrieving data: " + e.getMessage());
+            Logger.log(Logger.Level.ERROR, "Error retrieving data: " + e.getMessage());
             return null;
         }
     }

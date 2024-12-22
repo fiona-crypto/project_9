@@ -6,9 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import org.example.project_9.backend.TCPClient;
-import org.example.project_9.backend.WeatherData;
-import org.example.project_9.backend.WeatherParser;
+import org.example.project_9.backend.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,6 +60,8 @@ public class HelloController {
     @FXML
     public void initialize() {
         // Einheitenauswahl vorbereiten
+        favoriteCities = FavoritesManager.loadFavoritesFromLog();
+        favoritesChoiceBox.getItems().setAll(favoriteCities);
 
         unitChoiceBox.getSelectionModel().selectFirst(); // Standard auf metrisch
 
@@ -74,6 +74,7 @@ public class HelloController {
         favoritesChoiceBox.setOnAction(event -> selectFavoriteCity());
     }
 
+
     private void selectFavoriteCity() {
         String selectedCity = favoritesChoiceBox.getValue();
         if (selectedCity != null && !selectedCity.isEmpty()) {
@@ -85,20 +86,27 @@ public class HelloController {
     private void addFavoriteCity() {
         String city = searchField.getText();
         if (city != null && !city.isEmpty() && !favoriteCities.contains(city)) {
+            // Favoriten hinzufügen
             favoriteCities.add(city);
-            favoritesChoiceBox.getItems().add(city);
-            System.out.println("Favorit hinzugefügt: " + city);
+            favoritesChoiceBox.getItems().add(city);  // Favoriten in ChoiceBox anzeigen
+
+            // Speichern in der Logdatei
+            FavoritesManager.saveFavorite(city);
+
+            // Log-Ausgabe für das Hinzufügen des Favoriten
+            Logger.log(Logger.Level.INFO, "Favorit added: " + city);
         } else {
-            System.out.println("Stadt ist leer oder bereits in den Favoriten.");
+            Logger.log(Logger.Level.DEBUG, "No city found or already added to favorites.");
         }
     }
 
     private void fetchWeatherData() {
-        System.out.println("Suche wurde gestartet."); // Debug-Ausgabe
+        Logger.log(Logger.Level.DEBUG, "Search starts.");
 
         String city = searchField.getText();
         if (city == null || city.isEmpty()) {
-            cityLabel.setText("Bitte eine Stadt eingeben!");
+            cityLabel.setText("Please type a city.!");
+            Logger.log(Logger.Level.ERROR, "No city found.");
             return;
         }
 
@@ -110,10 +118,11 @@ public class HelloController {
             String serverResponse = TCPClient.getWeatherData(city, selectedUnit);
 
             // Debugging-Ausgabe
-            System.out.println("Server response: " + serverResponse);
+            Logger.log(Logger.Level.DEBUG, "Server response: " + serverResponse);
 
             if (serverResponse == null || serverResponse.isEmpty()) {
-                cityLabel.setText("Keine Daten gefunden.");
+                cityLabel.setText("No data found.");
+                Logger.log(Logger.Level.ERROR, "No response from server.");
                 return;
             }
 
@@ -121,9 +130,9 @@ public class HelloController {
             WeatherData weatherData = WeatherParser.parseWeatherData(serverResponse);
 
             // Debugging-Ausgabe
-            System.out.println("Parsed city: " + weatherData.getCity());
-            System.out.println("Parsed temperature: " + weatherData.getTemperature());
-            System.out.println("Parsed weather condition: " + weatherData.getWeatherCondition());
+            Logger.log(Logger.Level.DEBUG, "Parsed city: " + weatherData.getCity());
+            Logger.log(Logger.Level.DEBUG, "Parsed temperature: " + weatherData.getTemperature());
+            Logger.log(Logger.Level.DEBUG, "Parsed weather condition: " + weatherData.getWeatherCondition());
 
             // Einheitenspezifische Labels
             String tempUnit = selectedUnit.equals("metric") ? "°C" : "°F";
@@ -141,7 +150,7 @@ public class HelloController {
             windSpeedLabel.setText(String.format("Wind Speed: %.2f %s", weatherData.getWindSpeed(), windUnit));
         } catch (Exception e) {
             cityLabel.setText("Fehler: " + e.getMessage());
-            e.printStackTrace();
+            Logger.log(Logger.Level.ERROR, "Fehler beim Abrufen der Wetterdaten: " + e.getMessage());
         }
     }
 }

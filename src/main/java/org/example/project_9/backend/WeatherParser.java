@@ -12,14 +12,14 @@ public class WeatherParser {
             JsonObject json = JsonParser.parseString(apiResponse).getAsJsonObject();
 
             // Debug: Zeige die gesamte JSON-Antwort
-            System.out.println("Parsing JSON: " + json);
+            Logger.log(Logger.Level.DEBUG, "Parsing JSON: " + json);
 
             // City
             if (json.has("name")) {
                 weatherData.setCity(json.get("name").getAsString());
-                System.out.println("City: " + weatherData.getCity());
+                Logger.log(Logger.Level.INFO, "City: " + weatherData.getCity());
             } else {
-                System.out.println("Field 'name' not found in JSON.");
+                Logger.log(Logger.Level.WARN, "Field 'name' not found in JSON.");
             }
 
             // Main section
@@ -27,24 +27,24 @@ public class WeatherParser {
                 JsonObject main = json.getAsJsonObject("main");
 
                 weatherData.setTemperature(main.get("temp").getAsDouble());
-                System.out.println("Temperature: " + weatherData.getTemperature());
+                Logger.log(Logger.Level.INFO, "Temperature: " + weatherData.getTemperature());
 
                 weatherData.setFeelsLike(main.get("feels_like").getAsDouble());
-                System.out.println("Feels like: " + weatherData.getFeelsLike());
+                Logger.log(Logger.Level.INFO, "Feels like: " + weatherData.getFeelsLike());
 
                 weatherData.setTempMin(main.get("temp_min").getAsDouble());
-                System.out.println("Temp min: " + weatherData.getTempMin());
+                Logger.log(Logger.Level.INFO, "Temp min: " + weatherData.getTempMin());
 
                 weatherData.setTempMax(main.get("temp_max").getAsDouble());
-                System.out.println("Temp max: " + weatherData.getTempMax());
+                Logger.log(Logger.Level.INFO, "Temp max: " + weatherData.getTempMax());
 
                 weatherData.setPressure(main.get("pressure").getAsInt());
-                System.out.println("Pressure: " + weatherData.getPressure());
+                Logger.log(Logger.Level.INFO, "Pressure: " + weatherData.getPressure());
 
                 weatherData.setHumidity(main.get("humidity").getAsInt());
-                System.out.println("Humidity: " + weatherData.getHumidity());
+                Logger.log(Logger.Level.INFO, "Humidity: " + weatherData.getHumidity());
             } else {
-                System.out.println("Field 'main' not found in JSON.");
+                Logger.log(Logger.Level.WARN, "Field 'main' not found in JSON.");
             }
 
             // Wind section
@@ -52,9 +52,9 @@ public class WeatherParser {
                 JsonObject wind = json.getAsJsonObject("wind");
 
                 weatherData.setWindSpeed(wind.get("speed").getAsDouble());
-                System.out.println("Wind speed: " + weatherData.getWindSpeed());
+                Logger.log(Logger.Level.INFO, "Wind speed: " + weatherData.getWindSpeed());
             } else {
-                System.out.println("Field 'wind' not found in JSON.");
+                Logger.log(Logger.Level.WARN, "Field 'wind' not found in JSON.");
             }
 
             // Weather section
@@ -64,13 +64,13 @@ public class WeatherParser {
                                 .get(0).getAsJsonObject()
                                 .get("description").getAsString()
                 );
-                System.out.println("Weather condition: " + weatherData.getWeatherCondition());
+                Logger.log(Logger.Level.INFO, "Weather condition: " + weatherData.getWeatherCondition());
             } else {
-                System.out.println("Field 'weather' not found in JSON.");
+                Logger.log(Logger.Level.WARN, "Field 'weather' not found in JSON.");
             }
 
         } catch (Exception e) {
-            System.err.println("Error while parsing data: " + e.getMessage());
+            Logger.log(Logger.Level.ERROR, "Error while parsing data: " + e.getMessage());
             e.printStackTrace();
         }
 
