@@ -171,3 +171,202 @@
 [2024-12-23 00:20:15] [DEBUG] Parsed city: Vienna
 [2024-12-23 00:20:15] [DEBUG] Parsed temperature: 4.41
 [2024-12-23 00:20:15] [DEBUG] Parsed weather condition: clear sky
+[2024-12-23 11:25:18] [INFO] Server started and waiting for connection ...
+[2024-12-23 11:25:37] [DEBUG] Search starts.
+[2024-12-23 11:25:37] [DEBUG] Preparing to connect to server at localhost:4711
+[2024-12-23 11:25:37] [INFO] Connected to server.
+[2024-12-23 11:25:37] [DEBUG] Sending request to server: Bozen;metric
+[2024-12-23 11:25:37] [INFO] Client connected.
+[2024-12-23 11:25:37] [DEBUG] Received input from client: Bozen;metric
+[2024-12-23 11:25:37] [ERROR] Error retrieving data: api.openweathermap.org
+[2024-12-23 11:25:37] [ERROR] Error retrieving data or invalid response.
+[2024-12-23 11:25:37] [DEBUG] Server response: {"error": "Error retrieving data or invalid response."}
+[2024-12-23 11:25:37] [DEBUG] Parsing JSON: {"error":"Error retrieving data or invalid response."}
+[2024-12-23 11:25:37] [WARN] Field 'name' not found in JSON.
+[2024-12-23 11:25:37] [WARN] Field 'main' not found in JSON.
+[2024-12-23 11:25:37] [WARN] Field 'wind' not found in JSON.
+[2024-12-23 11:25:37] [WARN] Field 'weather' not found in JSON.
+[2024-12-23 11:25:37] [DEBUG] Parsed city: null
+[2024-12-23 11:25:37] [DEBUG] Parsed temperature: 0.0
+[2024-12-23 11:25:37] [DEBUG] Parsed weather condition: null
+[2024-12-23 11:27:16] [INFO] Server started and waiting for connection ...
+[2024-12-23 11:27:33] [DEBUG] Search starts.
+[2024-12-23 11:27:33] [DEBUG] Preparing to connect to server at localhost:4711
+[2024-12-23 11:27:33] [INFO] Connected to server.
+[2024-12-23 11:27:33] [DEBUG] Sending request to server: Bozen;metric
+[2024-12-23 11:27:33] [INFO] Client connected.
+[2024-12-23 11:27:33] [DEBUG] Received input from client: Bozen;metric
+[2024-12-23 11:27:34] [DEBUG] API Response: {"coord":{"lon":11.3336,"lat":46.4927},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01d"}],"base":"stations","main":{"temp":6.97,"feels_like":4.22,"temp_min":6.97,"temp_max":6.97,"pressure":1009,"humidity":26,"sea_level":1009,"grnd_level":898},"visibility":10000,"wind":{"speed":4.12,"deg":340},"clouds":{"all":0},"dt":1734949367,"sys":{"type":1,"id":6757,"country":"IT","sunrise":1734936997,"sunset":1734967863},"timezone":3600,"id":3181913,"name":"Bolzano","cod":200}
+[2024-12-23 11:27:34] [DEBUG] Sending API response to client.
+[2024-12-23 11:27:34] [DEBUG] Server response: {"coord":{"lon":11.3336,"lat":46.4927},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01d"}],"base":"stations","main":{"temp":6.97,"feels_like":4.22,"temp_min":6.97,"temp_max":6.97,"pressure":1009,"humidity":26,"sea_level":1009,"grnd_level":898},"visibility":10000,"wind":{"speed":4.12,"deg":340},"clouds":{"all":0},"dt":1734949367,"sys":{"type":1,"id":6757,"country":"IT","sunrise":1734936997,"sunset":1734967863},"timezone":3600,"id":3181913,"name":"Bolzano","cod":200}
+[2024-12-23 11:27:34] [DEBUG] Parsing JSON: {"coord":{"lon":11.3336,"lat":46.4927},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01d"}],"base":"stations","main":{"temp":6.97,"feels_like":4.22,"temp_min":6.97,"temp_max":6.97,"pressure":1009,"humidity":26,"sea_level":1009,"grnd_level":898},"visibility":10000,"wind":{"speed":4.12,"deg":340},"clouds":{"all":0},"dt":1734949367,"sys":{"type":1,"id":6757,"country":"IT","sunrise":1734936997,"sunset":1734967863},"timezone":3600,"id":3181913,"name":"Bolzano","cod":200}
+[2024-12-23 11:27:34] [INFO] City: Bolzano
+[2024-12-23 11:27:34] [INFO] Temperature: 6.97
+[2024-12-23 11:27:34] [INFO] Feels like: 4.22
+[2024-12-23 11:27:34] [INFO] Temp min: 6.97
+[2024-12-23 11:27:34] [INFO] Temp max: 6.97
+[2024-12-23 11:27:34] [INFO] Pressure: 1009
+[2024-12-23 11:27:34] [INFO] Humidity: 26
+[2024-12-23 11:27:34] [INFO] Wind speed: 4.12
+[2024-12-23 11:27:34] [INFO] Weather condition: clear sky
+[2024-12-23 11:27:34] [DEBUG] Parsed city: Bolzano
+[2024-12-23 11:27:34] [DEBUG] Parsed temperature: 6.97
+[2024-12-23 11:27:34] [DEBUG] Parsed weather condition: clear sky
+[2024-12-23 11:28:55] [INFO] Server started and waiting for connection ...
+[2024-12-23 11:29:20] [DEBUG] Search starts.
+[2024-12-23 11:29:21] [ERROR] Invalid city name: 123
+[2024-12-23 11:29:29] [DEBUG] Search starts.
+[2024-12-23 11:29:29] [DEBUG] Preparing to connect to server at localhost:4711
+[2024-12-23 11:29:29] [INFO] Connected to server.
+[2024-12-23 11:29:29] [DEBUG] Sending request to server: dhahah;metric
+[2024-12-23 11:29:29] [INFO] Client connected.
+[2024-12-23 11:29:29] [DEBUG] Received input from client: dhahah;metric
+[2024-12-23 11:29:30] [ERROR] Error retrieving data: https://api.openweathermap.org/data/2.5/weather?q=dhahah&appid=2846e091909907b38614eb85000db992&units=metric
+[2024-12-23 11:29:30] [ERROR] Error retrieving data or invalid response.
+[2024-12-23 11:29:30] [DEBUG] Server response: {"error": "Error retrieving data or invalid response."}
+[2024-12-23 11:29:33] [ERROR] Error retrieving data or invalid response.
+[2024-12-23 11:38:16] [DEBUG] Search starts.
+[2024-12-23 11:38:17] [ERROR] Invalid city name: 39100
+[2024-12-23 11:38:31] [DEBUG] Search starts.
+[2024-12-23 11:38:31] [DEBUG] Preparing to connect to server at localhost:4711
+[2024-12-23 11:38:31] [INFO] Connected to server.
+[2024-12-23 11:38:31] [DEBUG] Sending request to server: Vienna;metric
+[2024-12-23 11:38:31] [INFO] Client connected.
+[2024-12-23 11:38:31] [DEBUG] Received input from client: Vienna;metric
+[2024-12-23 11:38:31] [DEBUG] API Response: {"coord":{"lon":16.3721,"lat":48.2085},"weather":[{"id":803,"main":"Clouds","description":"broken clouds","icon":"04d"}],"base":"stations","main":{"temp":3.6,"feels_like":-1.51,"temp_min":2.56,"temp_max":3.97,"pressure":1009,"humidity":70,"sea_level":1009,"grnd_level":981},"visibility":10000,"wind":{"speed":7.6,"deg":343,"gust":18.33},"clouds":{"all":75},"dt":1734950032,"sys":{"type":2,"id":2037452,"country":"AT","sunrise":1734936210,"sunset":1734966230},"timezone":3600,"id":2761369,"name":"Vienna","cod":200}
+[2024-12-23 11:38:31] [DEBUG] Sending API response to client.
+[2024-12-23 11:38:31] [DEBUG] Server response: {"coord":{"lon":16.3721,"lat":48.2085},"weather":[{"id":803,"main":"Clouds","description":"broken clouds","icon":"04d"}],"base":"stations","main":{"temp":3.6,"feels_like":-1.51,"temp_min":2.56,"temp_max":3.97,"pressure":1009,"humidity":70,"sea_level":1009,"grnd_level":981},"visibility":10000,"wind":{"speed":7.6,"deg":343,"gust":18.33},"clouds":{"all":75},"dt":1734950032,"sys":{"type":2,"id":2037452,"country":"AT","sunrise":1734936210,"sunset":1734966230},"timezone":3600,"id":2761369,"name":"Vienna","cod":200}
+[2024-12-23 11:38:39] [ERROR] Error fetching weather data: Cannot invoke "com.google.gson.JsonElement.getAsString()" because the return value of "com.google.gson.JsonObject.get(String)" is null
+[2024-12-23 11:38:46] [DEBUG] Search starts.
+[2024-12-23 11:38:48] [ERROR] Invalid city name: Favorit: Dölsach
+[2024-12-23 11:38:54] [DEBUG] Search starts.
+[2024-12-23 11:38:54] [DEBUG] Preparing to connect to server at localhost:4711
+[2024-12-23 11:38:54] [INFO] Connected to server.
+[2024-12-23 11:38:54] [INFO] Client connected.
+[2024-12-23 11:38:54] [DEBUG] Sending request to server: Dölsach;metric
+[2024-12-23 11:38:54] [DEBUG] Received input from client: Dölsach;metric
+[2024-12-23 11:38:55] [DEBUG] API Response: {"coord":{"lon":12.8381,"lat":46.8489},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04d"}],"base":"stations","main":{"temp":-3.56,"feels_like":-8.73,"temp_min":-3.56,"temp_max":-3.56,"pressure":1009,"humidity":74,"sea_level":1009,"grnd_level":810},"visibility":10000,"wind":{"speed":4.1,"deg":342,"gust":5.93},"clouds":{"all":100},"dt":1734950335,"sys":{"country":"AT","sunrise":1734936721,"sunset":1734967417},"timezone":3600,"id":7872591,"name":"Dölsach","cod":200}
+[2024-12-23 11:38:55] [DEBUG] Sending API response to client.
+[2024-12-23 11:38:55] [DEBUG] Server response: {"coord":{"lon":12.8381,"lat":46.8489},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04d"}],"base":"stations","main":{"temp":-3.56,"feels_like":-8.73,"temp_min":-3.56,"temp_max":-3.56,"pressure":1009,"humidity":74,"sea_level":1009,"grnd_level":810},"visibility":10000,"wind":{"speed":4.1,"deg":342,"gust":5.93},"clouds":{"all":100},"dt":1734950335,"sys":{"country":"AT","sunrise":1734936721,"sunset":1734967417},"timezone":3600,"id":7872591,"name":"Dölsach","cod":200}
+[2024-12-23 11:38:59] [ERROR] Error fetching weather data: Cannot invoke "com.google.gson.JsonElement.getAsString()" because the return value of "com.google.gson.JsonObject.get(String)" is null
+[2024-12-23 11:39:24] [DEBUG] Search starts.
+[2024-12-23 11:39:24] [DEBUG] Preparing to connect to server at localhost:4711
+[2024-12-23 11:39:24] [INFO] Connected to server.
+[2024-12-23 11:39:24] [DEBUG] Sending request to server: Dölsach;metric
+[2024-12-23 11:39:24] [INFO] Client connected.
+[2024-12-23 11:39:24] [DEBUG] Received input from client: Dölsach;metric
+[2024-12-23 11:39:25] [DEBUG] API Response: {"coord":{"lon":12.8381,"lat":46.8489},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04d"}],"base":"stations","main":{"temp":-3.56,"feels_like":-8.73,"temp_min":-3.56,"temp_max":-3.56,"pressure":1009,"humidity":74,"sea_level":1009,"grnd_level":810},"visibility":10000,"wind":{"speed":4.1,"deg":342,"gust":5.93},"clouds":{"all":100},"dt":1734950335,"sys":{"country":"AT","sunrise":1734936721,"sunset":1734967417},"timezone":3600,"id":7872591,"name":"Dölsach","cod":200}
+[2024-12-23 11:39:25] [DEBUG] Sending API response to client.
+[2024-12-23 11:39:25] [DEBUG] Server response: {"coord":{"lon":12.8381,"lat":46.8489},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04d"}],"base":"stations","main":{"temp":-3.56,"feels_like":-8.73,"temp_min":-3.56,"temp_max":-3.56,"pressure":1009,"humidity":74,"sea_level":1009,"grnd_level":810},"visibility":10000,"wind":{"speed":4.1,"deg":342,"gust":5.93},"clouds":{"all":100},"dt":1734950335,"sys":{"country":"AT","sunrise":1734936721,"sunset":1734967417},"timezone":3600,"id":7872591,"name":"Dölsach","cod":200}
+[2024-12-23 11:39:33] [ERROR] Error fetching weather data: Cannot invoke "com.google.gson.JsonElement.getAsString()" because the return value of "com.google.gson.JsonObject.get(String)" is null
+[2024-12-23 11:44:16] [INFO] Server started and waiting for connection ...
+[2024-12-23 11:44:36] [DEBUG] Search starts.
+[2024-12-23 11:44:36] [DEBUG] Preparing to connect to server at localhost:4711
+[2024-12-23 11:44:36] [INFO] Connected to server.
+[2024-12-23 11:44:36] [DEBUG] Sending request to server: Vienna;metric
+[2024-12-23 11:44:36] [INFO] Client connected.
+[2024-12-23 11:44:36] [DEBUG] Received input from client: Vienna;metric
+[2024-12-23 11:44:36] [DEBUG] API Response: {"coord":{"lon":16.3721,"lat":48.2085},"weather":[{"id":803,"main":"Clouds","description":"broken clouds","icon":"04d"}],"base":"stations","main":{"temp":3.77,"feels_like":-1.29,"temp_min":2.56,"temp_max":4.33,"pressure":1009,"humidity":70,"sea_level":1009,"grnd_level":981},"visibility":10000,"wind":{"speed":7.6,"deg":343,"gust":18.33},"clouds":{"all":75},"dt":1734950648,"sys":{"type":2,"id":2037452,"country":"AT","sunrise":1734936210,"sunset":1734966230},"timezone":3600,"id":2761369,"name":"Vienna","cod":200}
+[2024-12-23 11:44:36] [DEBUG] Sending API response to client.
+[2024-12-23 11:44:36] [DEBUG] Server response: {"coord":{"lon":16.3721,"lat":48.2085},"weather":[{"id":803,"main":"Clouds","description":"broken clouds","icon":"04d"}],"base":"stations","main":{"temp":3.77,"feels_like":-1.29,"temp_min":2.56,"temp_max":4.33,"pressure":1009,"humidity":70,"sea_level":1009,"grnd_level":981},"visibility":10000,"wind":{"speed":7.6,"deg":343,"gust":18.33},"clouds":{"all":75},"dt":1734950648,"sys":{"type":2,"id":2037452,"country":"AT","sunrise":1734936210,"sunset":1734966230},"timezone":3600,"id":2761369,"name":"Vienna","cod":200}
+[2024-12-23 11:44:36] [DEBUG] Parsing JSON: {"coord":{"lon":16.3721,"lat":48.2085},"weather":[{"id":803,"main":"Clouds","description":"broken clouds","icon":"04d"}],"base":"stations","main":{"temp":3.77,"feels_like":-1.29,"temp_min":2.56,"temp_max":4.33,"pressure":1009,"humidity":70,"sea_level":1009,"grnd_level":981},"visibility":10000,"wind":{"speed":7.6,"deg":343,"gust":18.33},"clouds":{"all":75},"dt":1734950648,"sys":{"type":2,"id":2037452,"country":"AT","sunrise":1734936210,"sunset":1734966230},"timezone":3600,"id":2761369,"name":"Vienna","cod":200}
+[2024-12-23 11:44:36] [INFO] City: Vienna
+[2024-12-23 11:44:36] [INFO] Temperature: 3.77
+[2024-12-23 11:44:36] [INFO] Feels like: -1.29
+[2024-12-23 11:44:36] [INFO] Temp min: 2.56
+[2024-12-23 11:44:36] [INFO] Temp max: 4.33
+[2024-12-23 11:44:36] [INFO] Pressure: 1009
+[2024-12-23 11:44:36] [INFO] Humidity: 70
+[2024-12-23 11:44:36] [INFO] Wind speed: 7.6
+[2024-12-23 11:44:36] [INFO] Weather condition: broken clouds
+[2024-12-23 11:44:36] [DEBUG] Parsed city: Vienna
+[2024-12-23 11:44:36] [DEBUG] Parsed temperature: 3.77
+[2024-12-23 11:44:36] [DEBUG] Parsed weather condition: broken clouds
+[2024-12-23 11:44:43] [DEBUG] Search starts.
+[2024-12-23 11:44:44] [ERROR] Invalid city name: 654
+[2024-12-23 11:44:49] [DEBUG] Search starts.
+[2024-12-23 11:44:50] [ERROR] Invalid city name: #
+[2024-12-23 11:44:59] [DEBUG] Search starts.
+[2024-12-23 11:44:59] [DEBUG] Preparing to connect to server at localhost:4711
+[2024-12-23 11:44:59] [INFO] Connected to server.
+[2024-12-23 11:44:59] [DEBUG] Sending request to server: gigger;metric
+[2024-12-23 11:44:59] [INFO] Client connected.
+[2024-12-23 11:44:59] [DEBUG] Received input from client: gigger;metric
+[2024-12-23 11:44:59] [ERROR] Error retrieving data: https://api.openweathermap.org/data/2.5/weather?q=gigger&appid=2846e091909907b38614eb85000db992&units=metric
+[2024-12-23 11:44:59] [ERROR] Error retrieving data or invalid response.
+[2024-12-23 11:44:59] [DEBUG] Server response: {"error": "Error retrieving data or invalid response."}
+[2024-12-23 11:45:08] [ERROR] City not found: gigger
+[2024-12-23 11:45:14] [DEBUG] Search starts.
+[2024-12-23 11:45:14] [DEBUG] Preparing to connect to server at localhost:4711
+[2024-12-23 11:45:14] [INFO] Connected to server.
+[2024-12-23 11:45:14] [INFO] Client connected.
+[2024-12-23 11:45:14] [DEBUG] Sending request to server: htdmzthdghnh;metric
+[2024-12-23 11:45:14] [DEBUG] Received input from client: htdmzthdghnh;metric
+[2024-12-23 11:45:14] [ERROR] Error retrieving data: https://api.openweathermap.org/data/2.5/weather?q=htdmzthdghnh&appid=2846e091909907b38614eb85000db992&units=metric
+[2024-12-23 11:45:14] [ERROR] Error retrieving data or invalid response.
+[2024-12-23 11:45:14] [DEBUG] Server response: {"error": "Error retrieving data or invalid response."}
+[2024-12-23 11:45:15] [ERROR] City not found: htdmzthdghnh
+[2024-12-23 11:45:19] [DEBUG] Search starts.
+[2024-12-23 11:45:19] [DEBUG] Preparing to connect to server at localhost:4711
+[2024-12-23 11:45:19] [INFO] Connected to server.
+[2024-12-23 11:45:19] [DEBUG] Sending request to server: htdmzthdghnh;imperial
+[2024-12-23 11:45:19] [INFO] Client connected.
+[2024-12-23 11:45:19] [DEBUG] Received input from client: htdmzthdghnh;imperial
+[2024-12-23 11:45:19] [ERROR] Error retrieving data: https://api.openweathermap.org/data/2.5/weather?q=htdmzthdghnh&appid=2846e091909907b38614eb85000db992&units=imperial
+[2024-12-23 11:45:19] [ERROR] Error retrieving data or invalid response.
+[2024-12-23 11:45:19] [DEBUG] Server response: {"error": "Error retrieving data or invalid response."}
+[2024-12-23 11:45:22] [ERROR] City not found: htdmzthdghnh
+[2024-12-23 11:45:26] [DEBUG] Search starts.
+[2024-12-23 11:45:26] [DEBUG] Preparing to connect to server at localhost:4711
+[2024-12-23 11:45:26] [INFO] Connected to server.
+[2024-12-23 11:45:26] [DEBUG] Sending request to server: auer;imperial
+[2024-12-23 11:45:26] [INFO] Client connected.
+[2024-12-23 11:45:26] [DEBUG] Received input from client: auer;imperial
+[2024-12-23 11:45:27] [DEBUG] API Response: {"coord":{"lon":11.2954,"lat":46.3448},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01d"}],"base":"stations","main":{"temp":44.53,"feels_like":39.56,"temp_min":42.94,"temp_max":44.53,"pressure":1008,"humidity":26,"sea_level":1008,"grnd_level":896},"visibility":10000,"wind":{"speed":9.22,"deg":340},"clouds":{"all":0},"dt":1734950727,"sys":{"type":1,"id":6757,"country":"IT","sunrise":1734936971,"sunset":1734967907},"timezone":3600,"id":3171993,"name":"Auer","cod":200}
+[2024-12-23 11:45:27] [DEBUG] Sending API response to client.
+[2024-12-23 11:45:27] [DEBUG] Server response: {"coord":{"lon":11.2954,"lat":46.3448},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01d"}],"base":"stations","main":{"temp":44.53,"feels_like":39.56,"temp_min":42.94,"temp_max":44.53,"pressure":1008,"humidity":26,"sea_level":1008,"grnd_level":896},"visibility":10000,"wind":{"speed":9.22,"deg":340},"clouds":{"all":0},"dt":1734950727,"sys":{"type":1,"id":6757,"country":"IT","sunrise":1734936971,"sunset":1734967907},"timezone":3600,"id":3171993,"name":"Auer","cod":200}
+[2024-12-23 11:45:27] [DEBUG] Parsing JSON: {"coord":{"lon":11.2954,"lat":46.3448},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01d"}],"base":"stations","main":{"temp":44.53,"feels_like":39.56,"temp_min":42.94,"temp_max":44.53,"pressure":1008,"humidity":26,"sea_level":1008,"grnd_level":896},"visibility":10000,"wind":{"speed":9.22,"deg":340},"clouds":{"all":0},"dt":1734950727,"sys":{"type":1,"id":6757,"country":"IT","sunrise":1734936971,"sunset":1734967907},"timezone":3600,"id":3171993,"name":"Auer","cod":200}
+[2024-12-23 11:45:27] [INFO] City: Auer
+[2024-12-23 11:45:27] [INFO] Temperature: 44.53
+[2024-12-23 11:45:27] [INFO] Feels like: 39.56
+[2024-12-23 11:45:27] [INFO] Temp min: 42.94
+[2024-12-23 11:45:27] [INFO] Temp max: 44.53
+[2024-12-23 11:45:27] [INFO] Pressure: 1008
+[2024-12-23 11:45:27] [INFO] Humidity: 26
+[2024-12-23 11:45:27] [INFO] Wind speed: 9.22
+[2024-12-23 11:45:27] [INFO] Weather condition: clear sky
+[2024-12-23 11:45:27] [DEBUG] Parsed city: Auer
+[2024-12-23 11:45:27] [DEBUG] Parsed temperature: 44.53
+[2024-12-23 11:45:27] [DEBUG] Parsed weather condition: clear sky
+[2024-12-23 11:45:31] [DEBUG] Search starts.
+[2024-12-23 11:45:31] [DEBUG] Preparing to connect to server at localhost:4711
+[2024-12-23 11:45:31] [INFO] Connected to server.
+[2024-12-23 11:45:31] [DEBUG] Sending request to server: auer;metric
+[2024-12-23 11:45:31] [INFO] Client connected.
+[2024-12-23 11:45:31] [DEBUG] Received input from client: auer;metric
+[2024-12-23 11:45:31] [DEBUG] API Response: {"coord":{"lon":11.2954,"lat":46.3448},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01d"}],"base":"stations","main":{"temp":6.96,"feels_like":4.2,"temp_min":6.08,"temp_max":6.96,"pressure":1008,"humidity":26,"sea_level":1008,"grnd_level":896},"visibility":10000,"wind":{"speed":4.12,"deg":340},"clouds":{"all":0},"dt":1734950731,"sys":{"type":1,"id":6757,"country":"IT","sunrise":1734936971,"sunset":1734967907},"timezone":3600,"id":3171993,"name":"Auer","cod":200}
+[2024-12-23 11:45:31] [DEBUG] Sending API response to client.
+[2024-12-23 11:45:31] [DEBUG] Server response: {"coord":{"lon":11.2954,"lat":46.3448},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01d"}],"base":"stations","main":{"temp":6.96,"feels_like":4.2,"temp_min":6.08,"temp_max":6.96,"pressure":1008,"humidity":26,"sea_level":1008,"grnd_level":896},"visibility":10000,"wind":{"speed":4.12,"deg":340},"clouds":{"all":0},"dt":1734950731,"sys":{"type":1,"id":6757,"country":"IT","sunrise":1734936971,"sunset":1734967907},"timezone":3600,"id":3171993,"name":"Auer","cod":200}
+[2024-12-23 11:45:31] [DEBUG] Parsing JSON: {"coord":{"lon":11.2954,"lat":46.3448},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01d"}],"base":"stations","main":{"temp":6.96,"feels_like":4.2,"temp_min":6.08,"temp_max":6.96,"pressure":1008,"humidity":26,"sea_level":1008,"grnd_level":896},"visibility":10000,"wind":{"speed":4.12,"deg":340},"clouds":{"all":0},"dt":1734950731,"sys":{"type":1,"id":6757,"country":"IT","sunrise":1734936971,"sunset":1734967907},"timezone":3600,"id":3171993,"name":"Auer","cod":200}
+[2024-12-23 11:45:31] [INFO] City: Auer
+[2024-12-23 11:45:31] [INFO] Temperature: 6.96
+[2024-12-23 11:45:31] [INFO] Feels like: 4.2
+[2024-12-23 11:45:31] [INFO] Temp min: 6.08
+[2024-12-23 11:45:31] [INFO] Temp max: 6.96
+[2024-12-23 11:45:31] [INFO] Pressure: 1008
+[2024-12-23 11:45:31] [INFO] Humidity: 26
+[2024-12-23 11:45:31] [INFO] Wind speed: 4.12
+[2024-12-23 11:45:31] [INFO] Weather condition: clear sky
+[2024-12-23 11:45:31] [DEBUG] Parsed city: Auer
+[2024-12-23 11:45:31] [DEBUG] Parsed temperature: 6.96
+[2024-12-23 11:45:31] [DEBUG] Parsed weather condition: clear sky
+[2024-12-23 11:45:35] [DEBUG] Search starts.
+[2024-12-23 11:45:35] [DEBUG] Preparing to connect to server at localhost:4711
+[2024-12-23 11:45:35] [INFO] Connected to server.
+[2024-12-23 11:45:35] [DEBUG] Sending request to server: muzfhgdhnn;metric
+[2024-12-23 11:45:35] [INFO] Client connected.
+[2024-12-23 11:45:35] [DEBUG] Received input from client: muzfhgdhnn;metric
+[2024-12-23 11:45:35] [ERROR] Error retrieving data: https://api.openweathermap.org/data/2.5/weather?q=muzfhgdhnn&appid=2846e091909907b38614eb85000db992&units=metric
+[2024-12-23 11:45:35] [ERROR] Error retrieving data or invalid response.
+[2024-12-23 11:45:35] [DEBUG] Server response: {"error": "Error retrieving data or invalid response."}
+[2024-12-23 11:45:37] [ERROR] City not found: muzfhgdhnn

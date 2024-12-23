@@ -131,9 +131,25 @@ public class HelloController {
 
             // API-Antwort überprüfen (z.B. '404 - Stadt nicht gefunden')
             JsonObject jsonResponse = JsonParser.parseString(serverResponse).getAsJsonObject();
+
+            // Einheitenspezifische Labels
+            String tempUnit = selectedUnit.equals("metric") ? "°C" : "°F";
+            String windUnit = selectedUnit.equals("metric") ? "m/s" : "mph";
+
+            if (jsonResponse.has("error") && !jsonResponse.get("error").getAsString().isEmpty()){
+                Platform.runLater(() -> {
+                    cityLabel.setText("City not found");
+                    resetLabels(tempUnit, windUnit);
+                });
+                ErrorHandler.showErrorAndLog("City not found. ", "City not found: " +  city);
+                return;
+            }
+
             if (jsonResponse.has("cod") && jsonResponse.get("cod").getAsString().equals("404")) {
                 Platform.runLater(() -> {
                     cityLabel.setText("City not found.");
+                    resetLabels(tempUnit, windUnit);
+
                 });
                 ErrorHandler.showErrorAndLog("City not found.", "City not found: " + city);
                 return;
@@ -147,9 +163,6 @@ public class HelloController {
             Logger.log(Logger.Level.DEBUG, "Parsed temperature: " + weatherData.getTemperature());
             Logger.log(Logger.Level.DEBUG, "Parsed weather condition: " + weatherData.getWeatherCondition());
 
-            // Einheitenspezifische Labels
-            String tempUnit = selectedUnit.equals("metric") ? "°C" : "°F";
-            String windUnit = selectedUnit.equals("metric") ? "m/s" : "mph";
 
             // GUI-Elemente aktualisieren
             Platform.runLater(() -> {
@@ -174,6 +187,17 @@ public class HelloController {
 
     private boolean isValidCityName(String cityName) {
         return cityName != null && cityName.matches("[a-zA-ZäöüÄÖÜß\\- ']+") && cityName.length() <= 100;
+    }
+
+    private void resetLabels( String tempUnit, String windUnit) {
+        temperatureLabel.setText(String.format(" - %s", tempUnit));
+        weatherConditionLabel.setText(" - ");
+        feelsLikeLabel.setText(String.format(" -  %s", tempUnit));
+        maximumLabel.setText(String.format(" -  %s", tempUnit));
+        minimumLabel.setText(String.format(" -  %s", tempUnit));
+        airPressureLabel.setText(" -  hPa");
+        humidityLabel.setText(" - ");
+        windSpeedLabel.setText(String.format(" -  %s", windUnit));
     }
 
 }
