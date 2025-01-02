@@ -85,17 +85,45 @@ public class HelloController {
     }
 
     private void handleAddFavoriteCity() {
-        String city = searchField.getText();
+        String city = searchField.getText().trim();  // Trim entfernt führende/folgende Leerzeichen
         if (city != null && !city.isEmpty()) {
-            boolean wasAdded = FavoritesManager.addFavorite(city);
+            try {
+                // API-Anfrage senden
+                String serverResponse = TCPClient.getWeatherData(city, "metric");
+                JsonObject jsonResponse = JsonParser.parseString(serverResponse).getAsJsonObject();
 
-            if (wasAdded) {
-                favoritesChoiceBox.getItems().add(city);
-            } else {
-                ErrorHandler.showErrorAndLog("City already in favorites.", "City already in favorites.");
+                // Überprüfen, ob die API eine Fehlermeldung zurückgibt, z. B. 404 - Stadt nicht gefunden
+                if (jsonResponse.has("cod") && jsonResponse.get("cod").getAsString().equals("404")) {
+                    // Stadt nicht gefunden, Fehler anzeigen
+                    ErrorHandler.showErrorAndLog("City not found.", "City not found: " + city);
+                    return;
+                }
+
+                // Weitere zusätzliche Validierung, die geprüft werden kann, z. B. leere oder ungültige API-Daten
+                if (!jsonResponse.has("main")) {
+                    ErrorHandler.showErrorAndLog("Invalid city data.", "Invalid city data: " + city);
+                    return;
+                }
+
+                // Stadt ist gültig, nun sicherstellen, dass sie noch nicht zu den Favoriten hinzugefügt wurde
+                if (FavoritesManager.addFavorite(city)) {
+                    favoritesChoiceBox.getItems().add(city);
+                    Logger.log(Logger.Level.INFO, "City added to favorites: " + city);
+                } else {
+                    // Stadt schon ein Favorit
+                    ErrorHandler.showErrorAndLog("City already in favorites.", "City already in favorites: " + city);
+                }
+            } catch (Exception e) {
+                // Fehlerfall, wenn die API-Anfrage fehlschlägt
+                ErrorHandler.showErrorAndLog("Error verifying city.", "Error verifying city: " + city + ", Message: " + e.getMessage());
             }
+        } else {
+            // Überprüfen, ob die Stadt ungültig (z. B. leer) ist
+            ErrorHandler.showErrorAndLog("Invalid city name.", "City name is empty or invalid: " + city);
         }
     }
+
+
 
     private void fetchWeatherData() {
         Logger.log(Logger.Level.DEBUG, "Search starts.");
@@ -146,6 +174,7 @@ public class HelloController {
             }
 
             if (jsonResponse.has("cod") && jsonResponse.get("cod").getAsString().equals("404")) {
+                Logger.log(Logger.Level.DEBUG, "City not found.");
                 Platform.runLater(() -> {
                     cityLabel.setText("City not found.");
                     resetLabels(tempUnit, windUnit);
