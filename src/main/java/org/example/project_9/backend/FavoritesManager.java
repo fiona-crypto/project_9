@@ -30,16 +30,33 @@ public class FavoritesManager {
      * Adds a city to the list of favorites.
      *
      * @param city The city to add.
-     * @return True if the city was added successfully, false if the city is null, empty, or already in the list.
+     * @return True if the city was added successfully, false if the city is null, empty, invalid, or already in the list.
      */
     public static boolean addFavorite(String city) {
+        if (city == null || city.trim().isEmpty() || !isValidCity(city)) {
+            return false; // Invalid input
+        }
+
         String lowerCaseCity = city.toLowerCase();
         if (favoriteCities.stream().map(String::toLowerCase).anyMatch(lowerCaseCity::equals)) {
             return false; // City is already in favorites
         }
+
         favoriteCities.add(city);
         saveFavoriteToFile(city);
         return true;
+    }
+
+    /**
+     * Validates if a string is a valid city name.
+     *
+     * @param city The string to validate.
+     * @return True if the string is a valid city name, false otherwise.
+     */
+    private static boolean isValidCity(String city) {
+        // Check if the string contains only letters, spaces, or allowed punctuation (e.g., '-').
+        // Exclude strings consisting entirely of digits.
+        return city.matches("^[a-zA-ZäöüßÄÖÜ\\s'-]+$");
     }
 
     /**

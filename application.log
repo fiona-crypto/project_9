@@ -891,3 +891,303 @@
 [2025-01-13 21:29:29] [ERROR] Error retrieving data: https://api.openweathermap.org/data/2.5/weather?q=ghfjdks&appid=2846e091909907b38614eb85000db992&units=metric
 [2025-01-13 21:29:29] [ERROR] Error retrieving data or invalid response.
 [2025-01-13 21:29:30] [ERROR] Invalid city data: ghfjdks
+[2025-01-13 21:33:03] [INFO] Server started and waiting for connections ...
+[2025-01-13 21:33:14] [DEBUG] Search starts.
+[2025-01-13 21:33:15] [ERROR] Invalid city name: 12345
+[2025-01-13 21:33:16] [DEBUG] Preparing to connect to server at localhost:4711
+[2025-01-13 21:33:16] [INFO] Connected to server.
+[2025-01-13 21:33:16] [INFO] Client connected.
+[2025-01-13 21:33:16] [DEBUG] Sending request to server: 12345;metric
+[2025-01-13 21:33:16] [DEBUG] Received input from client: 12345;metric
+[2025-01-13 21:33:16] [DEBUG] API Response: {"coord":{"lon":28.7149,"lat":50.3856},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04n"}],"base":"stations","main":{"temp":-2.96,"feels_like":-8.24,"temp_min":-2.96,"temp_max":-2.96,"pressure":1037,"humidity":88,"sea_level":1037,"grnd_level":1009},"visibility":10000,"wind":{"speed":4.44,"deg":307,"gust":7.22},"clouds":{"all":98},"dt":1736800397,"sys":{"country":"UA","sunrise":1736748042,"sunset":1736778390},"timezone":7200,"id":686966,"name":"Trokovychi","cod":200}
+[2025-01-13 21:33:16] [DEBUG] Sending API response to client.
+[2025-01-13 21:33:17] [INFO] City added to favorites: 12345
+[2025-01-13 21:33:35] [DEBUG] Search starts.
+[2025-01-13 21:33:36] [ERROR] Invalid city name: 9991
+[2025-01-13 21:33:37] [DEBUG] Preparing to connect to server at localhost:4711
+[2025-01-13 21:33:37] [INFO] Client connected.
+[2025-01-13 21:33:37] [INFO] Connected to server.
+[2025-01-13 21:33:37] [DEBUG] Sending request to server: 9991;metric
+[2025-01-13 21:33:37] [DEBUG] Received input from client: 9991;metric
+[2025-01-13 21:33:37] [DEBUG] API Response: {"coord":{"lon":12.8527,"lat":46.8147},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01n"}],"base":"stations","main":{"temp":-6.87,"feels_like":-10.96,"temp_min":-6.87,"temp_max":-6.87,"pressure":1043,"humidity":68,"sea_level":1043,"grnd_level":844},"visibility":10000,"wind":{"speed":2.35,"deg":339,"gust":1.73},"clouds":{"all":10},"dt":1736800418,"sys":{"country":"AT","sunrise":1736751022,"sunset":1736783027},"timezone":3600,"id":2772505,"name":"Görtschach","cod":200}
+[2025-01-13 21:33:37] [DEBUG] Sending API response to client.
+[2025-01-13 21:33:37] [INFO] City added to favorites: 9991
+[2025-01-13 21:33:43] [DEBUG] Search starts.
+[2025-01-13 21:33:43] [DEBUG] Preparing to connect to server at localhost:4711
+[2025-01-13 21:33:43] [INFO] Connected to server.
+[2025-01-13 21:33:43] [INFO] Client connected.
+[2025-01-13 21:33:43] [DEBUG] Sending request to server: hgfndska;metric
+[2025-01-13 21:33:43] [DEBUG] Received input from client: hgfndska;metric
+[2025-01-13 21:33:43] [ERROR] Error retrieving data: https://api.openweathermap.org/data/2.5/weather?q=hgfndska&appid=2846e091909907b38614eb85000db992&units=metric
+[2025-01-13 21:33:43] [ERROR] Error retrieving data or invalid response.
+[2025-01-13 21:33:43] [DEBUG] Server response: {"error": "Error retrieving data or invalid response."}
+[2025-01-13 21:33:45] [ERROR] City not found: hgfndska
+[2025-01-13 21:33:45] [DEBUG] Preparing to connect to server at localhost:4711
+[2025-01-13 21:33:45] [INFO] Connected to server.
+[2025-01-13 21:33:45] [INFO] Client connected.
+[2025-01-13 21:33:45] [DEBUG] Sending request to server: hgfndska;metric
+[2025-01-13 21:33:45] [DEBUG] Received input from client: hgfndska;metric
+[2025-01-13 21:33:46] [ERROR] Error retrieving data: https://api.openweathermap.org/data/2.5/weather?q=hgfndska&appid=2846e091909907b38614eb85000db992&units=metric
+[2025-01-13 21:33:46] [ERROR] Error retrieving data or invalid response.
+[2025-01-13 21:33:47] [ERROR] Invalid city data: hgfndska
+[2025-01-13 21:36:29] [INFO] Server started and waiting for connections ...
+[2025-01-13 21:36:39] [DEBUG] Search starts.
+[2025-01-13 21:36:39] [DEBUG] Preparing to connect to server at localhost:4711
+[2025-01-13 21:36:39] [INFO] Connected to server.
+[2025-01-13 21:36:39] [INFO] Client connected.
+[2025-01-13 21:36:39] [DEBUG] Sending request to server: hbgjfk;metric
+[2025-01-13 21:36:39] [DEBUG] Received input from client: hbgjfk;metric
+[2025-01-13 21:36:40] [ERROR] Error retrieving data: https://api.openweathermap.org/data/2.5/weather?q=hbgjfk&appid=2846e091909907b38614eb85000db992&units=metric
+[2025-01-13 21:36:40] [ERROR] Error retrieving data or invalid response.
+[2025-01-13 21:36:40] [DEBUG] Server response: {"error": "Error retrieving data or invalid response."}
+[2025-01-13 21:36:41] [ERROR] City not found: hbgjfk
+[2025-01-13 21:36:42] [DEBUG] Preparing to connect to server at localhost:4711
+[2025-01-13 21:36:42] [INFO] Connected to server.
+[2025-01-13 21:36:42] [INFO] Client connected.
+[2025-01-13 21:36:42] [DEBUG] Sending request to server: hbgjfk;metric
+[2025-01-13 21:36:42] [DEBUG] Received input from client: hbgjfk;metric
+[2025-01-13 21:36:42] [ERROR] Error retrieving data: https://api.openweathermap.org/data/2.5/weather?q=hbgjfk&appid=2846e091909907b38614eb85000db992&units=metric
+[2025-01-13 21:36:42] [ERROR] Error retrieving data or invalid response.
+[2025-01-13 21:36:43] [ERROR] Invalid city data: hbgjfk
+[2025-01-13 21:36:49] [DEBUG] Search starts.
+[2025-01-13 21:36:49] [DEBUG] Preparing to connect to server at localhost:4711
+[2025-01-13 21:36:49] [INFO] Connected to server.
+[2025-01-13 21:36:49] [INFO] Client connected.
+[2025-01-13 21:36:49] [DEBUG] Sending request to server: New+York;metric
+[2025-01-13 21:36:49] [DEBUG] Received input from client: New+York;metric
+[2025-01-13 21:36:49] [DEBUG] API Response: {"coord":{"lon":-74.006,"lat":40.7143},"weather":[{"id":802,"main":"Clouds","description":"scattered clouds","icon":"03d"}],"base":"stations","main":{"temp":5.75,"feels_like":1.24,"temp_min":4.97,"temp_max":6.81,"pressure":1012,"humidity":50,"sea_level":1012,"grnd_level":1011},"visibility":10000,"wind":{"speed":7.72,"deg":260,"gust":11.32},"clouds":{"all":40},"dt":1736800329,"sys":{"type":1,"id":4610,"country":"US","sunrise":1736770710,"sunset":1736805042},"timezone":-18000,"id":5128581,"name":"New York","cod":200}
+[2025-01-13 21:36:49] [DEBUG] Sending API response to client.
+[2025-01-13 21:36:49] [DEBUG] Server response: {"coord":{"lon":-74.006,"lat":40.7143},"weather":[{"id":802,"main":"Clouds","description":"scattered clouds","icon":"03d"}],"base":"stations","main":{"temp":5.75,"feels_like":1.24,"temp_min":4.97,"temp_max":6.81,"pressure":1012,"humidity":50,"sea_level":1012,"grnd_level":1011},"visibility":10000,"wind":{"speed":7.72,"deg":260,"gust":11.32},"clouds":{"all":40},"dt":1736800329,"sys":{"type":1,"id":4610,"country":"US","sunrise":1736770710,"sunset":1736805042},"timezone":-18000,"id":5128581,"name":"New York","cod":200}
+[2025-01-13 21:36:49] [INFO] Parsing JSON: {"coord":{"lon":-74.006,"lat":40.7143},"weather":[{"id":802,"main":"Clouds","description":"scattered clouds","icon":"03d"}],"base":"stations","main":{"temp":5.75,"feels_like":1.24,"temp_min":4.97,"temp_max":6.81,"pressure":1012,"humidity":50,"sea_level":1012,"grnd_level":1011},"visibility":10000,"wind":{"speed":7.72,"deg":260,"gust":11.32},"clouds":{"all":40},"dt":1736800329,"sys":{"type":1,"id":4610,"country":"US","sunrise":1736770710,"sunset":1736805042},"timezone":-18000,"id":5128581,"name":"New York","cod":200}
+[2025-01-13 21:36:49] [INFO] City: New York
+[2025-01-13 21:36:49] [INFO] Temperature: 5.75
+[2025-01-13 21:36:49] [INFO] Feels like: 1.24
+[2025-01-13 21:36:49] [INFO] Temp min: 4.97
+[2025-01-13 21:36:49] [INFO] Temp max: 6.81
+[2025-01-13 21:36:49] [INFO] Pressure: 1012
+[2025-01-13 21:36:49] [INFO] Humidity: 50
+[2025-01-13 21:36:49] [INFO] Wind speed: 7.72
+[2025-01-13 21:36:49] [INFO] Weather condition: scattered clouds
+[2025-01-13 21:36:49] [DEBUG] Parsed city: New York
+[2025-01-13 21:36:49] [DEBUG] Parsed temperature: 5.75
+[2025-01-13 21:36:49] [DEBUG] Parsed weather condition: scattered clouds
+[2025-01-13 21:36:51] [DEBUG] Preparing to connect to server at localhost:4711
+[2025-01-13 21:36:51] [INFO] Connected to server.
+[2025-01-13 21:36:51] [INFO] Client connected.
+[2025-01-13 21:36:51] [DEBUG] Sending request to server: New+York;metric
+[2025-01-13 21:36:51] [DEBUG] Received input from client: New+York;metric
+[2025-01-13 21:36:51] [DEBUG] API Response: {"coord":{"lon":-74.006,"lat":40.7143},"weather":[{"id":802,"main":"Clouds","description":"scattered clouds","icon":"03d"}],"base":"stations","main":{"temp":5.75,"feels_like":1.24,"temp_min":4.97,"temp_max":6.81,"pressure":1012,"humidity":50,"sea_level":1012,"grnd_level":1011},"visibility":10000,"wind":{"speed":7.72,"deg":260,"gust":11.32},"clouds":{"all":40},"dt":1736800329,"sys":{"type":1,"id":4610,"country":"US","sunrise":1736770710,"sunset":1736805042},"timezone":-18000,"id":5128581,"name":"New York","cod":200}
+[2025-01-13 21:36:51] [DEBUG] Sending API response to client.
+[2025-01-13 21:36:51] [INFO] City added to favorites: New York
+[2025-01-13 21:36:55] [DEBUG] Search starts.
+[2025-01-13 21:36:56] [ERROR] Invalid city name: 12345
+[2025-01-13 21:36:56] [DEBUG] Preparing to connect to server at localhost:4711
+[2025-01-13 21:36:56] [INFO] Client connected.
+[2025-01-13 21:36:56] [INFO] Connected to server.
+[2025-01-13 21:36:56] [DEBUG] Sending request to server: 12345;metric
+[2025-01-13 21:36:56] [DEBUG] Received input from client: 12345;metric
+[2025-01-13 21:36:56] [DEBUG] API Response: {"coord":{"lon":28.7149,"lat":50.3856},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04n"}],"base":"stations","main":{"temp":-2.96,"feels_like":-8.24,"temp_min":-2.96,"temp_max":-2.96,"pressure":1037,"humidity":88,"sea_level":1037,"grnd_level":1009},"visibility":10000,"wind":{"speed":4.44,"deg":307,"gust":7.22},"clouds":{"all":98},"dt":1736800397,"sys":{"country":"UA","sunrise":1736748042,"sunset":1736778390},"timezone":7200,"id":686966,"name":"Trokovychi","cod":200}
+[2025-01-13 21:36:56] [DEBUG] Sending API response to client.
+[2025-01-13 21:36:58] [ERROR] City already in favorites: 12345
+[2025-01-13 21:37:01] [DEBUG] Search starts.
+[2025-01-13 21:37:02] [ERROR] Invalid city name: 123457654
+[2025-01-13 21:37:03] [DEBUG] Preparing to connect to server at localhost:4711
+[2025-01-13 21:37:03] [INFO] Connected to server.
+[2025-01-13 21:37:03] [DEBUG] Sending request to server: 123457654;metric
+[2025-01-13 21:37:03] [INFO] Client connected.
+[2025-01-13 21:37:03] [DEBUG] Received input from client: 123457654;metric
+[2025-01-13 21:37:03] [ERROR] Error retrieving data: https://api.openweathermap.org/data/2.5/weather?q=123457654&appid=2846e091909907b38614eb85000db992&units=metric
+[2025-01-13 21:37:03] [ERROR] Error retrieving data or invalid response.
+[2025-01-13 21:37:05] [ERROR] Invalid city data: 123457654
+[2025-01-13 21:37:21] [DEBUG] Search starts.
+[2025-01-13 21:37:22] [ERROR] Invalid city name: 991
+[2025-01-13 21:37:23] [DEBUG] Preparing to connect to server at localhost:4711
+[2025-01-13 21:37:23] [INFO] Connected to server.
+[2025-01-13 21:37:23] [INFO] Client connected.
+[2025-01-13 21:37:23] [DEBUG] Sending request to server: 991;metric
+[2025-01-13 21:37:23] [DEBUG] Received input from client: 991;metric
+[2025-01-13 21:37:23] [ERROR] Error retrieving data: https://api.openweathermap.org/data/2.5/weather?q=991&appid=2846e091909907b38614eb85000db992&units=metric
+[2025-01-13 21:37:23] [ERROR] Error retrieving data or invalid response.
+[2025-01-13 21:37:24] [ERROR] Invalid city data: 991
+[2025-01-13 21:38:10] [DEBUG] Search starts.
+[2025-01-13 21:38:10] [DEBUG] Preparing to connect to server at localhost:4711
+[2025-01-13 21:38:10] [INFO] Connected to server.
+[2025-01-13 21:38:10] [INFO] Client connected.
+[2025-01-13 21:38:10] [DEBUG] Sending request to server: Paris;metric
+[2025-01-13 21:38:10] [DEBUG] Received input from client: Paris;metric
+[2025-01-13 21:38:10] [DEBUG] API Response: {"coord":{"lon":2.3488,"lat":48.8534},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01n"}],"base":"stations","main":{"temp":0,"feels_like":-3.09,"temp_min":-1.62,"temp_max":0.64,"pressure":1039,"humidity":79,"sea_level":1039,"grnd_level":1028},"visibility":10000,"wind":{"speed":2.57,"deg":50},"clouds":{"all":0},"dt":1736800549,"sys":{"type":2,"id":2012208,"country":"FR","sunrise":1736753996,"sunset":1736785096},"timezone":3600,"id":2988507,"name":"Paris","cod":200}
+[2025-01-13 21:38:10] [DEBUG] Sending API response to client.
+[2025-01-13 21:38:10] [DEBUG] Server response: {"coord":{"lon":2.3488,"lat":48.8534},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01n"}],"base":"stations","main":{"temp":0,"feels_like":-3.09,"temp_min":-1.62,"temp_max":0.64,"pressure":1039,"humidity":79,"sea_level":1039,"grnd_level":1028},"visibility":10000,"wind":{"speed":2.57,"deg":50},"clouds":{"all":0},"dt":1736800549,"sys":{"type":2,"id":2012208,"country":"FR","sunrise":1736753996,"sunset":1736785096},"timezone":3600,"id":2988507,"name":"Paris","cod":200}
+[2025-01-13 21:38:10] [INFO] Parsing JSON: {"coord":{"lon":2.3488,"lat":48.8534},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01n"}],"base":"stations","main":{"temp":0,"feels_like":-3.09,"temp_min":-1.62,"temp_max":0.64,"pressure":1039,"humidity":79,"sea_level":1039,"grnd_level":1028},"visibility":10000,"wind":{"speed":2.57,"deg":50},"clouds":{"all":0},"dt":1736800549,"sys":{"type":2,"id":2012208,"country":"FR","sunrise":1736753996,"sunset":1736785096},"timezone":3600,"id":2988507,"name":"Paris","cod":200}
+[2025-01-13 21:38:10] [INFO] City: Paris
+[2025-01-13 21:38:10] [INFO] Temperature: 0.0
+[2025-01-13 21:38:10] [INFO] Feels like: -3.09
+[2025-01-13 21:38:10] [INFO] Temp min: -1.62
+[2025-01-13 21:38:10] [INFO] Temp max: 0.64
+[2025-01-13 21:38:10] [INFO] Pressure: 1039
+[2025-01-13 21:38:10] [INFO] Humidity: 79
+[2025-01-13 21:38:10] [INFO] Wind speed: 2.57
+[2025-01-13 21:38:10] [INFO] Weather condition: clear sky
+[2025-01-13 21:38:10] [DEBUG] Parsed city: Paris
+[2025-01-13 21:38:10] [DEBUG] Parsed temperature: 0.0
+[2025-01-13 21:38:10] [DEBUG] Parsed weather condition: clear sky
+[2025-01-13 21:38:16] [DEBUG] Search starts.
+[2025-01-13 21:38:16] [DEBUG] Preparing to connect to server at localhost:4711
+[2025-01-13 21:38:16] [INFO] Connected to server.
+[2025-01-13 21:38:16] [INFO] Client connected.
+[2025-01-13 21:38:16] [DEBUG] Sending request to server: M%C3%BCnchen;metric
+[2025-01-13 21:38:16] [DEBUG] Received input from client: M%C3%BCnchen;metric
+[2025-01-13 21:38:16] [DEBUG] API Response: {"coord":{"lon":11.5755,"lat":48.1374},"weather":[{"id":801,"main":"Clouds","description":"few clouds","icon":"02n"}],"base":"stations","main":{"temp":-5.53,"feels_like":-10.34,"temp_min":-6.71,"temp_max":-4.79,"pressure":1040,"humidity":85,"sea_level":1040,"grnd_level":972},"visibility":10000,"wind":{"speed":3.19,"deg":86,"gust":8.96},"clouds":{"all":13},"dt":1736800597,"sys":{"type":2,"id":2002112,"country":"DE","sunrise":1736751618,"sunset":1736783044},"timezone":3600,"id":2867714,"name":"Munich","cod":200}
+[2025-01-13 21:38:16] [DEBUG] Sending API response to client.
+[2025-01-13 21:38:16] [DEBUG] Server response: {"coord":{"lon":11.5755,"lat":48.1374},"weather":[{"id":801,"main":"Clouds","description":"few clouds","icon":"02n"}],"base":"stations","main":{"temp":-5.53,"feels_like":-10.34,"temp_min":-6.71,"temp_max":-4.79,"pressure":1040,"humidity":85,"sea_level":1040,"grnd_level":972},"visibility":10000,"wind":{"speed":3.19,"deg":86,"gust":8.96},"clouds":{"all":13},"dt":1736800597,"sys":{"type":2,"id":2002112,"country":"DE","sunrise":1736751618,"sunset":1736783044},"timezone":3600,"id":2867714,"name":"Munich","cod":200}
+[2025-01-13 21:38:16] [INFO] Parsing JSON: {"coord":{"lon":11.5755,"lat":48.1374},"weather":[{"id":801,"main":"Clouds","description":"few clouds","icon":"02n"}],"base":"stations","main":{"temp":-5.53,"feels_like":-10.34,"temp_min":-6.71,"temp_max":-4.79,"pressure":1040,"humidity":85,"sea_level":1040,"grnd_level":972},"visibility":10000,"wind":{"speed":3.19,"deg":86,"gust":8.96},"clouds":{"all":13},"dt":1736800597,"sys":{"type":2,"id":2002112,"country":"DE","sunrise":1736751618,"sunset":1736783044},"timezone":3600,"id":2867714,"name":"Munich","cod":200}
+[2025-01-13 21:38:16] [INFO] City: Munich
+[2025-01-13 21:38:16] [INFO] Temperature: -5.53
+[2025-01-13 21:38:16] [INFO] Feels like: -10.34
+[2025-01-13 21:38:16] [INFO] Temp min: -6.71
+[2025-01-13 21:38:16] [INFO] Temp max: -4.79
+[2025-01-13 21:38:16] [INFO] Pressure: 1040
+[2025-01-13 21:38:16] [INFO] Humidity: 85
+[2025-01-13 21:38:16] [INFO] Wind speed: 3.19
+[2025-01-13 21:38:16] [INFO] Weather condition: few clouds
+[2025-01-13 21:38:16] [DEBUG] Parsed city: Munich
+[2025-01-13 21:38:16] [DEBUG] Parsed temperature: -5.53
+[2025-01-13 21:38:16] [DEBUG] Parsed weather condition: few clouds
+[2025-01-13 21:38:19] [DEBUG] Preparing to connect to server at localhost:4711
+[2025-01-13 21:38:19] [INFO] Connected to server.
+[2025-01-13 21:38:19] [INFO] Client connected.
+[2025-01-13 21:38:19] [DEBUG] Sending request to server: M%C3%BCnchen;metric
+[2025-01-13 21:38:19] [DEBUG] Received input from client: M%C3%BCnchen;metric
+[2025-01-13 21:38:19] [DEBUG] API Response: {"coord":{"lon":11.5755,"lat":48.1374},"weather":[{"id":801,"main":"Clouds","description":"few clouds","icon":"02n"}],"base":"stations","main":{"temp":-5.53,"feels_like":-10.34,"temp_min":-6.71,"temp_max":-4.79,"pressure":1040,"humidity":85,"sea_level":1040,"grnd_level":972},"visibility":10000,"wind":{"speed":3.19,"deg":86,"gust":8.96},"clouds":{"all":13},"dt":1736800597,"sys":{"type":2,"id":2002112,"country":"DE","sunrise":1736751618,"sunset":1736783044},"timezone":3600,"id":2867714,"name":"Munich","cod":200}
+[2025-01-13 21:38:19] [DEBUG] Sending API response to client.
+[2025-01-13 21:38:19] [INFO] City added to favorites: München
+[2025-01-13 21:38:25] [DEBUG] Search starts.
+[2025-01-13 21:38:25] [DEBUG] Preparing to connect to server at localhost:4711
+[2025-01-13 21:38:25] [INFO] Connected to server.
+[2025-01-13 21:38:25] [INFO] Client connected.
+[2025-01-13 21:38:25] [DEBUG] Sending request to server: m%C3%BCnchen;metric
+[2025-01-13 21:38:25] [DEBUG] Received input from client: m%C3%BCnchen;metric
+[2025-01-13 21:38:25] [DEBUG] API Response: {"coord":{"lon":11.5755,"lat":48.1374},"weather":[{"id":801,"main":"Clouds","description":"few clouds","icon":"02n"}],"base":"stations","main":{"temp":-5.53,"feels_like":-10.34,"temp_min":-6.71,"temp_max":-4.79,"pressure":1040,"humidity":85,"sea_level":1040,"grnd_level":972},"visibility":10000,"wind":{"speed":3.19,"deg":86,"gust":8.96},"clouds":{"all":13},"dt":1736800597,"sys":{"type":2,"id":2002112,"country":"DE","sunrise":1736751618,"sunset":1736783044},"timezone":3600,"id":2867714,"name":"Munich","cod":200}
+[2025-01-13 21:38:25] [DEBUG] Sending API response to client.
+[2025-01-13 21:38:25] [DEBUG] Server response: {"coord":{"lon":11.5755,"lat":48.1374},"weather":[{"id":801,"main":"Clouds","description":"few clouds","icon":"02n"}],"base":"stations","main":{"temp":-5.53,"feels_like":-10.34,"temp_min":-6.71,"temp_max":-4.79,"pressure":1040,"humidity":85,"sea_level":1040,"grnd_level":972},"visibility":10000,"wind":{"speed":3.19,"deg":86,"gust":8.96},"clouds":{"all":13},"dt":1736800597,"sys":{"type":2,"id":2002112,"country":"DE","sunrise":1736751618,"sunset":1736783044},"timezone":3600,"id":2867714,"name":"Munich","cod":200}
+[2025-01-13 21:38:25] [INFO] Parsing JSON: {"coord":{"lon":11.5755,"lat":48.1374},"weather":[{"id":801,"main":"Clouds","description":"few clouds","icon":"02n"}],"base":"stations","main":{"temp":-5.53,"feels_like":-10.34,"temp_min":-6.71,"temp_max":-4.79,"pressure":1040,"humidity":85,"sea_level":1040,"grnd_level":972},"visibility":10000,"wind":{"speed":3.19,"deg":86,"gust":8.96},"clouds":{"all":13},"dt":1736800597,"sys":{"type":2,"id":2002112,"country":"DE","sunrise":1736751618,"sunset":1736783044},"timezone":3600,"id":2867714,"name":"Munich","cod":200}
+[2025-01-13 21:38:25] [INFO] City: Munich
+[2025-01-13 21:38:25] [INFO] Temperature: -5.53
+[2025-01-13 21:38:25] [INFO] Feels like: -10.34
+[2025-01-13 21:38:25] [INFO] Temp min: -6.71
+[2025-01-13 21:38:25] [INFO] Temp max: -4.79
+[2025-01-13 21:38:25] [INFO] Pressure: 1040
+[2025-01-13 21:38:25] [INFO] Humidity: 85
+[2025-01-13 21:38:25] [INFO] Wind speed: 3.19
+[2025-01-13 21:38:25] [INFO] Weather condition: few clouds
+[2025-01-13 21:38:25] [DEBUG] Parsed city: Munich
+[2025-01-13 21:38:25] [DEBUG] Parsed temperature: -5.53
+[2025-01-13 21:38:25] [DEBUG] Parsed weather condition: few clouds
+[2025-01-13 21:38:26] [DEBUG] Preparing to connect to server at localhost:4711
+[2025-01-13 21:38:26] [INFO] Connected to server.
+[2025-01-13 21:38:26] [INFO] Client connected.
+[2025-01-13 21:38:26] [DEBUG] Sending request to server: m%C3%BCnchen;metric
+[2025-01-13 21:38:26] [DEBUG] Received input from client: m%C3%BCnchen;metric
+[2025-01-13 21:38:26] [DEBUG] API Response: {"coord":{"lon":11.5755,"lat":48.1374},"weather":[{"id":801,"main":"Clouds","description":"few clouds","icon":"02n"}],"base":"stations","main":{"temp":-5.53,"feels_like":-10.34,"temp_min":-6.71,"temp_max":-4.79,"pressure":1040,"humidity":85,"sea_level":1040,"grnd_level":972},"visibility":10000,"wind":{"speed":3.19,"deg":86,"gust":8.96},"clouds":{"all":13},"dt":1736800597,"sys":{"type":2,"id":2002112,"country":"DE","sunrise":1736751618,"sunset":1736783044},"timezone":3600,"id":2867714,"name":"Munich","cod":200}
+[2025-01-13 21:38:26] [DEBUG] Sending API response to client.
+[2025-01-13 21:38:28] [ERROR] City already in favorites: münchen
+[2025-01-13 21:38:37] [DEBUG] Search starts.
+[2025-01-13 21:38:37] [DEBUG] Preparing to connect to server at localhost:4711
+[2025-01-13 21:38:37] [INFO] Connected to server.
+[2025-01-13 21:38:37] [INFO] Client connected.
+[2025-01-13 21:38:37] [DEBUG] Sending request to server: Munich;metric
+[2025-01-13 21:38:37] [DEBUG] Received input from client: Munich;metric
+[2025-01-13 21:38:37] [DEBUG] API Response: {"coord":{"lon":11.5755,"lat":48.1374},"weather":[{"id":801,"main":"Clouds","description":"few clouds","icon":"02n"}],"base":"stations","main":{"temp":-5.51,"feels_like":-5.51,"temp_min":-6.71,"temp_max":-4.79,"pressure":1040,"humidity":85,"sea_level":1040,"grnd_level":972},"visibility":10000,"wind":{"speed":0.89,"deg":110,"gust":2.24},"clouds":{"all":13},"dt":1736800021,"sys":{"type":2,"id":2002112,"country":"DE","sunrise":1736751618,"sunset":1736783044},"timezone":3600,"id":2867714,"name":"Munich","cod":200}
+[2025-01-13 21:38:37] [DEBUG] Sending API response to client.
+[2025-01-13 21:38:37] [DEBUG] Server response: {"coord":{"lon":11.5755,"lat":48.1374},"weather":[{"id":801,"main":"Clouds","description":"few clouds","icon":"02n"}],"base":"stations","main":{"temp":-5.51,"feels_like":-5.51,"temp_min":-6.71,"temp_max":-4.79,"pressure":1040,"humidity":85,"sea_level":1040,"grnd_level":972},"visibility":10000,"wind":{"speed":0.89,"deg":110,"gust":2.24},"clouds":{"all":13},"dt":1736800021,"sys":{"type":2,"id":2002112,"country":"DE","sunrise":1736751618,"sunset":1736783044},"timezone":3600,"id":2867714,"name":"Munich","cod":200}
+[2025-01-13 21:38:37] [INFO] Parsing JSON: {"coord":{"lon":11.5755,"lat":48.1374},"weather":[{"id":801,"main":"Clouds","description":"few clouds","icon":"02n"}],"base":"stations","main":{"temp":-5.51,"feels_like":-5.51,"temp_min":-6.71,"temp_max":-4.79,"pressure":1040,"humidity":85,"sea_level":1040,"grnd_level":972},"visibility":10000,"wind":{"speed":0.89,"deg":110,"gust":2.24},"clouds":{"all":13},"dt":1736800021,"sys":{"type":2,"id":2002112,"country":"DE","sunrise":1736751618,"sunset":1736783044},"timezone":3600,"id":2867714,"name":"Munich","cod":200}
+[2025-01-13 21:38:37] [INFO] City: Munich
+[2025-01-13 21:38:37] [INFO] Temperature: -5.51
+[2025-01-13 21:38:37] [INFO] Feels like: -5.51
+[2025-01-13 21:38:37] [INFO] Temp min: -6.71
+[2025-01-13 21:38:37] [INFO] Temp max: -4.79
+[2025-01-13 21:38:37] [INFO] Pressure: 1040
+[2025-01-13 21:38:37] [INFO] Humidity: 85
+[2025-01-13 21:38:37] [INFO] Wind speed: 0.89
+[2025-01-13 21:38:37] [INFO] Weather condition: few clouds
+[2025-01-13 21:38:37] [DEBUG] Parsed city: Munich
+[2025-01-13 21:38:37] [DEBUG] Parsed temperature: -5.51
+[2025-01-13 21:38:37] [DEBUG] Parsed weather condition: few clouds
+[2025-01-13 21:38:38] [DEBUG] Preparing to connect to server at localhost:4711
+[2025-01-13 21:38:38] [INFO] Connected to server.
+[2025-01-13 21:38:38] [INFO] Client connected.
+[2025-01-13 21:38:38] [DEBUG] Sending request to server: Munich;metric
+[2025-01-13 21:38:38] [DEBUG] Received input from client: Munich;metric
+[2025-01-13 21:38:38] [DEBUG] API Response: {"coord":{"lon":11.5755,"lat":48.1374},"weather":[{"id":801,"main":"Clouds","description":"few clouds","icon":"02n"}],"base":"stations","main":{"temp":-5.51,"feels_like":-5.51,"temp_min":-6.71,"temp_max":-4.79,"pressure":1040,"humidity":85,"sea_level":1040,"grnd_level":972},"visibility":10000,"wind":{"speed":0.89,"deg":110,"gust":2.24},"clouds":{"all":13},"dt":1736800021,"sys":{"type":2,"id":2002112,"country":"DE","sunrise":1736751618,"sunset":1736783044},"timezone":3600,"id":2867714,"name":"Munich","cod":200}
+[2025-01-13 21:38:38] [DEBUG] Sending API response to client.
+[2025-01-13 21:38:38] [INFO] City added to favorites: Munich
+[2025-01-13 21:38:51] [DEBUG] Search starts.
+[2025-01-13 21:38:52] [ERROR] Invalid city name: !"§$%
+[2025-01-13 21:38:53] [DEBUG] Preparing to connect to server at localhost:4711
+[2025-01-13 21:38:53] [INFO] Connected to server.
+[2025-01-13 21:38:53] [INFO] Client connected.
+[2025-01-13 21:38:53] [DEBUG] Sending request to server: %21%22%C2%A7%24%25;metric
+[2025-01-13 21:38:53] [DEBUG] Received input from client: %21%22%C2%A7%24%25;metric
+[2025-01-13 21:38:53] [ERROR] Error retrieving data: https://api.openweathermap.org/data/2.5/weather?q=%21%22%C2%A7%24%25&appid=2846e091909907b38614eb85000db992&units=metric
+[2025-01-13 21:38:53] [ERROR] Error retrieving data or invalid response.
+[2025-01-13 21:38:55] [ERROR] Invalid city data: !"§$%
+[2025-01-13 21:39:11] [DEBUG] Search starts.
+[2025-01-13 21:39:11] [DEBUG] Preparing to connect to server at localhost:4711
+[2025-01-13 21:39:11] [INFO] Connected to server.
+[2025-01-13 21:39:11] [INFO] Client connected.
+[2025-01-13 21:39:11] [DEBUG] Sending request to server: LIGNANO;metric
+[2025-01-13 21:39:11] [DEBUG] Received input from client: LIGNANO;metric
+[2025-01-13 21:39:11] [DEBUG] API Response: {"coord":{"lon":13.1481,"lat":45.6922},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04n"}],"base":"stations","main":{"temp":2.81,"feels_like":-0.52,"temp_min":2.81,"temp_max":4.05,"pressure":1036,"humidity":59,"sea_level":1036,"grnd_level":1035},"visibility":10000,"wind":{"speed":3.53,"deg":57,"gust":3.34},"clouds":{"all":97},"dt":1736800751,"sys":{"type":2,"id":2085885,"country":"IT","sunrise":1736750717,"sunset":1736783189},"timezone":3600,"id":3174729,"name":"Lignano Sabbiadoro","cod":200}
+[2025-01-13 21:39:11] [DEBUG] Sending API response to client.
+[2025-01-13 21:39:11] [DEBUG] Server response: {"coord":{"lon":13.1481,"lat":45.6922},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04n"}],"base":"stations","main":{"temp":2.81,"feels_like":-0.52,"temp_min":2.81,"temp_max":4.05,"pressure":1036,"humidity":59,"sea_level":1036,"grnd_level":1035},"visibility":10000,"wind":{"speed":3.53,"deg":57,"gust":3.34},"clouds":{"all":97},"dt":1736800751,"sys":{"type":2,"id":2085885,"country":"IT","sunrise":1736750717,"sunset":1736783189},"timezone":3600,"id":3174729,"name":"Lignano Sabbiadoro","cod":200}
+[2025-01-13 21:39:11] [INFO] Parsing JSON: {"coord":{"lon":13.1481,"lat":45.6922},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04n"}],"base":"stations","main":{"temp":2.81,"feels_like":-0.52,"temp_min":2.81,"temp_max":4.05,"pressure":1036,"humidity":59,"sea_level":1036,"grnd_level":1035},"visibility":10000,"wind":{"speed":3.53,"deg":57,"gust":3.34},"clouds":{"all":97},"dt":1736800751,"sys":{"type":2,"id":2085885,"country":"IT","sunrise":1736750717,"sunset":1736783189},"timezone":3600,"id":3174729,"name":"Lignano Sabbiadoro","cod":200}
+[2025-01-13 21:39:11] [INFO] City: Lignano Sabbiadoro
+[2025-01-13 21:39:11] [INFO] Temperature: 2.81
+[2025-01-13 21:39:11] [INFO] Feels like: -0.52
+[2025-01-13 21:39:11] [INFO] Temp min: 2.81
+[2025-01-13 21:39:11] [INFO] Temp max: 4.05
+[2025-01-13 21:39:11] [INFO] Pressure: 1036
+[2025-01-13 21:39:11] [INFO] Humidity: 59
+[2025-01-13 21:39:11] [INFO] Wind speed: 3.53
+[2025-01-13 21:39:11] [INFO] Weather condition: overcast clouds
+[2025-01-13 21:39:11] [DEBUG] Parsed city: Lignano Sabbiadoro
+[2025-01-13 21:39:11] [DEBUG] Parsed temperature: 2.81
+[2025-01-13 21:39:11] [DEBUG] Parsed weather condition: overcast clouds
+[2025-01-13 21:39:14] [DEBUG] Preparing to connect to server at localhost:4711
+[2025-01-13 21:39:14] [INFO] Connected to server.
+[2025-01-13 21:39:14] [INFO] Client connected.
+[2025-01-13 21:39:14] [DEBUG] Sending request to server: LIGNANO;metric
+[2025-01-13 21:39:14] [DEBUG] Received input from client: LIGNANO;metric
+[2025-01-13 21:39:14] [DEBUG] API Response: {"coord":{"lon":13.1481,"lat":45.6922},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04n"}],"base":"stations","main":{"temp":2.81,"feels_like":-0.52,"temp_min":2.81,"temp_max":4.05,"pressure":1036,"humidity":59,"sea_level":1036,"grnd_level":1035},"visibility":10000,"wind":{"speed":3.53,"deg":57,"gust":3.34},"clouds":{"all":97},"dt":1736800751,"sys":{"type":2,"id":2085885,"country":"IT","sunrise":1736750717,"sunset":1736783189},"timezone":3600,"id":3174729,"name":"Lignano Sabbiadoro","cod":200}
+[2025-01-13 21:39:14] [DEBUG] Sending API response to client.
+[2025-01-13 21:39:14] [INFO] City added to favorites: LIGNANO
+[2025-01-13 21:39:19] [DEBUG] Search starts.
+[2025-01-13 21:39:19] [DEBUG] Preparing to connect to server at localhost:4711
+[2025-01-13 21:39:19] [INFO] Connected to server.
+[2025-01-13 21:39:19] [INFO] Client connected.
+[2025-01-13 21:39:19] [DEBUG] Sending request to server: lignano;metric
+[2025-01-13 21:39:19] [DEBUG] Received input from client: lignano;metric
+[2025-01-13 21:39:19] [DEBUG] API Response: {"coord":{"lon":13.1481,"lat":45.6922},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04n"}],"base":"stations","main":{"temp":2.81,"feels_like":-0.52,"temp_min":2.81,"temp_max":4.05,"pressure":1036,"humidity":59,"sea_level":1036,"grnd_level":1035},"visibility":10000,"wind":{"speed":3.53,"deg":57,"gust":3.34},"clouds":{"all":97},"dt":1736800751,"sys":{"type":2,"id":2085885,"country":"IT","sunrise":1736750717,"sunset":1736783189},"timezone":3600,"id":3174729,"name":"Lignano Sabbiadoro","cod":200}
+[2025-01-13 21:39:19] [DEBUG] Sending API response to client.
+[2025-01-13 21:39:19] [DEBUG] Server response: {"coord":{"lon":13.1481,"lat":45.6922},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04n"}],"base":"stations","main":{"temp":2.81,"feels_like":-0.52,"temp_min":2.81,"temp_max":4.05,"pressure":1036,"humidity":59,"sea_level":1036,"grnd_level":1035},"visibility":10000,"wind":{"speed":3.53,"deg":57,"gust":3.34},"clouds":{"all":97},"dt":1736800751,"sys":{"type":2,"id":2085885,"country":"IT","sunrise":1736750717,"sunset":1736783189},"timezone":3600,"id":3174729,"name":"Lignano Sabbiadoro","cod":200}
+[2025-01-13 21:39:19] [INFO] Parsing JSON: {"coord":{"lon":13.1481,"lat":45.6922},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04n"}],"base":"stations","main":{"temp":2.81,"feels_like":-0.52,"temp_min":2.81,"temp_max":4.05,"pressure":1036,"humidity":59,"sea_level":1036,"grnd_level":1035},"visibility":10000,"wind":{"speed":3.53,"deg":57,"gust":3.34},"clouds":{"all":97},"dt":1736800751,"sys":{"type":2,"id":2085885,"country":"IT","sunrise":1736750717,"sunset":1736783189},"timezone":3600,"id":3174729,"name":"Lignano Sabbiadoro","cod":200}
+[2025-01-13 21:39:19] [INFO] City: Lignano Sabbiadoro
+[2025-01-13 21:39:19] [INFO] Temperature: 2.81
+[2025-01-13 21:39:19] [INFO] Feels like: -0.52
+[2025-01-13 21:39:19] [INFO] Temp min: 2.81
+[2025-01-13 21:39:19] [INFO] Temp max: 4.05
+[2025-01-13 21:39:19] [INFO] Pressure: 1036
+[2025-01-13 21:39:19] [INFO] Humidity: 59
+[2025-01-13 21:39:19] [INFO] Wind speed: 3.53
+[2025-01-13 21:39:19] [INFO] Weather condition: overcast clouds
+[2025-01-13 21:39:19] [DEBUG] Parsed city: Lignano Sabbiadoro
+[2025-01-13 21:39:19] [DEBUG] Parsed temperature: 2.81
+[2025-01-13 21:39:19] [DEBUG] Parsed weather condition: overcast clouds
+[2025-01-13 21:39:20] [DEBUG] Preparing to connect to server at localhost:4711
+[2025-01-13 21:39:20] [INFO] Client connected.
+[2025-01-13 21:39:20] [INFO] Connected to server.
+[2025-01-13 21:39:20] [DEBUG] Sending request to server: lignano;metric
+[2025-01-13 21:39:20] [DEBUG] Received input from client: lignano;metric
+[2025-01-13 21:39:20] [DEBUG] API Response: {"coord":{"lon":13.1481,"lat":45.6922},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04n"}],"base":"stations","main":{"temp":2.81,"feels_like":-0.52,"temp_min":2.81,"temp_max":4.05,"pressure":1036,"humidity":59,"sea_level":1036,"grnd_level":1035},"visibility":10000,"wind":{"speed":3.53,"deg":57,"gust":3.34},"clouds":{"all":97},"dt":1736800751,"sys":{"type":2,"id":2085885,"country":"IT","sunrise":1736750717,"sunset":1736783189},"timezone":3600,"id":3174729,"name":"Lignano Sabbiadoro","cod":200}
+[2025-01-13 21:39:20] [DEBUG] Sending API response to client.
+[2025-01-13 21:39:21] [ERROR] City already in favorites: lignano
