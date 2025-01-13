@@ -7,7 +7,19 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * The main entry point of the application.
+ * This class launches the weather application and sets up the initial scene.
+ */
 public class HelloApplication extends Application {
+
+    /**
+     * Initializes and sets up the main application stage.
+     * This method loads the FXML view, sets the scene, and displays the stage.
+     *
+     * @param stage The primary stage for this application.
+     * @throws IOException if the FXML file cannot be loaded.
+     */
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/org/example/project_9/fxml/hello-view.fxml"));

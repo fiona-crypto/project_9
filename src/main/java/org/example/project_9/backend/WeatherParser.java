@@ -3,19 +3,31 @@ package org.example.project_9.backend;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
+/**
+ * Parses weather data from a JSON API response and formats the output.
+ */
 public class WeatherParser {
 
+    /**
+     * Parses the weather data from the given API response.
+     * This method extracts various weather attributes from the JSON response,
+     * such as city name, temperature, wind speed, and weather conditions.
+     *
+     * @param apiResponse The API response in JSON format.
+     * @return A WeatherData object containing parsed weather information.
+     */
     public static WeatherData parseWeatherData(String apiResponse) {
         WeatherData weatherData = new WeatherData();
 
         try {
+            // Parse the JSON response to a JsonObject
             JsonObject json = JsonParser.parseString(apiResponse).getAsJsonObject();
 
-            // Debug: Zeige die gesamte JSON-Antwort
+            // Debug: Show the entire JSON response
             Logger.log(Logger.Level.DEBUG, "Parsing JSON: " + json);
 
 
-            // City
+            // Extract the city name
             if (json.has("name")) {
                 weatherData.setCity(json.get("name").getAsString());
                 Logger.log(Logger.Level.INFO, "City: " + weatherData.getCity());
@@ -23,7 +35,7 @@ public class WeatherParser {
                 Logger.log(Logger.Level.WARN, "Field 'name' not found in JSON.");
             }
 
-            // Main section
+            // Extract main section with temperature and related information
             if (json.has("main")) {
                 JsonObject main = json.getAsJsonObject("main");
 
@@ -48,7 +60,7 @@ public class WeatherParser {
                 Logger.log(Logger.Level.WARN, "Field 'main' not found in JSON.");
             }
 
-            // Wind section
+            // Extract wind data
             if (json.has("wind")) {
                 JsonObject wind = json.getAsJsonObject("wind");
 
@@ -58,7 +70,7 @@ public class WeatherParser {
                 Logger.log(Logger.Level.WARN, "Field 'wind' not found in JSON.");
             }
 
-            // Weather section
+            // Extract weather condition description
             if (json.has("weather")) {
                 weatherData.setWeatherCondition(
                         json.getAsJsonArray("weather")
@@ -76,28 +88,5 @@ public class WeatherParser {
         }
 
         return weatherData;
-    }
-
-    public static String formatWeatherData(WeatherData data) {
-        return String.format(
-                "City: %s%n" +
-                        "Temperature: %.2f °C%n" +
-                        "Weather Condition: %s%n" +
-                        "Feels like: %.2f °C%n" +
-                        "Min. Temperature: %.2f °C%n" +
-                        "Max. Temperature: %.2f °C%n" +
-                        "Air Pressure: %d hPa%n" +
-                        "Humidity: %d%%%n" +
-                        "Wind Speed: %.2f m/s%n",
-                data.getCity() != null ? data.getCity() : "N/A",
-                data.getTemperature(),
-                data.getWeatherCondition() != null ? data.getWeatherCondition() : "N/A",
-                data.getFeelsLike(),
-                data.getTempMin(),
-                data.getTempMax(),
-                data.getPressure(),
-                data.getHumidity(),
-                data.getWindSpeed()
-        );
     }
 }

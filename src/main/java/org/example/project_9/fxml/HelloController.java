@@ -9,52 +9,33 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import org.example.project_9.backend.*;
 
+
+/**
+ * Controller for the JavaFX weather application.
+ */
 public class HelloController {
 
-    @FXML
-    private TextField searchField;
-
-    @FXML
-    private Button searchButton;
-
-    @FXML
-    private Button addFavoriteButton;
-
-    @FXML
-    private ChoiceBox<String> favoritesChoiceBox;
-
-    @FXML
-    private ChoiceBox<String> unitChoiceBox; // Neue ChoiceBox für die Einheitenauswahl
-
-    @FXML
-    private Label cityLabel;
-
-    @FXML
-    private Label temperatureLabel;
-
-    @FXML
-    private Label weatherConditionLabel;
-
-    @FXML
-    private Label feelsLikeLabel;
-
-    @FXML
-    private Label maximumLabel;
-
-    @FXML
-    private Label minimumLabel;
-
-    @FXML
-    private Label airPressureLabel;
-
-    @FXML
-    private Label humidityLabel;
-
-    @FXML
-    private Label windSpeedLabel;
+    @FXML private TextField searchField;
+    @FXML private Button searchButton;
+    @FXML private Button addFavoriteButton;
+    @FXML private ChoiceBox<String> favoritesChoiceBox;
+    @FXML private ChoiceBox<String> unitChoiceBox;
+    @FXML private Label cityLabel;
+    @FXML private Label temperatureLabel;
+    @FXML private Label weatherConditionLabel;
+    @FXML private Label feelsLikeLabel;
+    @FXML private Label maximumLabel;
+    @FXML private Label minimumLabel;
+    @FXML private Label airPressureLabel;
+    @FXML private Label humidityLabel;
+    @FXML private Label windSpeedLabel;
 
     private FavoritesManager favoritesManager;
 
+    /**
+     * Initializes the controller. It sets up the favorite cities list,
+     * unit selection, and event handlers for buttons and choices.
+     */
     @FXML
     public void initialize() {
         initializeFavorites();
@@ -62,20 +43,32 @@ public class HelloController {
         initializeEventHandlers();
     }
 
+    /**
+     * Initializes the favorites list in the favorites ChoiceBox.
+     */
     private void initializeFavorites() {
         favoritesChoiceBox.getItems().setAll(FavoritesManager.getFavoriteCities());
     }
 
+    /**
+     * Initializes the unit choice box to select the first option by default (metric units).
+     */
     private void initializeUnitChoiceBox() {
-        unitChoiceBox.getSelectionModel().selectFirst(); // Standard auf metrisch
+        unitChoiceBox.getSelectionModel().selectFirst();
     }
 
+    /**
+     * Sets the event handlers for buttons and choice boxes.
+     */
     private void initializeEventHandlers() {
         searchButton.setOnAction(event -> fetchWeatherData());
         addFavoriteButton.setOnAction(event -> handleAddFavoriteCity());
         favoritesChoiceBox.setOnAction(event -> handleSelectFavoriteCity());
     }
 
+    /**
+     * Handles selecting a favorite city. Updates the search field and fetches data.
+     */
     private void handleSelectFavoriteCity() {
         String selectedCity = favoritesChoiceBox.getValue();
         if (selectedCity != null && !selectedCity.isEmpty()) {
@@ -84,86 +77,88 @@ public class HelloController {
         }
     }
 
+    /**
+     * Handles selecting a favorite city from the list.
+     * It updates the search field with the selected city and fetches its weather data.
+     */
     private void handleAddFavoriteCity() {
-        String city = searchField.getText().trim();  // Trim entfernt führende/folgende Leerzeichen
+        String city = searchField.getText().trim();  // Trim deletes leading Spaces
         if (city != null && !city.isEmpty()) {
             try {
-                // API-Anfrage senden
+                // send API-Anfrage
                 String serverResponse = TCPClient.getWeatherData(city, "metric");
                 JsonObject jsonResponse = JsonParser.parseString(serverResponse).getAsJsonObject();
 
-                // Überprüfen, ob die API eine Fehlermeldung zurückgibt, z. B. 404 - Stadt nicht gefunden
+                // Check if the API returns an error message
                 if (jsonResponse.has("cod") && jsonResponse.get("cod").getAsString().equals("404")) {
-                    // Stadt nicht gefunden, Fehler anzeigen
+                    // City not found, show error
                     ErrorHandler.showErrorAndLog("City not found.", "City not found: " + city);
                     return;
                 }
 
-                // Weitere zusätzliche Validierung, die geprüft werden kann, z. B. leere oder ungültige API-Daten
                 if (!jsonResponse.has("main")) {
                     ErrorHandler.showErrorAndLog("Invalid city data.", "Invalid city data: " + city);
                     return;
                 }
 
-                // Stadt ist gültig, nun sicherstellen, dass sie noch nicht zu den Favoriten hinzugefügt wurde
+                // City is valid, checking if it is already in favorites
                 if (FavoritesManager.addFavorite(city)) {
                     favoritesChoiceBox.getItems().add(city);
                     Logger.log(Logger.Level.INFO, "City added to favorites: " + city);
                 } else {
-                    // Stadt schon ein Favorit
+                    // City is already in favorites
                     ErrorHandler.showErrorAndLog("City already in favorites.", "City already in favorites: " + city);
                 }
             } catch (Exception e) {
-                // Fehlerfall, wenn die API-Anfrage fehlschlägt
+                // Error if API request fails
                 ErrorHandler.showErrorAndLog("Error verifying city.", "Error verifying city: " + city + ", Message: " + e.getMessage());
             }
         } else {
-            // Überprüfen, ob die Stadt ungültig (z. B. leer) ist
+            // Check if city is invalid
             ErrorHandler.showErrorAndLog("Invalid city name.", "City name is empty or invalid: " + city);
         }
     }
 
 
-
+    /**
+     * Fetches weather data for the city entered in the search field.
+     * This method validates the city input and retrieves data from the server.
+     */
     private void fetchWeatherData() {
         Logger.log(Logger.Level.DEBUG, "Search starts.");
 
         String city = searchField.getText();
 
-        // Erste Überprüfung der Eingabe (ungültige Stadtnamen erkennen)
+        // Validate city input
         if (city == null || city.isEmpty() || !isValidCityName(city)) {
-            Platform.runLater(() -> {
-                cityLabel.setText("Invalid city name.");
-            });
+            Platform.runLater(() -> cityLabel.setText("Invalid city name."));
             ErrorHandler.showErrorAndLog("Invalid city name.", "Invalid city name: " + city);
             return;
         }
 
-        // Einheit aus der ChoiceBox auswählen
+        // Select the unit from the ChoiceBox (metric or imperial)
         String selectedUnit = unitChoiceBox.getSelectionModel().getSelectedIndex() == 0 ? "metric" : "imperial";
 
         try {
-            // TCPClient aufrufen, um Daten vom Server abzurufen
+            // Send the request to fetch weather data from the server
             String serverResponse = TCPClient.getWeatherData(city, selectedUnit);
 
-            // Debugging-Ausgabe
             Logger.log(Logger.Level.DEBUG, "Server response: " + serverResponse);
 
             if (serverResponse == null || serverResponse.isEmpty()) {
-                Platform.runLater(() -> {
-                    cityLabel.setText("No data found.");
-                });
+                Platform.runLater(() -> cityLabel.setText("No data found."));
                 ErrorHandler.showErrorAndLog("No data from server.", "No response from server.");
                 return;
             }
 
-            // API-Antwort überprüfen (z.B. '404 - Stadt nicht gefunden')
+            // Parse the server's JSON response
             JsonObject jsonResponse = JsonParser.parseString(serverResponse).getAsJsonObject();
 
-            // Einheitenspezifische Labels
+            // Set the correct units for temperature and wind speed
             String tempUnit = selectedUnit.equals("metric") ? "°C" : "°F";
             String windUnit = selectedUnit.equals("metric") ? "m/s" : "mph";
 
+            // If city is not found, show an error message
             if (jsonResponse.has("error") && !jsonResponse.get("error").getAsString().isEmpty()){
                 Platform.runLater(() -> {
                     cityLabel.setText("City not found");
@@ -184,7 +179,7 @@ public class HelloController {
                 return;
             }
 
-            // Wetterdaten parsen
+            // Parse weather data into a WeatherData object
             WeatherData weatherData = WeatherParser.parseWeatherData(serverResponse);
 
             // Debugging-Ausgabe
@@ -193,7 +188,7 @@ public class HelloController {
             Logger.log(Logger.Level.DEBUG, "Parsed weather condition: " + weatherData.getWeatherCondition());
 
 
-            // GUI-Elemente aktualisieren
+            // Update the GUI with the fetched weather data
             Platform.runLater(() -> {
                 cityLabel.setText(weatherData.getCity());
                 temperatureLabel.setText(String.format("%.2f %s", weatherData.getTemperature(), tempUnit));
@@ -207,17 +202,27 @@ public class HelloController {
             });
 
         } catch (Exception e) {
-            Platform.runLater(() -> {
-                cityLabel.setText("Error: " + e.getMessage());
-            });
+            Platform.runLater(() -> cityLabel.setText("Error: " + e.getMessage()));
             ErrorHandler.showErrorAndLog("Error fetching weather data: " + e.getMessage(), "Error fetching weather data: " + e.getMessage());
         }
     }
 
+    /**
+     * Validates whether the given city name matches the required format.
+     *
+     * @param cityName The city name to validate.
+     * @return True if the city name is valid, false otherwise.
+     */
     private boolean isValidCityName(String cityName) {
         return cityName != null && cityName.matches("[a-zA-ZäöüÄÖÜß\\- ']+") && cityName.length() <= 100;
     }
 
+    /**
+     * Resets all weather-related labels to default values.
+     *
+     * @param tempUnit The unit for temperature (e.g., '°C' or '°F').
+     * @param windUnit The unit for wind speed (e.g., 'm/s' or 'mph').
+     */
     private void resetLabels( String tempUnit, String windUnit) {
         temperatureLabel.setText(String.format(" - %s", tempUnit));
         weatherConditionLabel.setText(" - ");
