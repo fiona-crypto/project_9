@@ -398,3 +398,222 @@
 [2025-01-13 19:20:28] [ERROR] Error retrieving data or invalid response.
 [2025-01-13 19:20:28] [DEBUG] Server response: {"error": "Error retrieving data or invalid response."}
 [2025-01-13 19:20:29] [ERROR] City not found: fdjksfbhd
+[2025-01-13 19:52:35] [INFO] Server started and waiting for connections ...
+[2025-01-13 19:52:37] [DEBUG] Search starts.
+[2025-01-13 19:52:37] [DEBUG] Preparing to connect to server at localhost:4711
+[2025-01-13 19:52:37] [INFO] Connected to server.
+[2025-01-13 19:52:37] [INFO] Client connected.
+[2025-01-13 19:52:37] [DEBUG] Sending request to server: wien;metric
+[2025-01-13 19:52:37] [DEBUG] Received input from client: wien;metric
+[2025-01-13 19:52:37] [DEBUG] API Response: {"coord":{"lon":16.3721,"lat":48.2085},"weather":[{"id":803,"main":"Clouds","description":"broken clouds","icon":"04n"}],"base":"stations","main":{"temp":0.32,"feels_like":-3.19,"temp_min":-0.75,"temp_max":1.09,"pressure":1042,"humidity":71,"sea_level":1042,"grnd_level":1013},"visibility":10000,"wind":{"speed":3.09,"deg":340},"clouds":{"all":75},"dt":1736793815,"sys":{"type":2,"id":2037452,"country":"AT","sunrise":1736750483,"sunset":1736781875},"timezone":3600,"id":2761369,"name":"Vienna","cod":200}
+[2025-01-13 19:52:37] [DEBUG] Sending API response to client.
+[2025-01-13 19:52:37] [DEBUG] Server response: {"coord":{"lon":16.3721,"lat":48.2085},"weather":[{"id":803,"main":"Clouds","description":"broken clouds","icon":"04n"}],"base":"stations","main":{"temp":0.32,"feels_like":-3.19,"temp_min":-0.75,"temp_max":1.09,"pressure":1042,"humidity":71,"sea_level":1042,"grnd_level":1013},"visibility":10000,"wind":{"speed":3.09,"deg":340},"clouds":{"all":75},"dt":1736793815,"sys":{"type":2,"id":2037452,"country":"AT","sunrise":1736750483,"sunset":1736781875},"timezone":3600,"id":2761369,"name":"Vienna","cod":200}
+[2025-01-13 19:52:37] [INFO] Parsing JSON: {"coord":{"lon":16.3721,"lat":48.2085},"weather":[{"id":803,"main":"Clouds","description":"broken clouds","icon":"04n"}],"base":"stations","main":{"temp":0.32,"feels_like":-3.19,"temp_min":-0.75,"temp_max":1.09,"pressure":1042,"humidity":71,"sea_level":1042,"grnd_level":1013},"visibility":10000,"wind":{"speed":3.09,"deg":340},"clouds":{"all":75},"dt":1736793815,"sys":{"type":2,"id":2037452,"country":"AT","sunrise":1736750483,"sunset":1736781875},"timezone":3600,"id":2761369,"name":"Vienna","cod":200}
+[2025-01-13 19:52:37] [INFO] City: Vienna
+[2025-01-13 19:52:37] [INFO] Temperature: 0.32
+[2025-01-13 19:52:37] [INFO] Feels like: -3.19
+[2025-01-13 19:52:37] [INFO] Temp min: -0.75
+[2025-01-13 19:52:37] [INFO] Temp max: 1.09
+[2025-01-13 19:52:37] [INFO] Pressure: 1042
+[2025-01-13 19:52:37] [INFO] Humidity: 71
+[2025-01-13 19:52:37] [INFO] Wind speed: 3.09
+[2025-01-13 19:52:37] [INFO] Weather condition: broken clouds
+[2025-01-13 19:52:37] [DEBUG] Parsed city: Vienna
+[2025-01-13 19:52:37] [DEBUG] Parsed temperature: 0.32
+[2025-01-13 19:52:37] [DEBUG] Parsed weather condition: broken clouds
+[2025-01-13 19:52:47] [DEBUG] Search starts.
+[2025-01-13 19:52:47] [DEBUG] Preparing to connect to server at localhost:4711
+[2025-01-13 19:52:47] [INFO] Connected to server.
+[2025-01-13 19:52:47] [INFO] Client connected.
+[2025-01-13 19:52:47] [DEBUG] Sending request to server: Paris;metric
+[2025-01-13 19:52:47] [DEBUG] Received input from client: Paris;metric
+[2025-01-13 19:52:47] [DEBUG] API Response: {"coord":{"lon":2.3488,"lat":48.8534},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01n"}],"base":"stations","main":{"temp":0.28,"feels_like":-3.24,"temp_min":-0.53,"temp_max":1.28,"pressure":1039,"humidity":78,"sea_level":1039,"grnd_level":1029},"visibility":10000,"wind":{"speed":3.09,"deg":50},"clouds":{"all":0},"dt":1736794302,"sys":{"type":1,"id":6550,"country":"FR","sunrise":1736753996,"sunset":1736785096},"timezone":3600,"id":2988507,"name":"Paris","cod":200}
+[2025-01-13 19:52:47] [DEBUG] Sending API response to client.
+[2025-01-13 19:52:47] [DEBUG] Server response: {"coord":{"lon":2.3488,"lat":48.8534},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01n"}],"base":"stations","main":{"temp":0.28,"feels_like":-3.24,"temp_min":-0.53,"temp_max":1.28,"pressure":1039,"humidity":78,"sea_level":1039,"grnd_level":1029},"visibility":10000,"wind":{"speed":3.09,"deg":50},"clouds":{"all":0},"dt":1736794302,"sys":{"type":1,"id":6550,"country":"FR","sunrise":1736753996,"sunset":1736785096},"timezone":3600,"id":2988507,"name":"Paris","cod":200}
+[2025-01-13 19:52:47] [INFO] Parsing JSON: {"coord":{"lon":2.3488,"lat":48.8534},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01n"}],"base":"stations","main":{"temp":0.28,"feels_like":-3.24,"temp_min":-0.53,"temp_max":1.28,"pressure":1039,"humidity":78,"sea_level":1039,"grnd_level":1029},"visibility":10000,"wind":{"speed":3.09,"deg":50},"clouds":{"all":0},"dt":1736794302,"sys":{"type":1,"id":6550,"country":"FR","sunrise":1736753996,"sunset":1736785096},"timezone":3600,"id":2988507,"name":"Paris","cod":200}
+[2025-01-13 19:52:47] [INFO] City: Paris
+[2025-01-13 19:52:47] [INFO] Temperature: 0.28
+[2025-01-13 19:52:47] [INFO] Feels like: -3.24
+[2025-01-13 19:52:47] [INFO] Temp min: -0.53
+[2025-01-13 19:52:47] [INFO] Temp max: 1.28
+[2025-01-13 19:52:47] [INFO] Pressure: 1039
+[2025-01-13 19:52:47] [INFO] Humidity: 78
+[2025-01-13 19:52:47] [INFO] Wind speed: 3.09
+[2025-01-13 19:52:47] [INFO] Weather condition: clear sky
+[2025-01-13 19:52:47] [DEBUG] Parsed city: Paris
+[2025-01-13 19:52:47] [DEBUG] Parsed temperature: 0.28
+[2025-01-13 19:52:47] [DEBUG] Parsed weather condition: clear sky
+[2025-01-13 19:52:52] [DEBUG] Search starts.
+[2025-01-13 19:52:52] [DEBUG] Preparing to connect to server at localhost:4711
+[2025-01-13 19:52:52] [INFO] Connected to server.
+[2025-01-13 19:52:52] [INFO] Client connected.
+[2025-01-13 19:52:52] [DEBUG] Sending request to server: lienz;metric
+[2025-01-13 19:52:52] [DEBUG] Received input from client: lienz;metric
+[2025-01-13 19:52:52] [DEBUG] API Response: {"coord":{"lon":12.769,"lat":46.8289},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01n"}],"base":"stations","main":{"temp":-6.31,"feels_like":-10.62,"temp_min":-6.31,"temp_max":-6.31,"pressure":1042,"humidity":65,"sea_level":1042,"grnd_level":830},"visibility":10000,"wind":{"speed":2.6,"deg":347,"gust":2.01},"clouds":{"all":8},"dt":1736794372,"sys":{"country":"AT","sunrise":1736751045,"sunset":1736783044},"timezone":3600,"id":2772505,"name":"Lienz","cod":200}
+[2025-01-13 19:52:52] [DEBUG] Sending API response to client.
+[2025-01-13 19:52:52] [DEBUG] Server response: {"coord":{"lon":12.769,"lat":46.8289},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01n"}],"base":"stations","main":{"temp":-6.31,"feels_like":-10.62,"temp_min":-6.31,"temp_max":-6.31,"pressure":1042,"humidity":65,"sea_level":1042,"grnd_level":830},"visibility":10000,"wind":{"speed":2.6,"deg":347,"gust":2.01},"clouds":{"all":8},"dt":1736794372,"sys":{"country":"AT","sunrise":1736751045,"sunset":1736783044},"timezone":3600,"id":2772505,"name":"Lienz","cod":200}
+[2025-01-13 19:52:52] [INFO] Parsing JSON: {"coord":{"lon":12.769,"lat":46.8289},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01n"}],"base":"stations","main":{"temp":-6.31,"feels_like":-10.62,"temp_min":-6.31,"temp_max":-6.31,"pressure":1042,"humidity":65,"sea_level":1042,"grnd_level":830},"visibility":10000,"wind":{"speed":2.6,"deg":347,"gust":2.01},"clouds":{"all":8},"dt":1736794372,"sys":{"country":"AT","sunrise":1736751045,"sunset":1736783044},"timezone":3600,"id":2772505,"name":"Lienz","cod":200}
+[2025-01-13 19:52:52] [INFO] City: Lienz
+[2025-01-13 19:52:52] [INFO] Temperature: -6.31
+[2025-01-13 19:52:52] [INFO] Feels like: -10.62
+[2025-01-13 19:52:52] [INFO] Temp min: -6.31
+[2025-01-13 19:52:52] [INFO] Temp max: -6.31
+[2025-01-13 19:52:52] [INFO] Pressure: 1042
+[2025-01-13 19:52:52] [INFO] Humidity: 65
+[2025-01-13 19:52:52] [INFO] Wind speed: 2.6
+[2025-01-13 19:52:52] [INFO] Weather condition: clear sky
+[2025-01-13 19:52:52] [DEBUG] Parsed city: Lienz
+[2025-01-13 19:52:52] [DEBUG] Parsed temperature: -6.31
+[2025-01-13 19:52:52] [DEBUG] Parsed weather condition: clear sky
+[2025-01-13 19:53:00] [DEBUG] Search starts.
+[2025-01-13 19:53:00] [DEBUG] Preparing to connect to server at localhost:4711
+[2025-01-13 19:53:00] [INFO] Connected to server.
+[2025-01-13 19:53:00] [INFO] Client connected.
+[2025-01-13 19:53:00] [DEBUG] Sending request to server: paris;metric
+[2025-01-13 19:53:00] [DEBUG] Received input from client: paris;metric
+[2025-01-13 19:53:00] [DEBUG] API Response: {"coord":{"lon":2.3488,"lat":48.8534},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01n"}],"base":"stations","main":{"temp":0.28,"feels_like":-3.24,"temp_min":-0.53,"temp_max":1.28,"pressure":1039,"humidity":78,"sea_level":1039,"grnd_level":1029},"visibility":10000,"wind":{"speed":3.09,"deg":50},"clouds":{"all":0},"dt":1736794302,"sys":{"type":1,"id":6550,"country":"FR","sunrise":1736753996,"sunset":1736785096},"timezone":3600,"id":2988507,"name":"Paris","cod":200}
+[2025-01-13 19:53:00] [DEBUG] Sending API response to client.
+[2025-01-13 19:53:00] [DEBUG] Server response: {"coord":{"lon":2.3488,"lat":48.8534},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01n"}],"base":"stations","main":{"temp":0.28,"feels_like":-3.24,"temp_min":-0.53,"temp_max":1.28,"pressure":1039,"humidity":78,"sea_level":1039,"grnd_level":1029},"visibility":10000,"wind":{"speed":3.09,"deg":50},"clouds":{"all":0},"dt":1736794302,"sys":{"type":1,"id":6550,"country":"FR","sunrise":1736753996,"sunset":1736785096},"timezone":3600,"id":2988507,"name":"Paris","cod":200}
+[2025-01-13 19:53:00] [INFO] Parsing JSON: {"coord":{"lon":2.3488,"lat":48.8534},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01n"}],"base":"stations","main":{"temp":0.28,"feels_like":-3.24,"temp_min":-0.53,"temp_max":1.28,"pressure":1039,"humidity":78,"sea_level":1039,"grnd_level":1029},"visibility":10000,"wind":{"speed":3.09,"deg":50},"clouds":{"all":0},"dt":1736794302,"sys":{"type":1,"id":6550,"country":"FR","sunrise":1736753996,"sunset":1736785096},"timezone":3600,"id":2988507,"name":"Paris","cod":200}
+[2025-01-13 19:53:00] [INFO] City: Paris
+[2025-01-13 19:53:00] [INFO] Temperature: 0.28
+[2025-01-13 19:53:00] [INFO] Feels like: -3.24
+[2025-01-13 19:53:00] [INFO] Temp min: -0.53
+[2025-01-13 19:53:00] [INFO] Temp max: 1.28
+[2025-01-13 19:53:00] [INFO] Pressure: 1039
+[2025-01-13 19:53:00] [INFO] Humidity: 78
+[2025-01-13 19:53:00] [INFO] Wind speed: 3.09
+[2025-01-13 19:53:00] [INFO] Weather condition: clear sky
+[2025-01-13 19:53:00] [DEBUG] Parsed city: Paris
+[2025-01-13 19:53:00] [DEBUG] Parsed temperature: 0.28
+[2025-01-13 19:53:00] [DEBUG] Parsed weather condition: clear sky
+[2025-01-13 19:53:09] [DEBUG] Search starts.
+[2025-01-13 19:53:09] [DEBUG] Preparing to connect to server at localhost:4711
+[2025-01-13 19:53:09] [INFO] Client connected.
+[2025-01-13 19:53:09] [INFO] Connected to server.
+[2025-01-13 19:53:09] [DEBUG] Sending request to server: new+york;metric
+[2025-01-13 19:53:09] [DEBUG] Received input from client: new+york;metric
+[2025-01-13 19:53:09] [DEBUG] API Response: {"coord":{"lon":-74.006,"lat":40.7143},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04d"}],"base":"stations","main":{"temp":4.5,"feels_like":0.64,"temp_min":3.86,"temp_max":5.73,"pressure":1012,"humidity":54,"sea_level":1012,"grnd_level":1011},"visibility":10000,"wind":{"speed":5.14,"deg":240},"clouds":{"all":100},"dt":1736793974,"sys":{"type":1,"id":4610,"country":"US","sunrise":1736770710,"sunset":1736805042},"timezone":-18000,"id":5128581,"name":"New York","cod":200}
+[2025-01-13 19:53:09] [DEBUG] Sending API response to client.
+[2025-01-13 19:53:09] [DEBUG] Server response: {"coord":{"lon":-74.006,"lat":40.7143},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04d"}],"base":"stations","main":{"temp":4.5,"feels_like":0.64,"temp_min":3.86,"temp_max":5.73,"pressure":1012,"humidity":54,"sea_level":1012,"grnd_level":1011},"visibility":10000,"wind":{"speed":5.14,"deg":240},"clouds":{"all":100},"dt":1736793974,"sys":{"type":1,"id":4610,"country":"US","sunrise":1736770710,"sunset":1736805042},"timezone":-18000,"id":5128581,"name":"New York","cod":200}
+[2025-01-13 19:53:09] [INFO] Parsing JSON: {"coord":{"lon":-74.006,"lat":40.7143},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04d"}],"base":"stations","main":{"temp":4.5,"feels_like":0.64,"temp_min":3.86,"temp_max":5.73,"pressure":1012,"humidity":54,"sea_level":1012,"grnd_level":1011},"visibility":10000,"wind":{"speed":5.14,"deg":240},"clouds":{"all":100},"dt":1736793974,"sys":{"type":1,"id":4610,"country":"US","sunrise":1736770710,"sunset":1736805042},"timezone":-18000,"id":5128581,"name":"New York","cod":200}
+[2025-01-13 19:53:09] [INFO] City: New York
+[2025-01-13 19:53:09] [INFO] Temperature: 4.5
+[2025-01-13 19:53:09] [INFO] Feels like: 0.64
+[2025-01-13 19:53:09] [INFO] Temp min: 3.86
+[2025-01-13 19:53:09] [INFO] Temp max: 5.73
+[2025-01-13 19:53:09] [INFO] Pressure: 1012
+[2025-01-13 19:53:09] [INFO] Humidity: 54
+[2025-01-13 19:53:09] [INFO] Wind speed: 5.14
+[2025-01-13 19:53:09] [INFO] Weather condition: overcast clouds
+[2025-01-13 19:53:09] [DEBUG] Parsed city: New York
+[2025-01-13 19:53:09] [DEBUG] Parsed temperature: 4.5
+[2025-01-13 19:53:09] [DEBUG] Parsed weather condition: overcast clouds
+[2025-01-13 19:55:46] [INFO] Server started and waiting for connections ...
+[2025-01-13 19:55:56] [DEBUG] Search starts.
+[2025-01-13 19:55:56] [DEBUG] Preparing to connect to server at localhost:4711
+[2025-01-13 19:55:56] [INFO] Connected to server.
+[2025-01-13 19:55:56] [INFO] Client connected.
+[2025-01-13 19:55:56] [DEBUG] Sending request to server: D%C3%B6lsach;metric
+[2025-01-13 19:55:56] [DEBUG] Received input from client: D%C3%B6lsach;metric
+[2025-01-13 19:55:56] [DEBUG] API Response: {"coord":{"lon":12.8381,"lat":46.8489},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01n"}],"base":"stations","main":{"temp":-9.25,"feels_like":-14.17,"temp_min":-9.25,"temp_max":-9.25,"pressure":1042,"humidity":66,"sea_level":1042,"grnd_level":834},"visibility":10000,"wind":{"speed":2.64,"deg":349,"gust":1.97},"clouds":{"all":8},"dt":1736794556,"sys":{"country":"AT","sunrise":1736751032,"sunset":1736783023},"timezone":3600,"id":7872591,"name":"Dölsach","cod":200}
+[2025-01-13 19:55:56] [DEBUG] Sending API response to client.
+[2025-01-13 19:55:56] [DEBUG] Server response: {"coord":{"lon":12.8381,"lat":46.8489},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01n"}],"base":"stations","main":{"temp":-9.25,"feels_like":-14.17,"temp_min":-9.25,"temp_max":-9.25,"pressure":1042,"humidity":66,"sea_level":1042,"grnd_level":834},"visibility":10000,"wind":{"speed":2.64,"deg":349,"gust":1.97},"clouds":{"all":8},"dt":1736794556,"sys":{"country":"AT","sunrise":1736751032,"sunset":1736783023},"timezone":3600,"id":7872591,"name":"Dölsach","cod":200}
+[2025-01-13 19:55:56] [INFO] Parsing JSON: {"coord":{"lon":12.8381,"lat":46.8489},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01n"}],"base":"stations","main":{"temp":-9.25,"feels_like":-14.17,"temp_min":-9.25,"temp_max":-9.25,"pressure":1042,"humidity":66,"sea_level":1042,"grnd_level":834},"visibility":10000,"wind":{"speed":2.64,"deg":349,"gust":1.97},"clouds":{"all":8},"dt":1736794556,"sys":{"country":"AT","sunrise":1736751032,"sunset":1736783023},"timezone":3600,"id":7872591,"name":"Dölsach","cod":200}
+[2025-01-13 19:55:56] [INFO] City: Dölsach
+[2025-01-13 19:55:56] [INFO] Temperature: -9.25
+[2025-01-13 19:55:56] [INFO] Feels like: -14.17
+[2025-01-13 19:55:56] [INFO] Temp min: -9.25
+[2025-01-13 19:55:56] [INFO] Temp max: -9.25
+[2025-01-13 19:55:56] [INFO] Pressure: 1042
+[2025-01-13 19:55:56] [INFO] Humidity: 66
+[2025-01-13 19:55:56] [INFO] Wind speed: 2.64
+[2025-01-13 19:55:56] [INFO] Weather condition: clear sky
+[2025-01-13 19:55:56] [DEBUG] Parsed city: Dölsach
+[2025-01-13 19:55:56] [DEBUG] Parsed temperature: -9.25
+[2025-01-13 19:55:56] [DEBUG] Parsed weather condition: clear sky
+[2025-01-13 19:56:01] [DEBUG] Search starts.
+[2025-01-13 19:56:01] [DEBUG] Preparing to connect to server at localhost:4711
+[2025-01-13 19:56:01] [INFO] Connected to server.
+[2025-01-13 19:56:01] [INFO] Client connected.
+[2025-01-13 19:56:01] [DEBUG] Sending request to server: Lienz;metric
+[2025-01-13 19:56:01] [DEBUG] Received input from client: Lienz;metric
+[2025-01-13 19:56:01] [DEBUG] API Response: {"coord":{"lon":12.769,"lat":46.8289},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01n"}],"base":"stations","main":{"temp":-6.31,"feels_like":-10.62,"temp_min":-6.31,"temp_max":-6.31,"pressure":1042,"humidity":65,"sea_level":1042,"grnd_level":830},"visibility":10000,"wind":{"speed":2.6,"deg":347,"gust":2.01},"clouds":{"all":8},"dt":1736794372,"sys":{"country":"AT","sunrise":1736751045,"sunset":1736783044},"timezone":3600,"id":2772505,"name":"Lienz","cod":200}
+[2025-01-13 19:56:01] [DEBUG] Sending API response to client.
+[2025-01-13 19:56:01] [DEBUG] Server response: {"coord":{"lon":12.769,"lat":46.8289},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01n"}],"base":"stations","main":{"temp":-6.31,"feels_like":-10.62,"temp_min":-6.31,"temp_max":-6.31,"pressure":1042,"humidity":65,"sea_level":1042,"grnd_level":830},"visibility":10000,"wind":{"speed":2.6,"deg":347,"gust":2.01},"clouds":{"all":8},"dt":1736794372,"sys":{"country":"AT","sunrise":1736751045,"sunset":1736783044},"timezone":3600,"id":2772505,"name":"Lienz","cod":200}
+[2025-01-13 19:56:01] [INFO] Parsing JSON: {"coord":{"lon":12.769,"lat":46.8289},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01n"}],"base":"stations","main":{"temp":-6.31,"feels_like":-10.62,"temp_min":-6.31,"temp_max":-6.31,"pressure":1042,"humidity":65,"sea_level":1042,"grnd_level":830},"visibility":10000,"wind":{"speed":2.6,"deg":347,"gust":2.01},"clouds":{"all":8},"dt":1736794372,"sys":{"country":"AT","sunrise":1736751045,"sunset":1736783044},"timezone":3600,"id":2772505,"name":"Lienz","cod":200}
+[2025-01-13 19:56:01] [INFO] City: Lienz
+[2025-01-13 19:56:01] [INFO] Temperature: -6.31
+[2025-01-13 19:56:01] [INFO] Feels like: -10.62
+[2025-01-13 19:56:01] [INFO] Temp min: -6.31
+[2025-01-13 19:56:01] [INFO] Temp max: -6.31
+[2025-01-13 19:56:01] [INFO] Pressure: 1042
+[2025-01-13 19:56:01] [INFO] Humidity: 65
+[2025-01-13 19:56:01] [INFO] Wind speed: 2.6
+[2025-01-13 19:56:01] [INFO] Weather condition: clear sky
+[2025-01-13 19:56:01] [DEBUG] Parsed city: Lienz
+[2025-01-13 19:56:01] [DEBUG] Parsed temperature: -6.31
+[2025-01-13 19:56:01] [DEBUG] Parsed weather condition: clear sky
+[2025-01-13 19:56:04] [DEBUG] Preparing to connect to server at localhost:4711
+[2025-01-13 19:56:04] [INFO] Connected to server.
+[2025-01-13 19:56:04] [INFO] Client connected.
+[2025-01-13 19:56:04] [DEBUG] Sending request to server: Lienz;metric
+[2025-01-13 19:56:04] [DEBUG] Received input from client: Lienz;metric
+[2025-01-13 19:56:04] [DEBUG] API Response: {"coord":{"lon":12.769,"lat":46.8289},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01n"}],"base":"stations","main":{"temp":-6.31,"feels_like":-10.62,"temp_min":-6.31,"temp_max":-6.31,"pressure":1042,"humidity":65,"sea_level":1042,"grnd_level":830},"visibility":10000,"wind":{"speed":2.6,"deg":347,"gust":2.01},"clouds":{"all":8},"dt":1736794372,"sys":{"country":"AT","sunrise":1736751045,"sunset":1736783044},"timezone":3600,"id":2772505,"name":"Lienz","cod":200}
+[2025-01-13 19:56:04] [DEBUG] Sending API response to client.
+[2025-01-13 19:56:04] [INFO] City added to favorites: Lienz
+[2025-01-13 19:56:08] [DEBUG] Search starts.
+[2025-01-13 19:56:08] [DEBUG] Preparing to connect to server at localhost:4711
+[2025-01-13 19:56:08] [INFO] Connected to server.
+[2025-01-13 19:56:08] [INFO] Client connected.
+[2025-01-13 19:56:08] [DEBUG] Sending request to server: Wien;metric
+[2025-01-13 19:56:08] [DEBUG] Received input from client: Wien;metric
+[2025-01-13 19:56:08] [DEBUG] API Response: {"coord":{"lon":16.3721,"lat":48.2085},"weather":[{"id":803,"main":"Clouds","description":"broken clouds","icon":"04n"}],"base":"stations","main":{"temp":0.32,"feels_like":-3.19,"temp_min":-0.75,"temp_max":1.09,"pressure":1042,"humidity":71,"sea_level":1042,"grnd_level":1013},"visibility":10000,"wind":{"speed":3.09,"deg":340},"clouds":{"all":75},"dt":1736793815,"sys":{"type":2,"id":2037452,"country":"AT","sunrise":1736750483,"sunset":1736781875},"timezone":3600,"id":2761369,"name":"Vienna","cod":200}
+[2025-01-13 19:56:08] [DEBUG] Sending API response to client.
+[2025-01-13 19:56:08] [DEBUG] Server response: {"coord":{"lon":16.3721,"lat":48.2085},"weather":[{"id":803,"main":"Clouds","description":"broken clouds","icon":"04n"}],"base":"stations","main":{"temp":0.32,"feels_like":-3.19,"temp_min":-0.75,"temp_max":1.09,"pressure":1042,"humidity":71,"sea_level":1042,"grnd_level":1013},"visibility":10000,"wind":{"speed":3.09,"deg":340},"clouds":{"all":75},"dt":1736793815,"sys":{"type":2,"id":2037452,"country":"AT","sunrise":1736750483,"sunset":1736781875},"timezone":3600,"id":2761369,"name":"Vienna","cod":200}
+[2025-01-13 19:56:08] [INFO] Parsing JSON: {"coord":{"lon":16.3721,"lat":48.2085},"weather":[{"id":803,"main":"Clouds","description":"broken clouds","icon":"04n"}],"base":"stations","main":{"temp":0.32,"feels_like":-3.19,"temp_min":-0.75,"temp_max":1.09,"pressure":1042,"humidity":71,"sea_level":1042,"grnd_level":1013},"visibility":10000,"wind":{"speed":3.09,"deg":340},"clouds":{"all":75},"dt":1736793815,"sys":{"type":2,"id":2037452,"country":"AT","sunrise":1736750483,"sunset":1736781875},"timezone":3600,"id":2761369,"name":"Vienna","cod":200}
+[2025-01-13 19:56:08] [INFO] City: Vienna
+[2025-01-13 19:56:08] [INFO] Temperature: 0.32
+[2025-01-13 19:56:08] [INFO] Feels like: -3.19
+[2025-01-13 19:56:08] [INFO] Temp min: -0.75
+[2025-01-13 19:56:08] [INFO] Temp max: 1.09
+[2025-01-13 19:56:08] [INFO] Pressure: 1042
+[2025-01-13 19:56:08] [INFO] Humidity: 71
+[2025-01-13 19:56:08] [INFO] Wind speed: 3.09
+[2025-01-13 19:56:08] [INFO] Weather condition: broken clouds
+[2025-01-13 19:56:08] [DEBUG] Parsed city: Vienna
+[2025-01-13 19:56:08] [DEBUG] Parsed temperature: 0.32
+[2025-01-13 19:56:08] [DEBUG] Parsed weather condition: broken clouds
+[2025-01-13 19:56:29] [DEBUG] Search starts.
+[2025-01-13 19:56:29] [DEBUG] Preparing to connect to server at localhost:4711
+[2025-01-13 19:56:29] [INFO] Connected to server.
+[2025-01-13 19:56:29] [INFO] Client connected.
+[2025-01-13 19:56:29] [DEBUG] Sending request to server: fghfdjks;metric
+[2025-01-13 19:56:29] [DEBUG] Received input from client: fghfdjks;metric
+[2025-01-13 19:56:29] [ERROR] Error retrieving data: https://api.openweathermap.org/data/2.5/weather?q=fghfdjks&appid=2846e091909907b38614eb85000db992&units=metric
+[2025-01-13 19:56:29] [ERROR] Error retrieving data or invalid response.
+[2025-01-13 19:56:29] [DEBUG] Server response: {"error": "Error retrieving data or invalid response."}
+[2025-01-13 19:56:30] [ERROR] City not found: fghfdjks
+[2025-01-13 20:01:18] [INFO] Server started and waiting for connections ...
+[2025-01-13 20:06:08] [DEBUG] Search starts.
+[2025-01-13 20:06:08] [DEBUG] Preparing to connect to server at localhost:4711
+[2025-01-13 20:06:08] [INFO] Connected to server.
+[2025-01-13 20:06:08] [DEBUG] Sending request to server: d%C3%B6lsach;metric
+[2025-01-13 20:06:08] [INFO] Client connected.
+[2025-01-13 20:06:08] [DEBUG] Received input from client: d%C3%B6lsach;metric
+[2025-01-13 20:06:08] [DEBUG] API Response: {"coord":{"lon":12.8381,"lat":46.8489},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01n"}],"base":"stations","main":{"temp":-9.25,"feels_like":-14.17,"temp_min":-9.25,"temp_max":-9.25,"pressure":1042,"humidity":66,"sea_level":1042,"grnd_level":834},"visibility":10000,"wind":{"speed":2.64,"deg":349,"gust":1.97},"clouds":{"all":8},"dt":1736795169,"sys":{"country":"AT","sunrise":1736751032,"sunset":1736783023},"timezone":3600,"id":7872591,"name":"Dölsach","cod":200}
+[2025-01-13 20:06:08] [DEBUG] Sending API response to client.
+[2025-01-13 20:06:08] [DEBUG] Server response: {"coord":{"lon":12.8381,"lat":46.8489},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01n"}],"base":"stations","main":{"temp":-9.25,"feels_like":-14.17,"temp_min":-9.25,"temp_max":-9.25,"pressure":1042,"humidity":66,"sea_level":1042,"grnd_level":834},"visibility":10000,"wind":{"speed":2.64,"deg":349,"gust":1.97},"clouds":{"all":8},"dt":1736795169,"sys":{"country":"AT","sunrise":1736751032,"sunset":1736783023},"timezone":3600,"id":7872591,"name":"Dölsach","cod":200}
+[2025-01-13 20:06:09] [INFO] Parsing JSON: {"coord":{"lon":12.8381,"lat":46.8489},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01n"}],"base":"stations","main":{"temp":-9.25,"feels_like":-14.17,"temp_min":-9.25,"temp_max":-9.25,"pressure":1042,"humidity":66,"sea_level":1042,"grnd_level":834},"visibility":10000,"wind":{"speed":2.64,"deg":349,"gust":1.97},"clouds":{"all":8},"dt":1736795169,"sys":{"country":"AT","sunrise":1736751032,"sunset":1736783023},"timezone":3600,"id":7872591,"name":"Dölsach","cod":200}
+[2025-01-13 20:06:09] [INFO] City: Dölsach
+[2025-01-13 20:06:09] [INFO] Temperature: -9.25
+[2025-01-13 20:06:09] [INFO] Feels like: -14.17
+[2025-01-13 20:06:09] [INFO] Temp min: -9.25
+[2025-01-13 20:06:09] [INFO] Temp max: -9.25
+[2025-01-13 20:06:09] [INFO] Pressure: 1042
+[2025-01-13 20:06:09] [INFO] Humidity: 66
+[2025-01-13 20:06:09] [INFO] Wind speed: 2.64
+[2025-01-13 20:06:09] [INFO] Weather condition: clear sky
+[2025-01-13 20:06:09] [DEBUG] Parsed city: Dölsach
+[2025-01-13 20:06:09] [DEBUG] Parsed temperature: -9.25
+[2025-01-13 20:06:09] [DEBUG] Parsed weather condition: clear sky
