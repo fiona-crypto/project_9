@@ -24,7 +24,7 @@ public class WeatherParser {
             JsonObject json = JsonParser.parseString(apiResponse).getAsJsonObject();
 
             // Debug: Show the entire JSON response
-            Logger.log(Logger.Level.DEBUG, "Parsing JSON: " + json);
+            Logger.log(Logger.Level.INFO, "Parsing JSON: " + json);
 
 
             // Extract the city name

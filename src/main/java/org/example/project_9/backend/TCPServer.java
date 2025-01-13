@@ -9,6 +9,7 @@ import java.net.*;
  * client to send a city name and temperature unit.
  */
 public class TCPServer {
+
     public static void main(String[] args) {
         int port = 4711;
 
@@ -16,55 +17,68 @@ public class TCPServer {
         Logger.setMinimumLevel(Logger.Level.DEBUG);
 
         try (ServerSocket serverSocket = new ServerSocket(port)) {
-            Logger.log(Logger.Level.INFO, "Server started and waiting for connection ...");
+            Logger.log(Logger.Level.INFO, "Server started and waiting for connections ...");
 
             while (true) {
-                // Accept client connections and process requests
-                try (Socket clientSocket = serverSocket.accept();
-                     BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-                     PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true)) {
+                Socket clientSocket = serverSocket.accept();
+                Logger.log(Logger.Level.INFO, "Client connected.");
 
-                    Logger.log(Logger.Level.INFO, "Client connected.");
+                // Handle client connection in a new thread
+                new Thread(() -> handleClient(clientSocket)).start();
+            }
+        } catch (IOException e) {
+            Logger.log(Logger.Level.ERROR, "Server can't start: " + e.getMessage());
+        }
+    }
 
-                    // Read the client's request
-                    String input = in.readLine(); // Input from client (city and unit)
-                    Logger.log(Logger.Level.DEBUG, "Received input from client: " + input);
+    /**
+     * Handles a single client connection.
+     *
+     * @param clientSocket The socket representing the client connection.
+     */
+    private static void handleClient(Socket clientSocket) {
+        try (BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+             PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true)) {
 
-                    // Process valid input
-                    if (input != null && input.contains(";")) {
-                        // Split city and unit
-                        String[] parts = input.split(";");
-                        String city = parts[0].trim();
-                        String units = parts[1].trim();
+            // Read the client's request
+            String input = in.readLine();
+            Logger.log(Logger.Level.DEBUG, "Received input from client: " + input);
 
-                        // Fetch weather data
-                        String apiResponse = fetchWeatherData(city, units);
+            // Process valid input
+            if (input != null && input.contains(";")) {
+                String[] parts = input.split(";");
+                String city = parts[0].trim();
+                String units = parts[1].trim();
 
-                        // Respond to the client with the API result or an error message
-                        if (apiResponse != null && !apiResponse.isEmpty() && apiResponse.startsWith("{")) {
-                            if (apiResponse.contains("\"cod\":\"404\"")) {
-                                Logger.log(Logger.Level.INFO, "City not found in API.");
-                                out.println("{\"error\": \"City not found.\"}");
-                            } else {
-                                Logger.log(Logger.Level.DEBUG, "Sending API response to client.");
-                                out.println(apiResponse);  // raw JSON response
-                            }
-                        } else {
-                            Logger.log(Logger.Level.ERROR, "Error retrieving data or invalid response.");
-                            out.println("{\"error\": \"Error retrieving data or invalid response.\"}");
-                        }
+                // Fetch weather data
+                String apiResponse = fetchWeatherData(city, units);
+
+                // Send the appropriate response to the client
+                if (apiResponse != null && !apiResponse.isEmpty() && apiResponse.startsWith("{")) {
+                    if (apiResponse.contains("\"cod\":\"404\"")) {
+                        Logger.log(Logger.Level.INFO, "City not found in API.");
+                        out.println("{\"error\": \"City not found.\"}");
                     } else {
-                        Logger.log(Logger.Level.ERROR, "Invalid request format received.");
-                        out.println("{\"error\": \"Invalid request format.\"}"); // Error invalid request
+                        Logger.log(Logger.Level.DEBUG, "Sending API response to client.");
+                        out.println(apiResponse);
                     }
-
-                } catch (IOException e) {
-                    Logger.log(Logger.Level.ERROR, "Error communicating with the client: " + e.getMessage());
+                } else {
+                    Logger.log(Logger.Level.ERROR, "Error retrieving data or invalid response.");
+                    out.println("{\"error\": \"Error retrieving data or invalid response.\"}");
                 }
+            } else {
+                Logger.log(Logger.Level.ERROR, "Invalid request format received.");
+                out.println("{\"error\": \"Invalid request format.\"}");
             }
 
         } catch (IOException e) {
-            Logger.log(Logger.Level.ERROR, "Server can't start: " + e.getMessage());
+            Logger.log(Logger.Level.ERROR, "Error communicating with the client: " + e.getMessage());
+        } finally {
+            try {
+                clientSocket.close();
+            } catch (IOException e) {
+                Logger.log(Logger.Level.ERROR, "Error closing client socket: " + e.getMessage());
+            }
         }
     }
 
