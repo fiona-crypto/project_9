@@ -2,6 +2,7 @@ package org.example.project_9.backend;
 
 import java.io.*;
 import java.net.*;
+import java.nio.charset.StandardCharsets;
 
 /**
  * A simple TCP client that connects to a server to retrieve weather data.
@@ -30,7 +31,9 @@ public class TCPClient {
             Logger.log(Logger.Level.INFO, "Connected to server.");
 
             // Construct the request string
-            String request = city + ";" + units;
+            String encodedCity = URLEncoder.encode(city, StandardCharsets.UTF_8);
+            // Construct the request string with the encoded city
+            String request = encodedCity + ";" + units;
             Logger.log(Logger.Level.DEBUG, "Sending request to server: " + request);
             // Send the request to the server
             out.println(request);

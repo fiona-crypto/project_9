@@ -764,3 +764,80 @@
 [2025-01-13 15:24:33] [ERROR] Invalid city name: 57377
 [2025-01-13 15:24:39] [DEBUG] Search starts.
 [2025-01-13 15:24:40] [ERROR] Invalid city name: ´§$%
+[2025-01-13 17:07:21] [INFO] Server started and waiting for connection ...
+[2025-01-13 17:07:28] [DEBUG] Search starts.
+[2025-01-13 17:07:28] [DEBUG] Preparing to connect to server at localhost:4711
+[2025-01-13 17:07:28] [INFO] Connected to server.
+[2025-01-13 17:07:28] [INFO] Client connected.
+[2025-01-13 17:07:28] [DEBUG] Sending request to server: New+York;metric
+[2025-01-13 17:07:28] [DEBUG] Received input from client: New+York;metric
+[2025-01-13 17:07:30] [DEBUG] API Response: {"coord":{"lon":-74.006,"lat":40.7143},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04d"}],"base":"stations","main":{"temp":3.02,"feels_like":-1.21,"temp_min":2,"temp_max":4.01,"pressure":1015,"humidity":57,"sea_level":1015,"grnd_level":1014},"visibility":10000,"wind":{"speed":5.14,"deg":250},"clouds":{"all":100},"dt":1736784290,"sys":{"type":1,"id":4610,"country":"US","sunrise":1736770710,"sunset":1736805042},"timezone":-18000,"id":5128581,"name":"New York","cod":200}
+[2025-01-13 17:07:30] [DEBUG] Sending API response to client.
+[2025-01-13 17:07:30] [DEBUG] Server response: {"coord":{"lon":-74.006,"lat":40.7143},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04d"}],"base":"stations","main":{"temp":3.02,"feels_like":-1.21,"temp_min":2,"temp_max":4.01,"pressure":1015,"humidity":57,"sea_level":1015,"grnd_level":1014},"visibility":10000,"wind":{"speed":5.14,"deg":250},"clouds":{"all":100},"dt":1736784290,"sys":{"type":1,"id":4610,"country":"US","sunrise":1736770710,"sunset":1736805042},"timezone":-18000,"id":5128581,"name":"New York","cod":200}
+[2025-01-13 17:07:30] [DEBUG] Parsing JSON: {"coord":{"lon":-74.006,"lat":40.7143},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04d"}],"base":"stations","main":{"temp":3.02,"feels_like":-1.21,"temp_min":2,"temp_max":4.01,"pressure":1015,"humidity":57,"sea_level":1015,"grnd_level":1014},"visibility":10000,"wind":{"speed":5.14,"deg":250},"clouds":{"all":100},"dt":1736784290,"sys":{"type":1,"id":4610,"country":"US","sunrise":1736770710,"sunset":1736805042},"timezone":-18000,"id":5128581,"name":"New York","cod":200}
+[2025-01-13 17:07:30] [INFO] City: New York
+[2025-01-13 17:07:30] [INFO] Temperature: 3.02
+[2025-01-13 17:07:30] [INFO] Feels like: -1.21
+[2025-01-13 17:07:30] [INFO] Temp min: 2.0
+[2025-01-13 17:07:30] [INFO] Temp max: 4.01
+[2025-01-13 17:07:30] [INFO] Pressure: 1015
+[2025-01-13 17:07:30] [INFO] Humidity: 57
+[2025-01-13 17:07:30] [INFO] Wind speed: 5.14
+[2025-01-13 17:07:30] [INFO] Weather condition: overcast clouds
+[2025-01-13 17:07:30] [DEBUG] Parsed city: New York
+[2025-01-13 17:07:30] [DEBUG] Parsed temperature: 3.02
+[2025-01-13 17:07:30] [DEBUG] Parsed weather condition: overcast clouds
+[2025-01-13 17:07:30] [DEBUG] Search starts.
+[2025-01-13 17:07:30] [DEBUG] Preparing to connect to server at localhost:4711
+[2025-01-13 17:07:30] [INFO] Connected to server.
+[2025-01-13 17:07:30] [DEBUG] Sending request to server: New+York;metric
+[2025-01-13 17:07:30] [INFO] Client connected.
+[2025-01-13 17:07:30] [DEBUG] Received input from client: New+York;metric
+[2025-01-13 17:07:30] [DEBUG] API Response: {"coord":{"lon":-74.006,"lat":40.7143},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04d"}],"base":"stations","main":{"temp":3.02,"feels_like":-1.21,"temp_min":2,"temp_max":4.01,"pressure":1015,"humidity":57,"sea_level":1015,"grnd_level":1014},"visibility":10000,"wind":{"speed":5.14,"deg":250},"clouds":{"all":100},"dt":1736784290,"sys":{"type":1,"id":4610,"country":"US","sunrise":1736770710,"sunset":1736805042},"timezone":-18000,"id":5128581,"name":"New York","cod":200}
+[2025-01-13 17:07:30] [DEBUG] Sending API response to client.
+[2025-01-13 17:07:30] [DEBUG] Server response: {"coord":{"lon":-74.006,"lat":40.7143},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04d"}],"base":"stations","main":{"temp":3.02,"feels_like":-1.21,"temp_min":2,"temp_max":4.01,"pressure":1015,"humidity":57,"sea_level":1015,"grnd_level":1014},"visibility":10000,"wind":{"speed":5.14,"deg":250},"clouds":{"all":100},"dt":1736784290,"sys":{"type":1,"id":4610,"country":"US","sunrise":1736770710,"sunset":1736805042},"timezone":-18000,"id":5128581,"name":"New York","cod":200}
+[2025-01-13 17:07:30] [DEBUG] Parsing JSON: {"coord":{"lon":-74.006,"lat":40.7143},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04d"}],"base":"stations","main":{"temp":3.02,"feels_like":-1.21,"temp_min":2,"temp_max":4.01,"pressure":1015,"humidity":57,"sea_level":1015,"grnd_level":1014},"visibility":10000,"wind":{"speed":5.14,"deg":250},"clouds":{"all":100},"dt":1736784290,"sys":{"type":1,"id":4610,"country":"US","sunrise":1736770710,"sunset":1736805042},"timezone":-18000,"id":5128581,"name":"New York","cod":200}
+[2025-01-13 17:07:30] [INFO] City: New York
+[2025-01-13 17:07:30] [INFO] Temperature: 3.02
+[2025-01-13 17:07:30] [INFO] Feels like: -1.21
+[2025-01-13 17:07:30] [INFO] Temp min: 2.0
+[2025-01-13 17:07:30] [INFO] Temp max: 4.01
+[2025-01-13 17:07:30] [INFO] Pressure: 1015
+[2025-01-13 17:07:30] [INFO] Humidity: 57
+[2025-01-13 17:07:30] [INFO] Wind speed: 5.14
+[2025-01-13 17:07:30] [INFO] Weather condition: overcast clouds
+[2025-01-13 17:07:30] [DEBUG] Parsed city: New York
+[2025-01-13 17:07:30] [DEBUG] Parsed temperature: 3.02
+[2025-01-13 17:07:30] [DEBUG] Parsed weather condition: overcast clouds
+[2025-01-13 17:07:40] [DEBUG] Search starts.
+[2025-01-13 17:07:40] [DEBUG] Preparing to connect to server at localhost:4711
+[2025-01-13 17:07:40] [INFO] Connected to server.
+[2025-01-13 17:07:40] [INFO] Client connected.
+[2025-01-13 17:07:40] [DEBUG] Sending request to server: djddjjjj;metric
+[2025-01-13 17:07:40] [DEBUG] Received input from client: djddjjjj;metric
+[2025-01-13 17:07:41] [ERROR] Error retrieving data: https://api.openweathermap.org/data/2.5/weather?q=djddjjjj&appid=2846e091909907b38614eb85000db992&units=metric
+[2025-01-13 17:07:41] [ERROR] Error retrieving data or invalid response.
+[2025-01-13 17:07:41] [DEBUG] Server response: {"error": "Error retrieving data or invalid response."}
+[2025-01-13 17:07:42] [ERROR] City not found: djddjjjj
+[2025-01-13 17:07:49] [DEBUG] Search starts.
+[2025-01-13 17:07:49] [DEBUG] Preparing to connect to server at localhost:4711
+[2025-01-13 17:07:49] [INFO] Connected to server.
+[2025-01-13 17:07:49] [INFO] Client connected.
+[2025-01-13 17:07:49] [DEBUG] Sending request to server: Sankt+Veit+an+der+Glan;metric
+[2025-01-13 17:07:49] [DEBUG] Received input from client: Sankt+Veit+an+der+Glan;metric
+[2025-01-13 17:07:50] [DEBUG] API Response: {"coord":{"lon":14.3603,"lat":46.7681},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01n"}],"base":"stations","main":{"temp":-0.27,"feels_like":-4.32,"temp_min":-0.88,"temp_max":-0.27,"pressure":1037,"humidity":55,"sea_level":1037,"grnd_level":953},"visibility":10000,"wind":{"speed":3.6,"deg":80},"clouds":{"all":0},"dt":1736784309,"sys":{"type":1,"id":6875,"country":"AT","sunrise":1736750650,"sunset":1736782675},"timezone":3600,"id":2766359,"name":"Sankt Veit an der Glan","cod":200}
+[2025-01-13 17:07:50] [DEBUG] Sending API response to client.
+[2025-01-13 17:07:50] [DEBUG] Server response: {"coord":{"lon":14.3603,"lat":46.7681},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01n"}],"base":"stations","main":{"temp":-0.27,"feels_like":-4.32,"temp_min":-0.88,"temp_max":-0.27,"pressure":1037,"humidity":55,"sea_level":1037,"grnd_level":953},"visibility":10000,"wind":{"speed":3.6,"deg":80},"clouds":{"all":0},"dt":1736784309,"sys":{"type":1,"id":6875,"country":"AT","sunrise":1736750650,"sunset":1736782675},"timezone":3600,"id":2766359,"name":"Sankt Veit an der Glan","cod":200}
+[2025-01-13 17:07:50] [DEBUG] Parsing JSON: {"coord":{"lon":14.3603,"lat":46.7681},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01n"}],"base":"stations","main":{"temp":-0.27,"feels_like":-4.32,"temp_min":-0.88,"temp_max":-0.27,"pressure":1037,"humidity":55,"sea_level":1037,"grnd_level":953},"visibility":10000,"wind":{"speed":3.6,"deg":80},"clouds":{"all":0},"dt":1736784309,"sys":{"type":1,"id":6875,"country":"AT","sunrise":1736750650,"sunset":1736782675},"timezone":3600,"id":2766359,"name":"Sankt Veit an der Glan","cod":200}
+[2025-01-13 17:07:50] [INFO] City: Sankt Veit an der Glan
+[2025-01-13 17:07:50] [INFO] Temperature: -0.27
+[2025-01-13 17:07:50] [INFO] Feels like: -4.32
+[2025-01-13 17:07:50] [INFO] Temp min: -0.88
+[2025-01-13 17:07:50] [INFO] Temp max: -0.27
+[2025-01-13 17:07:50] [INFO] Pressure: 1037
+[2025-01-13 17:07:50] [INFO] Humidity: 55
+[2025-01-13 17:07:50] [INFO] Wind speed: 3.6
+[2025-01-13 17:07:50] [INFO] Weather condition: clear sky
+[2025-01-13 17:07:50] [DEBUG] Parsed city: Sankt Veit an der Glan
+[2025-01-13 17:07:50] [DEBUG] Parsed temperature: -0.27
+[2025-01-13 17:07:50] [DEBUG] Parsed weather condition: clear sky
