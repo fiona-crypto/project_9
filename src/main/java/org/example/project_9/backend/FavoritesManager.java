@@ -33,8 +33,9 @@ public class FavoritesManager {
      * @return True if the city was added successfully, false if the city is null, empty, or already in the list.
      */
     public static boolean addFavorite(String city) {
-        if (city == null || city.isEmpty() || favoriteCities.contains(city)) {
-            return false; // Keine Duplikate oder ungültige Einträge hinzufügen
+        String lowerCaseCity = city.toLowerCase();
+        if (favoriteCities.stream().map(String::toLowerCase).anyMatch(lowerCaseCity::equals)) {
+            return false; // Stadt ist bereits in den Favoriten
         }
         favoriteCities.add(city);
         saveFavoriteToFile(city);
