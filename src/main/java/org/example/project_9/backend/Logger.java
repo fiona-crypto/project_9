@@ -5,8 +5,7 @@ import lombok.Setter;
 import java.io.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.List;
+
 
 /**
  * A simple logger utility for logging messages with different levels.

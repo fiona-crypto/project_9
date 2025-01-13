@@ -30,8 +30,6 @@ public class HelloController {
     @FXML private Label humidityLabel;
     @FXML private Label windSpeedLabel;
 
-    private FavoritesManager favoritesManager;
-
     /**
      * Initializes the controller. It sets up the favorite cities list,
      * unit selection, and event handlers for buttons and choices.
@@ -83,7 +81,7 @@ public class HelloController {
      */
     private void handleAddFavoriteCity() {
         String city = searchField.getText().trim();  // Trim deletes leading Spaces
-        if (city != null && !city.isEmpty()) {
+        if (!city.isEmpty()) {
             try {
                 // send API-Anfrage
                 String serverResponse = TCPClient.getWeatherData(city, "metric");

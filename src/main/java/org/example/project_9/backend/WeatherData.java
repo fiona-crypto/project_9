@@ -50,16 +50,14 @@ public class WeatherData {
     @Setter
     @Getter
     public static class Weather {
-        private String description;
-
-        public Weather(String description) {
-            this.description = description;
+        private String weatherCondition;
+        public Weather(String weatherCondition) {
+            this.weatherCondition = weatherCondition;
         }
 
-        // Overriding toString() to provide a meaningful description
         @Override
         public String toString() {
-            return "Weather Description: " + description;
+            return "Condition: " + weatherCondition;
         }
     }
 
@@ -77,11 +75,6 @@ public class WeatherData {
         private int pressure;
         private int humidity;
 
-        public Main(double temp, int pressure, int humidity) {
-            this.temp = temp;
-            this.pressure = pressure;
-            this.humidity = humidity;
-        }
 
         // Overriding toString() to provide a formatted summary of core weather attributes
         @Override

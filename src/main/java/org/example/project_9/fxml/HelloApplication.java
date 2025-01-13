@@ -9,7 +9,7 @@ import java.io.IOException;
 
 /**
  * The main entry point of the application.
- * This class launches the weather application and sets up the initial scene.
+ * This class launches the weather application.
  */
 public class HelloApplication extends Application {
 

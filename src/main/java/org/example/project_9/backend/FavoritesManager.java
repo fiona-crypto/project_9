@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class FavoritesManager {
     private static final String FAVORITES_LOG_FILE = "favorites.log";
-    private static List<String> favoriteCities = new ArrayList<>();
+    private static final List<String> favoriteCities;
 
     static {
         favoriteCities = loadFavoritesFromLog();
@@ -35,7 +35,7 @@ public class FavoritesManager {
     public static boolean addFavorite(String city) {
         String lowerCaseCity = city.toLowerCase();
         if (favoriteCities.stream().map(String::toLowerCase).anyMatch(lowerCaseCity::equals)) {
-            return false; // Stadt ist bereits in den Favoriten
+            return false; // City is already in favorites
         }
         favoriteCities.add(city);
         saveFavoriteToFile(city);
