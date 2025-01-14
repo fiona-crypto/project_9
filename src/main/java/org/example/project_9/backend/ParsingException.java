@@ -8,7 +8,6 @@ public class ParsingException extends Exception {
         super(message);
     }
 
-    // Konstruktor mit Fehlermeldung und zugrunde liegender Ausnahme
     public ParsingException(String message, Throwable cause) {
         super(message, cause);
     }

@@ -71,10 +71,7 @@ public class WeatherParser {
 
         } catch (IllegalStateException | ClassCastException e) {
             throw new ParsingException("Invalid JSON structure or unexpected value type.", e);
-        } catch (IndexOutOfBoundsException e) {
-            throw new ParsingException("Weather array is empty or improperly structured.", e);
         }
-
         return weatherData;
     }
 

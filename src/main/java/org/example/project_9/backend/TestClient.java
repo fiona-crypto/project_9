@@ -13,12 +13,12 @@ public class TestClient {
              PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
              BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()))) {
 
-            // Stadt an den Server senden
+            // Send city to server
             String city = "Berlin";
             System.out.println("Sending city: " + city);
             out.println(city);
 
-            // Antwort vom Server empfangen
+            // Response from server
             String response;
             while ((response = in.readLine()) != null) {
                 System.out.println("Server response: " + response);
