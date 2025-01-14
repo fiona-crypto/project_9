@@ -1191,3 +1191,121 @@
 [2025-01-13 21:39:20] [DEBUG] API Response: {"coord":{"lon":13.1481,"lat":45.6922},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04n"}],"base":"stations","main":{"temp":2.81,"feels_like":-0.52,"temp_min":2.81,"temp_max":4.05,"pressure":1036,"humidity":59,"sea_level":1036,"grnd_level":1035},"visibility":10000,"wind":{"speed":3.53,"deg":57,"gust":3.34},"clouds":{"all":97},"dt":1736800751,"sys":{"type":2,"id":2085885,"country":"IT","sunrise":1736750717,"sunset":1736783189},"timezone":3600,"id":3174729,"name":"Lignano Sabbiadoro","cod":200}
 [2025-01-13 21:39:20] [DEBUG] Sending API response to client.
 [2025-01-13 21:39:21] [ERROR] City already in favorites: lignano
+[2025-01-14 14:42:52] [INFO] Server started and waiting for connections ...
+[2025-01-14 14:43:02] [DEBUG] Search starts.
+[2025-01-14 14:43:02] [DEBUG] Preparing to connect to server at localhost:4711
+[2025-01-14 14:43:02] [INFO] Connected to server.
+[2025-01-14 14:43:02] [DEBUG] Sending request to server: Wien;metric
+[2025-01-14 14:43:02] [INFO] Client connected.
+[2025-01-14 14:43:02] [DEBUG] Received input from client: Wien;metric
+[2025-01-14 14:43:03] [DEBUG] API Response: {"coord":{"lon":16.3721,"lat":48.2085},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01d"}],"base":"stations","main":{"temp":2.87,"feels_like":2.87,"temp_min":1.26,"temp_max":3.75,"pressure":1034,"humidity":62,"sea_level":1034,"grnd_level":1006},"visibility":10000,"wind":{"speed":1.03,"deg":0},"clouds":{"all":0},"dt":1736861697,"sys":{"type":2,"id":2037452,"country":"AT","sunrise":1736836846,"sunset":1736868356},"timezone":3600,"id":2761369,"name":"Vienna","cod":200}
+[2025-01-14 14:43:03] [DEBUG] Sending API response to client.
+[2025-01-14 14:43:03] [DEBUG] Server response: {"coord":{"lon":16.3721,"lat":48.2085},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01d"}],"base":"stations","main":{"temp":2.87,"feels_like":2.87,"temp_min":1.26,"temp_max":3.75,"pressure":1034,"humidity":62,"sea_level":1034,"grnd_level":1006},"visibility":10000,"wind":{"speed":1.03,"deg":0},"clouds":{"all":0},"dt":1736861697,"sys":{"type":2,"id":2037452,"country":"AT","sunrise":1736836846,"sunset":1736868356},"timezone":3600,"id":2761369,"name":"Vienna","cod":200}
+[2025-01-14 14:43:03] [INFO] Parsing JSON: {"coord":{"lon":16.3721,"lat":48.2085},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01d"}],"base":"stations","main":{"temp":2.87,"feels_like":2.87,"temp_min":1.26,"temp_max":3.75,"pressure":1034,"humidity":62,"sea_level":1034,"grnd_level":1006},"visibility":10000,"wind":{"speed":1.03,"deg":0},"clouds":{"all":0},"dt":1736861697,"sys":{"type":2,"id":2037452,"country":"AT","sunrise":1736836846,"sunset":1736868356},"timezone":3600,"id":2761369,"name":"Vienna","cod":200}
+[2025-01-14 14:43:03] [INFO] City: Vienna
+[2025-01-14 14:43:03] [INFO] Main section processed.
+[2025-01-14 14:43:03] [INFO] Weather condition: clear sky
+[2025-01-14 14:43:03] [DEBUG] Parsed city: Vienna
+[2025-01-14 14:43:03] [DEBUG] Parsed temperature: 2.87
+[2025-01-14 14:43:03] [DEBUG] Parsed weather condition: clear sky
+[2025-01-14 14:43:05] [DEBUG] Preparing to connect to server at localhost:4711
+[2025-01-14 14:43:05] [INFO] Connected to server.
+[2025-01-14 14:43:05] [INFO] Client connected.
+[2025-01-14 14:43:05] [DEBUG] Sending request to server: Wien;metric
+[2025-01-14 14:43:05] [DEBUG] Received input from client: Wien;metric
+[2025-01-14 14:43:05] [DEBUG] API Response: {"coord":{"lon":16.3721,"lat":48.2085},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01d"}],"base":"stations","main":{"temp":2.87,"feels_like":2.87,"temp_min":1.26,"temp_max":3.75,"pressure":1034,"humidity":62,"sea_level":1034,"grnd_level":1006},"visibility":10000,"wind":{"speed":1.03,"deg":0},"clouds":{"all":0},"dt":1736861697,"sys":{"type":2,"id":2037452,"country":"AT","sunrise":1736836846,"sunset":1736868356},"timezone":3600,"id":2761369,"name":"Vienna","cod":200}
+[2025-01-14 14:43:05] [DEBUG] Sending API response to client.
+[2025-01-14 14:43:05] [INFO] City added to favorites: Wien
+[2025-01-14 14:43:09] [DEBUG] Search starts.
+[2025-01-14 14:43:09] [DEBUG] Preparing to connect to server at localhost:4711
+[2025-01-14 14:43:09] [INFO] Connected to server.
+[2025-01-14 14:43:09] [INFO] Client connected.
+[2025-01-14 14:43:09] [DEBUG] Sending request to server: wien;metric
+[2025-01-14 14:43:09] [DEBUG] Received input from client: wien;metric
+[2025-01-14 14:43:10] [DEBUG] API Response: {"coord":{"lon":16.3721,"lat":48.2085},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01d"}],"base":"stations","main":{"temp":2.87,"feels_like":2.87,"temp_min":1.26,"temp_max":3.75,"pressure":1034,"humidity":62,"sea_level":1034,"grnd_level":1006},"visibility":10000,"wind":{"speed":1.03,"deg":0},"clouds":{"all":0},"dt":1736861697,"sys":{"type":2,"id":2037452,"country":"AT","sunrise":1736836846,"sunset":1736868356},"timezone":3600,"id":2761369,"name":"Vienna","cod":200}
+[2025-01-14 14:43:10] [DEBUG] Sending API response to client.
+[2025-01-14 14:43:10] [DEBUG] Server response: {"coord":{"lon":16.3721,"lat":48.2085},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01d"}],"base":"stations","main":{"temp":2.87,"feels_like":2.87,"temp_min":1.26,"temp_max":3.75,"pressure":1034,"humidity":62,"sea_level":1034,"grnd_level":1006},"visibility":10000,"wind":{"speed":1.03,"deg":0},"clouds":{"all":0},"dt":1736861697,"sys":{"type":2,"id":2037452,"country":"AT","sunrise":1736836846,"sunset":1736868356},"timezone":3600,"id":2761369,"name":"Vienna","cod":200}
+[2025-01-14 14:43:10] [INFO] Parsing JSON: {"coord":{"lon":16.3721,"lat":48.2085},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01d"}],"base":"stations","main":{"temp":2.87,"feels_like":2.87,"temp_min":1.26,"temp_max":3.75,"pressure":1034,"humidity":62,"sea_level":1034,"grnd_level":1006},"visibility":10000,"wind":{"speed":1.03,"deg":0},"clouds":{"all":0},"dt":1736861697,"sys":{"type":2,"id":2037452,"country":"AT","sunrise":1736836846,"sunset":1736868356},"timezone":3600,"id":2761369,"name":"Vienna","cod":200}
+[2025-01-14 14:43:10] [INFO] City: Vienna
+[2025-01-14 14:43:10] [INFO] Main section processed.
+[2025-01-14 14:43:10] [INFO] Weather condition: clear sky
+[2025-01-14 14:43:10] [DEBUG] Parsed city: Vienna
+[2025-01-14 14:43:10] [DEBUG] Parsed temperature: 2.87
+[2025-01-14 14:43:10] [DEBUG] Parsed weather condition: clear sky
+[2025-01-14 14:43:10] [DEBUG] Preparing to connect to server at localhost:4711
+[2025-01-14 14:43:10] [INFO] Connected to server.
+[2025-01-14 14:43:10] [INFO] Client connected.
+[2025-01-14 14:43:10] [DEBUG] Sending request to server: wien;metric
+[2025-01-14 14:43:10] [DEBUG] Received input from client: wien;metric
+[2025-01-14 14:43:10] [DEBUG] API Response: {"coord":{"lon":16.3721,"lat":48.2085},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01d"}],"base":"stations","main":{"temp":2.87,"feels_like":2.87,"temp_min":1.26,"temp_max":3.75,"pressure":1034,"humidity":62,"sea_level":1034,"grnd_level":1006},"visibility":10000,"wind":{"speed":1.03,"deg":0},"clouds":{"all":0},"dt":1736861697,"sys":{"type":2,"id":2037452,"country":"AT","sunrise":1736836846,"sunset":1736868356},"timezone":3600,"id":2761369,"name":"Vienna","cod":200}
+[2025-01-14 14:43:10] [DEBUG] Sending API response to client.
+[2025-01-14 14:43:11] [ERROR] City already in favorites: wien
+[2025-01-14 14:43:18] [DEBUG] Search starts.
+[2025-01-14 14:43:18] [DEBUG] Preparing to connect to server at localhost:4711
+[2025-01-14 14:43:18] [INFO] Connected to server.
+[2025-01-14 14:43:18] [INFO] Client connected.
+[2025-01-14 14:43:18] [DEBUG] Sending request to server: Paris;metric
+[2025-01-14 14:43:18] [DEBUG] Received input from client: Paris;metric
+[2025-01-14 14:43:18] [DEBUG] API Response: {"coord":{"lon":2.3488,"lat":48.8534},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01d"}],"base":"stations","main":{"temp":3.69,"feels_like":1.59,"temp_min":2.34,"temp_max":5.03,"pressure":1035,"humidity":66,"sea_level":1035,"grnd_level":1025},"visibility":10000,"wind":{"speed":2.24,"deg":47,"gust":2.68},"clouds":{"all":0},"dt":1736861923,"sys":{"type":2,"id":2012208,"country":"FR","sunrise":1736840357,"sunset":1736871579},"timezone":3600,"id":2988507,"name":"Paris","cod":200}
+[2025-01-14 14:43:18] [DEBUG] Sending API response to client.
+[2025-01-14 14:43:18] [DEBUG] Server response: {"coord":{"lon":2.3488,"lat":48.8534},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01d"}],"base":"stations","main":{"temp":3.69,"feels_like":1.59,"temp_min":2.34,"temp_max":5.03,"pressure":1035,"humidity":66,"sea_level":1035,"grnd_level":1025},"visibility":10000,"wind":{"speed":2.24,"deg":47,"gust":2.68},"clouds":{"all":0},"dt":1736861923,"sys":{"type":2,"id":2012208,"country":"FR","sunrise":1736840357,"sunset":1736871579},"timezone":3600,"id":2988507,"name":"Paris","cod":200}
+[2025-01-14 14:43:18] [INFO] Parsing JSON: {"coord":{"lon":2.3488,"lat":48.8534},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01d"}],"base":"stations","main":{"temp":3.69,"feels_like":1.59,"temp_min":2.34,"temp_max":5.03,"pressure":1035,"humidity":66,"sea_level":1035,"grnd_level":1025},"visibility":10000,"wind":{"speed":2.24,"deg":47,"gust":2.68},"clouds":{"all":0},"dt":1736861923,"sys":{"type":2,"id":2012208,"country":"FR","sunrise":1736840357,"sunset":1736871579},"timezone":3600,"id":2988507,"name":"Paris","cod":200}
+[2025-01-14 14:43:18] [INFO] City: Paris
+[2025-01-14 14:43:18] [INFO] Main section processed.
+[2025-01-14 14:43:18] [INFO] Weather condition: clear sky
+[2025-01-14 14:43:18] [DEBUG] Parsed city: Paris
+[2025-01-14 14:43:18] [DEBUG] Parsed temperature: 3.69
+[2025-01-14 14:43:18] [DEBUG] Parsed weather condition: clear sky
+[2025-01-14 14:43:22] [DEBUG] Search starts.
+[2025-01-14 14:43:23] [ERROR] Invalid city name: 234
+[2025-01-14 14:43:23] [DEBUG] Preparing to connect to server at localhost:4711
+[2025-01-14 14:43:23] [INFO] Connected to server.
+[2025-01-14 14:43:23] [INFO] Client connected.
+[2025-01-14 14:43:23] [DEBUG] Sending request to server: 234;metric
+[2025-01-14 14:43:23] [DEBUG] Received input from client: 234;metric
+[2025-01-14 14:43:24] [ERROR] Error retrieving data: https://api.openweathermap.org/data/2.5/weather?q=234&appid=2846e091909907b38614eb85000db992&units=metric
+[2025-01-14 14:43:24] [ERROR] Error retrieving data or invalid response.
+[2025-01-14 14:43:24] [ERROR] Invalid city data: 234
+[2025-01-14 15:05:27] [INFO] Server started and waiting for connections ...
+[2025-01-14 15:05:35] [DEBUG] Search starts.
+[2025-01-14 15:05:35] [DEBUG] Preparing to connect to server at localhost:4711
+[2025-01-14 15:05:35] [INFO] Connected to server.
+[2025-01-14 15:05:35] [DEBUG] Sending request to server: Wien;metric
+[2025-01-14 15:05:35] [INFO] Client connected.
+[2025-01-14 15:05:35] [DEBUG] Received input from client: Wien;metric
+[2025-01-14 15:05:36] [DEBUG] API Response: {"coord":{"lon":16.3721,"lat":48.2085},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01d"}],"base":"stations","main":{"temp":3.23,"feels_like":2.16,"temp_min":1.59,"temp_max":4.6,"pressure":1034,"humidity":61,"sea_level":1034,"grnd_level":1006},"visibility":10000,"wind":{"speed":1.34,"deg":320,"gust":1.34},"clouds":{"all":0},"dt":1736863062,"sys":{"type":2,"id":2037452,"country":"AT","sunrise":1736836846,"sunset":1736868356},"timezone":3600,"id":2761369,"name":"Vienna","cod":200}
+[2025-01-14 15:05:36] [DEBUG] Sending API response to client.
+[2025-01-14 15:05:36] [DEBUG] Server response: {"coord":{"lon":16.3721,"lat":48.2085},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01d"}],"base":"stations","main":{"temp":3.23,"feels_like":2.16,"temp_min":1.59,"temp_max":4.6,"pressure":1034,"humidity":61,"sea_level":1034,"grnd_level":1006},"visibility":10000,"wind":{"speed":1.34,"deg":320,"gust":1.34},"clouds":{"all":0},"dt":1736863062,"sys":{"type":2,"id":2037452,"country":"AT","sunrise":1736836846,"sunset":1736868356},"timezone":3600,"id":2761369,"name":"Vienna","cod":200}
+[2025-01-14 15:05:36] [INFO] Parsing JSON: {"coord":{"lon":16.3721,"lat":48.2085},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01d"}],"base":"stations","main":{"temp":3.23,"feels_like":2.16,"temp_min":1.59,"temp_max":4.6,"pressure":1034,"humidity":61,"sea_level":1034,"grnd_level":1006},"visibility":10000,"wind":{"speed":1.34,"deg":320,"gust":1.34},"clouds":{"all":0},"dt":1736863062,"sys":{"type":2,"id":2037452,"country":"AT","sunrise":1736836846,"sunset":1736868356},"timezone":3600,"id":2761369,"name":"Vienna","cod":200}
+[2025-01-14 15:05:36] [INFO] City: Vienna
+[2025-01-14 15:05:36] [INFO] Main section processed.
+[2025-01-14 15:05:36] [INFO] Weather condition: clear sky
+[2025-01-14 15:05:36] [DEBUG] Parsed city: Vienna
+[2025-01-14 15:05:36] [DEBUG] Parsed temperature: 3.23
+[2025-01-14 15:05:36] [DEBUG] Parsed weather condition: clear sky
+[2025-01-14 15:05:37] [DEBUG] Preparing to connect to server at localhost:4711
+[2025-01-14 15:05:37] [INFO] Client connected.
+[2025-01-14 15:05:37] [INFO] Connected to server.
+[2025-01-14 15:05:37] [DEBUG] Sending request to server: Wien;metric
+[2025-01-14 15:05:37] [DEBUG] Received input from client: Wien;metric
+[2025-01-14 15:05:37] [DEBUG] API Response: {"coord":{"lon":16.3721,"lat":48.2085},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01d"}],"base":"stations","main":{"temp":3.23,"feels_like":2.16,"temp_min":1.59,"temp_max":4.6,"pressure":1034,"humidity":61,"sea_level":1034,"grnd_level":1006},"visibility":10000,"wind":{"speed":1.34,"deg":320,"gust":1.34},"clouds":{"all":0},"dt":1736863062,"sys":{"type":2,"id":2037452,"country":"AT","sunrise":1736836846,"sunset":1736868356},"timezone":3600,"id":2761369,"name":"Vienna","cod":200}
+[2025-01-14 15:05:37] [DEBUG] Sending API response to client.
+[2025-01-14 15:05:39] [ERROR] City already in favorites: Wien
+[2025-01-14 15:05:48] [DEBUG] Search starts.
+[2025-01-14 15:05:48] [DEBUG] Preparing to connect to server at localhost:4711
+[2025-01-14 15:05:48] [INFO] Connected to server.
+[2025-01-14 15:05:48] [DEBUG] Sending request to server: Mpnchen;metric
+[2025-01-14 15:05:48] [INFO] Client connected.
+[2025-01-14 15:05:48] [DEBUG] Received input from client: Mpnchen;metric
+[2025-01-14 15:05:48] [ERROR] Error retrieving data from API: https://api.openweathermap.org/data/2.5/weather?q=Mpnchen&appid=2846e091909907b38614eb85000db992&units=metric
+[2025-01-14 15:05:48] [ERROR] Error retrieving data or invalid response.
+[2025-01-14 15:05:48] [DEBUG] Server response: {"error": "Error retrieving data or invalid response."}
+[2025-01-14 15:05:49] [ERROR] City not found: Mpnchen
+[2025-01-14 15:05:50] [DEBUG] Preparing to connect to server at localhost:4711
+[2025-01-14 15:05:50] [INFO] Connected to server.
+[2025-01-14 15:05:50] [INFO] Client connected.
+[2025-01-14 15:05:50] [DEBUG] Sending request to server: Mpnchen;metric
+[2025-01-14 15:05:50] [DEBUG] Received input from client: Mpnchen;metric
+[2025-01-14 15:05:50] [ERROR] Error retrieving data from API: https://api.openweathermap.org/data/2.5/weather?q=Mpnchen&appid=2846e091909907b38614eb85000db992&units=metric
+[2025-01-14 15:05:50] [ERROR] Error retrieving data or invalid response.
+[2025-01-14 15:05:51] [ERROR] Invalid city data: Mpnchen

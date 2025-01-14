@@ -15,8 +15,9 @@ public class WeatherParser {
      *
      * @param apiResponse The API response in JSON format.
      * @return A WeatherData object containing parsed weather information.
+     * @throws ParsingException If an error occurs during parsing.
      */
-    public static WeatherData parseWeatherData(String apiResponse) {
+    public static WeatherData parseWeatherData(String apiResponse) throws ParsingException {
         WeatherData weatherData = new WeatherData();
 
         try {
@@ -26,67 +27,76 @@ public class WeatherParser {
             // Debug: Show the entire JSON response
             Logger.log(Logger.Level.INFO, "Parsing JSON: " + json);
 
-
             // Extract the city name
             if (json.has("name")) {
                 weatherData.setCity(json.get("name").getAsString());
                 Logger.log(Logger.Level.INFO, "City: " + weatherData.getCity());
             } else {
-                Logger.log(Logger.Level.WARN, "Field 'name' not found in JSON.");
+                throw new ParsingException("Field 'name' not found in JSON.");
             }
 
             // Extract main section with temperature and related information
             if (json.has("main")) {
                 JsonObject main = json.getAsJsonObject("main");
 
-                weatherData.setTemperature(main.get("temp").getAsDouble());
-                Logger.log(Logger.Level.INFO, "Temperature: " + weatherData.getTemperature());
+                weatherData.setTemperature(getJsonDouble(main, "temp", "Temperature"));
+                weatherData.setFeelsLike(getJsonDouble(main, "feels_like", "Feels like"));
+                weatherData.setTempMin(getJsonDouble(main, "temp_min", "Temp min"));
+                weatherData.setTempMax(getJsonDouble(main, "temp_max", "Temp max"));
+                weatherData.setPressure(getJsonInt(main, "pressure", "Pressure"));
+                weatherData.setHumidity(getJsonInt(main, "humidity", "Humidity"));
 
-                weatherData.setFeelsLike(main.get("feels_like").getAsDouble());
-                Logger.log(Logger.Level.INFO, "Feels like: " + weatherData.getFeelsLike());
-
-                weatherData.setTempMin(main.get("temp_min").getAsDouble());
-                Logger.log(Logger.Level.INFO, "Temp min: " + weatherData.getTempMin());
-
-                weatherData.setTempMax(main.get("temp_max").getAsDouble());
-                Logger.log(Logger.Level.INFO, "Temp max: " + weatherData.getTempMax());
-
-                weatherData.setPressure(main.get("pressure").getAsInt());
-                Logger.log(Logger.Level.INFO, "Pressure: " + weatherData.getPressure());
-
-                weatherData.setHumidity(main.get("humidity").getAsInt());
-                Logger.log(Logger.Level.INFO, "Humidity: " + weatherData.getHumidity());
+                Logger.log(Logger.Level.INFO, "Main section processed.");
             } else {
-                Logger.log(Logger.Level.WARN, "Field 'main' not found in JSON.");
+                throw new ParsingException("Field 'main' not found in JSON.");
             }
 
             // Extract wind data
             if (json.has("wind")) {
                 JsonObject wind = json.getAsJsonObject("wind");
-
-                weatherData.setWindSpeed(wind.get("speed").getAsDouble());
-                Logger.log(Logger.Level.INFO, "Wind speed: " + weatherData.getWindSpeed());
+                weatherData.setWindSpeed(getJsonDouble(wind, "speed", "Wind speed"));
             } else {
-                Logger.log(Logger.Level.WARN, "Field 'wind' not found in JSON.");
+                throw new ParsingException("Field 'wind' not found in JSON.");
             }
 
             // Extract weather condition description
             if (json.has("weather")) {
                 weatherData.setWeatherCondition(
-                        json.getAsJsonArray("weather")
-                                .get(0).getAsJsonObject()
-                                .get("description").getAsString()
+                        json.getAsJsonArray("weather").get(0).getAsJsonObject().get("description").getAsString()
                 );
                 Logger.log(Logger.Level.INFO, "Weather condition: " + weatherData.getWeatherCondition());
             } else {
-                Logger.log(Logger.Level.WARN, "Field 'weather' not found in JSON.");
+                throw new ParsingException("Field 'weather' not found in JSON.");
             }
 
-        } catch (Exception e) {
-            Logger.log(Logger.Level.ERROR, "Error while parsing data: " + e.getMessage());
-            e.printStackTrace();
+        } catch (IllegalStateException | ClassCastException e) {
+            throw new ParsingException("Invalid JSON structure or unexpected value type.", e);
+        } catch (IndexOutOfBoundsException e) {
+            throw new ParsingException("Weather array is empty or improperly structured.", e);
         }
 
         return weatherData;
+    }
+
+    private static double getJsonDouble(JsonObject json, String key, String fieldName) throws ParsingException {
+        if (!json.has(key)) {
+            throw new ParsingException("Missing field: '" + fieldName + "'");
+        }
+        try {
+            return json.get(key).getAsDouble();
+        } catch (NumberFormatException | ClassCastException e) {
+            throw new ParsingException("Invalid type for field: '" + fieldName + "'", e);
+        }
+    }
+
+    private static int getJsonInt(JsonObject json, String key, String fieldName) throws ParsingException {
+        if (!json.has(key)) {
+            throw new ParsingException("Missing field: '" + fieldName + "'");
+        }
+        try {
+            return json.get(key).getAsInt();
+        } catch (NumberFormatException | ClassCastException e) {
+            throw new ParsingException("Invalid type for field: '" + fieldName + "'", e);
+        }
     }
 }

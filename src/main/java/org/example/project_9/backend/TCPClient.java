@@ -17,8 +17,10 @@ public class TCPClient {
      * @param city  The name of the city for which weather data is requested.
      * @param units The temperature unit ("metric" for Celsius, "imperial" for Fahrenheit).
      * @return The server's response as a JSON string or {@code null} if an error occurs.
+     * @throws ClientException If an error occurs during the request or response handling.
+     *
      */
-    public static String getWeatherData(String city, String units) {
+    public static String getWeatherData(String city, String units) throws ClientException {
         String serverHost = "localhost";
         int serverPort = 4711;
 
@@ -49,9 +51,12 @@ public class TCPClient {
             // Return the server's response as a JSON string
             return serverResponse.toString();
 
+        } catch (UnknownHostException e) {
+            throw new ClientException("Unable to resolve host: " + serverHost, e);
+        } catch (ConnectException e) {
+            throw new ClientException("Connection to server failed: " + serverHost + ":" + serverPort, e);
         } catch (IOException e) {
-            Logger.log(Logger.Level.ERROR, "Error connecting to the server: " + e.getMessage());
-            return null;
+            throw new ClientException("I/O error during communication with the server.", e);
         }
     }
 }

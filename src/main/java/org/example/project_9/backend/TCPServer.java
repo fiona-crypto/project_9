@@ -20,11 +20,15 @@ public class TCPServer {
             Logger.log(Logger.Level.INFO, "Server started and waiting for connections ...");
 
             while (true) {
-                Socket clientSocket = serverSocket.accept();
-                Logger.log(Logger.Level.INFO, "Client connected.");
+                try {
+                    Socket clientSocket = serverSocket.accept();
+                    Logger.log(Logger.Level.INFO, "Client connected.");
 
-                // Handle client connection in a new thread
-                new Thread(() -> handleClient(clientSocket)).start();
+                    // Handle client connection in a new thread
+                    new Thread(() -> handleClient(clientSocket)).start();
+                } catch (IOException e) {
+                    Logger.log(Logger.Level.ERROR, "Error accepting client connection: " + e.getMessage());
+                }
             }
         } catch (IOException e) {
             Logger.log(Logger.Level.ERROR, "Server can't start: " + e.getMessage());
@@ -113,9 +117,14 @@ public class TCPServer {
                 // raw JSON response
                 return response.toString();
             }
+        } catch (MalformedURLException e) {
+            Logger.log(Logger.Level.ERROR, "Malformed URL: " + e.getMessage());
+        } catch (SocketTimeoutException e) {
+            Logger.log(Logger.Level.ERROR, "Connection or read timeout: " + e.getMessage());
         } catch (IOException e) {
-            Logger.log(Logger.Level.ERROR, "Error retrieving data: " + e.getMessage());
-            return null;
+            Logger.log(Logger.Level.ERROR, "Error retrieving data from API: " + e.getMessage());
         }
+        return null;
     }
+
 }
